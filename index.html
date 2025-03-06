@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victoria Kayode - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <div class="logo">
+       <!-- <img src="logo.png" alt="Victoria Kayode Logo">-->
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+       <!-- <li><a href="Victoria_Kayode_Resume.pdf" download class="btn">Download Resume</a></li>--> 
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h1>Victoria Kayode</h1>
+      <h2>Computer Engineer | IoT Enthusiast | Problem Solver</h2>
+      <p>Hi, I'm Victoria Kayode, a Computer Engineering graduate from Kennesaw State University with a passion for IoT, embedded systems, and software development.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View My Projects</a>
+        <a href="Victoria_Kayode_Resume.pdf" download class="btn">Download Resume</a>
+      </div>
+    </div>
+  </section>
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="profile.jpg" alt="Victoria Kayode">
+      <div>
+        <p>
+          <span class="typing-animation">
+            Hi, I’m Victoria! I’m a software developer with a background in computer engineering, passionate about building intuitive and user-friendly experiences. Skilled in Python and Product Design, I love solving problems and bringing ideas to life.
+            <br><br>
+            Outside of tech, I enjoy drawing and animation, which fuel my creativity and attention to detail.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box">Python</div>
+      <div class="skill-box">C++</div>
+      <div class="skill-box">JavaScript</div>
+      <div class="skill-box">Raspberry Pi</div>
+      <div class="skill-box">Arduino</div>
+      <div class="skill-box">Figma</div>
+      <div class="skill-box">Fusion 360</div>
+      <div class="skill-box">AWS</div>
+      <div class="skill-box">UI/UX Design</div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education-item">
+        <h3>Kennesaw State University</h3>
+        <p class="degree">Bachelor of Science in Computer Engineering (Cum Laude)</p>
+        <p class="date">Graduated: December 2024S</p>
+        <p class="gpa">Cumulative GPA: 3.57</p>
+        <p class="coursework"><strong>Relevant Coursework:</strong> Advanced Embedded Systems, Data Collection and Analysis, Senior Project Design, VHDL Design with FPGAs</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>LocIT</h3>
+          <img src="locit-app-screenshot.PNG" alt="Locit App Screenshot">
+          <p>A location-tracking necklace with facial recognition and geofencing capabilities designed to enhance personal safety and security.</p>
+          <button class="read-more">Read More</button>
+          <div class="more-info">
+            <p><strong>Technologies:</strong> Python, Fusion 360, Figma, Raspberry PI, Eagle</p>
+            <p><strong>Details:</strong> This project involved designing a wearable device that tracks the user's location and sends alerts if they enter or exit a predefined area. The mobile app was designed using Figma and developed with FlutterFlow.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Raspberry Pi Weather Station</h3>
+          <img src="weather-station-photo.jpg" alt="Weather Station Photo">
+          <p>A weather monitoring station that logs environmental data with 95% accuracy, integrated with AWS for cloud-based data storage.</p>
+          <button class="read-more">Read More</button>
+          <div class="more-info">
+            <p><strong>Technologies:</strong> Python, AWS, Raspberry Pi</p>
+            <p><strong>Details:</strong> This project involved building a weather station that collects temperature, humidity, and pressure data. The data is stored in AWS for real-time monitoring and analysis.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Red Light, Green Light Game</h3>
+          <img src="red-light-game-prototype.jpg" alt="Red Light Game Prototype">
+          <p>An interactive version of the Squid Game-inspired Red Light, Green Light game using Arduino and motion sensors.</p>
+          <button class="read-more">Read More</button>
+          <div class="more-info">
+            <p><strong>Technologies:</strong> Arduino, C++</p>
+            <p><strong>Details:</strong> This project involved creating a game that uses motion sensors to detect player movement. The game mechanics were programmed in C++, and the hardware components included LEDs, buzzers, and an LCD screen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Victoria Kayode. All rights reserved.</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/victoriakayode" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:damisikayode03@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

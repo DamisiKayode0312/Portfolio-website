@@ -1,0 +1,377 @@
+/* General Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #e6e6e6; /* Light Gray for Primary Text */
+  background: #1a1a1a; /* Dark Gray for Background */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #e6e6e6; /* Light Gray for Primary Text */
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #6d28d9; /* Deep Purple Accent */
+  padding-bottom: 5px;
+}
+
+p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Navbar */
+nav {
+  background: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));; /* Semi-transparent dark background */
+  backdrop-filter: blur(10px); /* Add a blur effect */
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease; /* Smooth transition for background */
+}
+
+/* Change navbar background on scroll (optional) */
+nav.scrolled {
+  background: rgba(26, 26, 26, 0.9); /* Darker background when scrolled */
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #e6e6e6; /* Light Gray for Primary Text */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #8b5cf6; /* Purple accent on hover */
+}
+
+.logo img {
+  height: 40px;
+}
+/* Hero Section */
+#hero {
+  background: url('your-image.jpg') no-repeat center center/cover; /* Add your image here */
+  color: #e6e6e6; /* Light Gray for Primary Text */
+  padding: 100px 0;
+  text-align: center;
+  overflow: hidden; /* Ensure animations don't overflow */
+  min-height: 70vh;
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  position: relative; /* Needed for overlay */
+  z-index: 1; /* Ensure hero is above the navbar */
+  transition: transform 1s ease, opacity 1s ease; /* Smooth transition for scroll-up effect */
+}
+
+/* Overlay to make text readable */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay with 90% opacity */
+  z-index: -1;
+}
+
+#hero .container {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 2;
+}
+
+/* Animation when hero section is out of view */
+#hero.hide {
+  transform: translateY(-100%); /* Move hero section up */
+  opacity: 0; /* Fade out */
+}
+
+/* Fade-in animations for hero content */
+#hero h1,
+#hero h2,
+#hero p,
+#hero .hero-buttons {
+  opacity: 0; /* Start with elements hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInUp 1s ease-out forwards; /* Animation */
+}
+
+#hero h1 {
+  font-size: 4rem; /* Larger font size for h1 */
+  margin-bottom: 20px; /* Increased spacing */
+  animation-delay: 0.2s; /* Delay for h1 */
+}
+
+#hero h2 {
+  font-size: 2rem; /* Larger font size for h2 */
+  margin-bottom: 30px; /* Increased spacing */
+  animation-delay: 0.4s; /* Delay for h2 */
+}
+
+#hero p {
+  font-size: 1.2rem; /* Larger font size for paragraph */
+  margin-bottom: 40px; /* Increased spacing */
+  animation-delay: 0.6s; /* Delay for p */
+}
+
+#hero .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  animation-delay: 0.8s; /* Delay for buttons */
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #6d28d9; /* Lighter Purple Accent */
+  color: #e6e6e6; /* Light Gray for Primary Text */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #7c4dff; /* Darker Lighter Purple on Hover */
+}
+
+/* About Section */
+#about {
+  padding: 100px 0;
+  min-height: 70vh;
+  background:  linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));; /* Darker Gray for Tertiary Background */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap:50px;
+}
+
+.about-content img {
+  width: 200px;
+  border-radius: 40%;
+  padding: 70px 0;
+}
+
+.typing-animation {
+  font-size: 25px;
+  line-height: 1.6; 
+}
+
+/* Skills Section */
+#skills {
+  padding: 50px 0;
+  background: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)); /* Match your theme */
+}
+
+#skills h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #6d28d9; /* Deep Purple Accent */
+  padding-bottom: 5px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.skill-box {
+  background: rgb(10, 4, 22); /* Dark Gray for Secondary Background */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(129, 72, 144, 0.561);
+}
+
+
+/* Education Section */
+#education {
+  padding: 50px 0;
+  background: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)); /* Dark Gray for Secondary Background */
+}
+
+.education-item {
+  background: rgb(10, 4, 22); /* Darker Gray for Tertiary Background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.education-item .degree {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.education-item .date, .education-item .gpa {
+  color:#6d28d9; /* Faint Text Color */
+  margin-bottom: 5px;
+}
+
+.education-item .coursework {
+  margin-top: 10px;
+}
+
+/* Projects Section */
+#projects {
+  padding: 50px 0;
+  background: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)); /* Darker Gray for Tertiary Background */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: rgb(10, 4, 22); /* Dark Gray for Secondary Background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  overflow: hidden !important;
+  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover; 
+}
+
+.read-more {
+  background: #8b5cf6; /* Lighter Purple Accent */
+  color: #e6e6e6; /* Light Gray for Primary Text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.more-info {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Contact Section */
+#contact {
+  padding: 40px 0;
+  background: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)); /* Dark Gray for Secondary Background */
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid#6d28d9; /* Faint Border Color */
+  border-radius: 5px;
+  background: rgb(10, 4, 22); /* Darker Gray for Tertiary Background */
+  color: #e6e6e6; /* Light Gray for Primary Text */
+
+}
+
+form input::placeholder, form textarea::placeholder {
+  color: #999999; /* Faint Text Color */
+}
+
+/* Footer */
+footer {
+  background:  rgb(10, 4, 22);; /* Dark Gray for Background */
+  color: #e6e6e6; /* Light Gray for Primary Text */
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer ul li a {
+  color: #e6e6e6; /* Light Gray for Primary Text */
+}
