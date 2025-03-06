@@ -39,7 +39,7 @@ if (typingText) {
     if (index < text.length) {
       typingText.textContent += text.charAt(index);
       index++;
-      setTimeout(type, 150); // Adjust typing speed (100ms per character)
+      setTimeout(type, 100); // Adjust typing speed (100ms per character)
     }
   }
 
