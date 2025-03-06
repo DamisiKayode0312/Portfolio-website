@@ -58,7 +58,7 @@ nav {
   transition: background 0.3s ease; /* Smooth transition for background */
 }
 
-/* Change navbar background on scroll (optional) */
+/* Change navbar background on scroll
 nav.scrolled {
   background: rgba(26, 26, 26, 0.9); /* Darker background when scrolled */
 }
@@ -116,7 +116,7 @@ nav ul li a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8); /* Dark overlay with 90% opacity */
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay with 90% opacity */
   z-index: -1;
 }
 
