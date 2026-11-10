@@ -20,6 +20,9 @@
     var go=doors.querySelector('a');if(go&&!reduce)setTimeout(function(){go.focus({preventScroll:true})},700);
   }
   tear.addEventListener('click',doTear);
+  /* walk in through the doors instead of a hard page jump */
+  var go=document.querySelector('#doors .go');
+  if(go)go.addEventListener('click',function(e){if(!window.Passage||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();Passage.leave(go.getAttribute('href'));});
   var sy=0,sx=0,drag=false;
   stub.addEventListener('pointerdown',function(e){if(e.target===tear||torn)return;drag=true;sy=e.clientY;sx=e.clientX;stub.classList.add('drag');stub.setPointerCapture(e.pointerId)});
   stub.addEventListener('pointermove',function(e){if(!drag)return;var dy=Math.max(0,e.clientY-sy),dx=(e.clientX-sx)*.4;stub.style.transform='translate('+dx+'px,'+dy*.7+'px) rotate('+(dx/14+dy/40)+'deg)'});

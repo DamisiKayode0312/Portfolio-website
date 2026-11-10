@@ -1,0 +1,15 @@
+/* Passage between rooms: two gallery doors close behind the visitor, then open on the next room.
+   Shared by index.html and museum.html. Skipped entirely under prefers-reduced-motion. */
+.passage{position:fixed;inset:0;z-index:100;pointer-events:none;display:flex}
+.passage i{flex:1;background:#E4DFD3;transition:transform .5s cubic-bezier(.6,0,.3,1);
+  box-shadow:inset 0 0 0 1px rgba(38,35,31,.08)}
+.passage i:first-child{transform:translateX(-101%);border-right:1px solid #CFC6AE}
+.passage i:last-child{transform:translateX(101%);border-left:1px solid #CFC6AE}
+.passage i::after{content:"";position:absolute;top:50%;width:6px;height:56px;margin-top:-28px;border-radius:3px;background:#B08D4A}
+.passage i{position:relative}
+.passage i:first-child::after{right:14px}.passage i:last-child::after{left:14px}
+.passage.shut i{transform:none}
+.passage.instant i{transition:none}
+@media (prefers-reduced-motion:reduce){.passage{display:none}}
+/* set by an inline head script before first paint, removed once the doors exist */
+html.arriving::after{content:"";position:fixed;inset:0;z-index:99;background:#E4DFD3}

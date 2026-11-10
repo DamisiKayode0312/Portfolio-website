@@ -1,0 +1,184 @@
+{
+  "_note": "Exhibit content for the Product and Technology Gallery. Anything marked needs/placeholder is missing evidence: do not replace it with invented facts. status is one of: shipped, prototype, designed, in-progress, planned.",
+  "projects": [
+    {
+      "id": "fjm",
+      "title": "Fairy Job Mother",
+      "meta": "2026 · Web app",
+      "icon": "fjm",
+      "status": "in-progress",
+      "verified": false,
+      "summary": "Compares your resume to a job posting, rewrites weak bullets, and shows which skills you’re missing, with projects and short courses to close the gap.",
+      "details": [
+        {
+          "label": "Problem",
+          "value": "Entry-level applicants can’t tell why their resume isn’t landing."
+        },
+        {
+          "label": "My role",
+          "value": "Product lead and promoter."
+        },
+        {
+          "label": "Result",
+          "value": "Placeholder: add a number or outcome.",
+          "placeholder": true
+        }
+      ],
+      "caseStudy": null
+    },
+    {
+      "id": "locit",
+      "title": "LOCIT",
+      "meta": "Location Integrated Tracker · Wearable · Dec 2024",
+      "icon": "locit",
+      "status": "prototype",
+      "verified": true,
+      "summary": "A wearable location and safety tracker built on a Raspberry Pi, with a companion app for live location and geofence alerts. My senior capstone at Kennesaw State.",
+      "details": [
+        {
+          "label": "Problem",
+          "value": "Placeholder: who needed it and why.",
+          "placeholder": true
+        },
+        {
+          "label": "My role",
+          "value": "Product vision and requirements; translated user needs into technical specs for GPS tracking, geofencing and facial recognition."
+        },
+        {
+          "label": "Result",
+          "value": "Placeholder: add the measured result once the source is confirmed.",
+          "placeholder": true
+        }
+      ],
+      "caseStudy": {
+        "subtitle": "A wearable that knows where you are, and a companion app that tells the people you trust when you leave a safe area.",
+        "facts": [
+          {
+            "label": "When",
+            "value": "Senior capstone, completed December 2024"
+          },
+          {
+            "label": "Where",
+            "value": "Kennesaw State University, Computer Engineering"
+          },
+          {
+            "label": "Team",
+            "value": "AZAD (team mark designed by me)"
+          },
+          {
+            "label": "Tools",
+            "value": "Raspberry Pi, Python, Eagle (PCB), Fusion 360, Figma, FlutterFlow"
+          }
+        ],
+        "sections": {
+          "problem": {
+            "body": [
+              "LOCIT is a location-tracking necklace meant to improve personal safety. It tracks the wearer’s location and sends an alert when they enter or leave a predefined area."
+            ],
+            "needs": "Who this was for and what situation prompted it, in Victoria’s words."
+          },
+          "why": {
+            "body": [],
+            "needs": "Why personal location safety mattered to the team or the users they had in mind. Cite any source used."
+          },
+          "role": {
+            "body": [
+              "I defined the product vision and requirements, and translated user needs into technical specs for GPS tracking, geofencing and facial recognition.",
+              "I led the team through ideation, prototyping, user testing and the capstone milestones, and designed the companion app in Figma before it was built in FlutterFlow."
+            ],
+            "needs": "Team size and who owned the hardware, firmware and app build."
+          },
+          "constraints": {
+            "body": [],
+            "needs": "Budget, timeline, hardware limits (battery, size, connectivity), course requirements. Milestone 1 report."
+          },
+          "research": {
+            "body": [],
+            "needs": "What user research or usability testing was done, with how many people and what was learned. Milestone reports."
+          },
+          "decisions": {
+            "body": [
+              "The device ran on a Raspberry Pi. Eagle was used for PCB design, and the enclosure was modelled in Fusion 360 and printed in PLA.",
+              "The companion app was designed in Figma and built in FlutterFlow."
+            ],
+            "needs": "The reasoning behind each choice and what alternatives were considered."
+          },
+          "built": {
+            "body": [
+              "The companion app screens below were built in FlutterFlow: a sign-in screen, a live location map, and a geofence screen that warns when the wearer is out of bounds."
+            ],
+            "figures": [
+              {
+                "src": "assets/projects/locit/companion-app-screens.jpg",
+                "alt": "Three phone screens from the LOCIT companion app: a teal sign-in screen reading Stay Connected, a campus map with a red location pin, and a geofence screen showing a Warning: User out of bounds dialog.",
+                "caption": "Companion app: sign-in, location tracking, geofence warning."
+              }
+            ],
+            "inventory": [
+              {
+                "item": "Companion app: sign-in, live map, geofence alert",
+                "status": "prototype",
+                "note": "Shown in app screenshots"
+              },
+              {
+                "item": "Wearable device on Raspberry Pi with printed enclosure",
+                "status": "prototype",
+                "note": "Photo needed"
+              },
+              {
+                "item": "Facial recognition and “Add people” screen",
+                "status": "designed",
+                "note": "Appears in a design mockup. Confirm whether the camera and recognition shipped"
+              }
+            ],
+            "needs": "Photos of the device and enclosure, and a simple architecture sketch (device → cloud → app)."
+          },
+          "results": {
+            "body": [],
+            "claims": [
+              "98% location accuracy",
+              "100% alert accuracy",
+              "20+ test scenarios",
+              "About 20% performance gain",
+              "Usability testing improved task completion by 20%",
+              "40% fewer device-app sync failures"
+            ],
+            "needs": "These figures appear on the resume or in earlier notes but have no source yet. Confirm each one against the Milestone 3 report (how it was measured, sample size) before any of them appears as a result."
+          },
+          "improve": {
+            "body": [],
+            "needs": "What Victoria would change next time, in her own words."
+          }
+        },
+        "sources": [
+          "Victoria’s resume (role, tools, date)",
+          "Previous portfolio site (problem statement, tools)",
+          "Companion app screenshots (what was built)",
+          "Milestone 1 and 3 reports: not yet added to the repo"
+        ]
+      }
+    },
+    {
+      "id": "rlg",
+      "title": "Red Light, Green Light",
+      "meta": "Arduino · Game",
+      "icon": "rlg",
+      "status": "prototype",
+      "verified": false,
+      "summary": "An Arduino game where players move on green and freeze on red.",
+      "details": [
+        {
+          "label": "Built with",
+          "value": "Arduino, LEDs, sensors (placeholder).",
+          "placeholder": true
+        },
+        {
+          "label": "Result",
+          "value": "Placeholder: add a clip or photo.",
+          "placeholder": true
+        }
+      ],
+      "caseStudy": null
+    }
+  ]
+}

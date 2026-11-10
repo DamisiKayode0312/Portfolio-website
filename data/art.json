@@ -1,0 +1,9 @@
+{
+  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. Each frame without an image renders as an empty, labelled frame. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, and set placeholder to false.",
+  "artworks": [
+    { "id": "art1", "title": "Frame reserved", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true },
+    { "id": "art2", "title": "Frame reserved", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true },
+    { "id": "art3", "title": "Frame reserved", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true },
+    { "id": "art4", "title": "Frame reserved", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true }
+  ]
+}

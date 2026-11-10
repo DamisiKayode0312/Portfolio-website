@@ -5,14 +5,19 @@ A scroll-driven museum portfolio. Plain HTML, CSS, and JavaScript, so there is n
 ## Structure
 - `index.html` : entrance (museum ticket)
 - `museum.html` : scroll-driven museum walk (mock)
+- `case-study.html?p=<id>` : field-journal case study, filled from `data/projects.json`
+- `data/projects.json`, `data/art.json` : all exhibit content (edit these, not the JS)
+- `legacy/` : the previous portfolio site, kept for reference
 - `CLAUDE.md` : build brief for Claude Code
 - `css/style.css` : all styling (colors are set near the top of the file; the palette will change)
-- `js/main.js` : exhibits, art wing, scrolling, lanyard
+- `js/main.js` : renders the walk from the data files (scrolling, label sheet, lanyard)
+- `js/passage.js`, `css/passage.css` : door transition from the ticket into the museum
+- `js/case-study.js`, `css/case-study.css` : case-study template
 - `assets/art/` : your art images
 - `assets/projects/` : product images and videos
 
 ## Run locally
-Open `index.html` in a browser, or run `python3 -m http.server` in this folder and visit http://localhost:8000.
+Run `python3 -m http.server` in this folder and visit http://localhost:8000. (Opening the file directly no longer works, because exhibits load from `data/`.)
 
 ## Put it on GitHub
 1. Create a new empty repo on github.com (for example `portfolio`).
