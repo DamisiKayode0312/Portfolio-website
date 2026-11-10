@@ -133,3 +133,4 @@ a.tile-ticket:hover .miniticket{transform:rotate(0deg) translateY(-2px)}
   .js .reveal{opacity:1;transform:none;transition:none}
   .tile,.miniticket,.work .pic,.rail a i,.track b{transition:none}
 }
+.walkin{margin:-8px 0 24px}

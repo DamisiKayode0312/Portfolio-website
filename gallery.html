@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Art Gallery · Victoria Kayode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="home.html">Victoria Kayode</a>
+  <div class="actions">
+    <button class="pill" id="lights" type="button" aria-pressed="false"><span aria-hidden="true">☾</span><span class="lbl-long">Lights off</span></button>
+    <a class="pill" href="home.html#art">Grid<span class="lbl-long">&nbsp;view</span></a>
+    <a class="pill solid" href="home.html#about">About</a>
+  </div>
+</header>
+
+<main class="hall" id="hall" aria-label="Art Gallery hallway">
+  <div class="ceiling" aria-hidden="true"><div class="beams" id="beams"></div></div>
+  <div class="world" id="world"></div>
+  <div class="floor" aria-hidden="true"><div class="plane" id="plane"></div></div>
+  <div class="walker" id="walker" aria-hidden="true">
+    <!-- Placeholder figure. Replace with Victoria's own character drawing when she supplies one. -->
+    <svg viewBox="0 0 80 150" width="80" height="150">
+      <g class="leg leg-a"><line x1="34" y1="104" x2="34" y2="142"/></g>
+      <g class="leg leg-b"><line x1="46" y1="104" x2="46" y2="142"/></g>
+      <rect class="body" x="22" y="52" width="36" height="58" rx="18"/>
+      <circle class="head" cx="40" cy="34" r="17"/>
+      <path class="scarf" d="M26 54h28"/>
+    </svg>
+  </div>
+  <div class="hud">
+    <div class="dots" id="dots" role="group" aria-label="Walk to"></div>
+    <p class="hint" id="hint"><span class="hint-key">← →</span> or swipe to walk · tap a frame</p>
+  </div>
+</main>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-t">
+  <div class="sheet-art" id="sheet-art"></div>
+  <h2 id="sheet-t"></h2>
+  <p class="sheet-m" id="sheet-m"></p>
+  <p class="sheet-s" id="sheet-s"></p>
+  <form method="dialog"><button class="btn" type="submit">Back to the hallway</button></form>
+</dialog>
+
+<script src="js/gallery.js" defer></script>
+</body>
+</html>

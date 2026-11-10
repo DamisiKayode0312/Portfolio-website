@@ -1,0 +1,110 @@
+/* Art Gallery hallway: a side-scrolling walk past the frames. Same palette and type as home.css. */
+:root{
+  --wall:#FAF9F6; --wall-2:#F0ECE3; --ink:#21201F; --ink-2:#57534F; --link:#933323;
+  --kraft:#C9A880; --cream:#F0E4CC; --navy:#1B2746; --gold:#F0B46A; --rule:rgba(33,32,31,.12);
+  --serif:"Cutive","Iowan Old Style",Georgia,serif; --sans:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --horizon:70%;
+  color-scheme:light;
+}
+body.dark{--wall:#1B2746; --wall-2:#16203A; --ink:#F4EFE4; --ink-2:#C3C9DB; --link:#F0B46A; --rule:rgba(244,239,228,.16); --kraft:#7A6447; --cream:#2A3556; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}
+body{background:var(--wall);color:var(--ink);font:400 16px/1.5 var(--sans);transition:background .5s ease}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+
+/* top bar */
+.bar{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(12px,env(safe-area-inset-left,0px))}
+.home{font:400 17px/1.1 var(--serif);letter-spacing:.04em;text-decoration:none;min-height:44px;display:flex;align-items:center}
+.actions{display:flex;gap:6px}
+.pill{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--rule);background:var(--wall);color:var(--ink);
+  font:400 14px var(--sans);text-decoration:none;cursor:pointer}
+.pill.solid{background:var(--link);border-color:var(--link);color:#FAF9F6}
+body.dark .pill.solid{color:#1B2746}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--wall)}
+@media (max-width:480px){.lbl-long{display:none}.pill{padding:0 12px}.home{font-size:15px;max-width:7.5em}}
+
+/* hall */
+.hall{position:fixed;inset:0;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ceiling{position:absolute;inset:0 0 auto;height:96px;background:var(--wall-2);border-bottom:1px solid var(--rule);overflow:hidden}
+.beams{position:absolute;inset:0;width:200%;background:repeating-linear-gradient(90deg,transparent 0 119px,var(--rule) 119px 120px);transform:translateX(0)}
+.world{position:absolute;inset:0;will-change:transform}
+.floor{position:absolute;left:0;right:0;bottom:0;top:var(--horizon);overflow:hidden;border-top:1px solid var(--rule);perspective:320px;perspective-origin:50% 0}
+.plane{position:absolute;left:-150%;width:400%;top:0;height:260%;transform-origin:50% 0;transform:rotateX(62deg);
+  background:conic-gradient(var(--kraft) 25%,var(--cream) 0 50%,var(--kraft) 0 75%,var(--cream) 0) 0 0/96px 96px}
+
+/* stations in the world */
+.st{position:absolute;top:0;bottom:0;width:0}
+.sign{position:absolute;top:24%;left:0;transform:translateX(-50%);width:min(84vw,420px);text-align:center}
+.sign .k{font:500 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin:0 0 6px}
+.sign h1{font:400 clamp(34px,9vw,52px)/1.05 var(--serif);letter-spacing:.05em;margin:0 0 10px}
+.sign p{margin:0;color:var(--ink-2);font-size:15px}
+.lamp{position:absolute;top:96px;left:0;width:2px;height:28px;margin-left:-1px;background:var(--ink-2)}
+.lamp::after{content:"";position:absolute;left:-7px;top:26px;width:16px;height:9px;border-radius:0 0 9px 9px;background:var(--ink)}
+.glow{position:absolute;top:130px;left:0;width:300px;height:calc(var(--horizon) - 130px);transform:translateX(-50%);pointer-events:none;opacity:0;
+  background:radial-gradient(60% 70% at 50% 0,rgba(240,180,106,.42),transparent 70%);transition:opacity .5s ease}
+body.dark .glow{opacity:1}
+
+.frame{position:absolute;top:calc(var(--horizon) * .3);left:0;transform:translateX(-50%);width:min(46vw,220px);aspect-ratio:4/5;padding:0;border:8px solid #FFFFFF;
+  background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 14px 22px -12px rgba(0,0,0,.45);cursor:pointer;transition:transform .3s ease}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.empty{background:repeating-linear-gradient(135deg,#F5F2EA 0 10px,#EFEADF 10px 20px);display:grid;place-items:center;
+  font:500 10px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#57534F;text-align:center;padding:10px}
+.frame:hover,.st.near .frame{transform:translateX(-50%) translateY(-4px)}
+.plaque{position:absolute;top:calc(var(--horizon) * .3 + 30px);left:calc(min(46vw,220px) / 2 + 18px);width:132px;background:#FFFFFF;color:#21201F;padding:10px 12px;
+  box-shadow:0 6px 12px -8px rgba(0,0,0,.4);font:400 12px/1.35 var(--sans);opacity:.55;transition:opacity .3s ease}
+.plaque b{display:block;font:400 15px/1.2 var(--serif);letter-spacing:.03em;margin-bottom:4px}
+.plaque span{color:#57534F}
+.st.near .plaque{opacity:1}
+@media (max-width:480px){.plaque{top:calc(var(--horizon) * .2 + min(46vw,220px) * 1.25 + 30px);left:50%;transform:translateX(-50%);width:min(70vw,220px);text-align:center;opacity:0}.st.near .plaque{opacity:1}
+
+  .frame{top:calc(var(--horizon) * .2)}}
+
+.door{position:absolute;bottom:calc(100% - var(--horizon));left:0;transform:translateX(-50%);width:120px;height:190px;border:2px solid var(--ink);border-bottom:0;
+  background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-decoration:none;text-align:center;padding:10px;color:var(--ink)}
+.door b{font:400 15px/1.2 var(--serif);letter-spacing:.06em;text-transform:uppercase}
+.door small{font:400 12px var(--sans);color:var(--ink-2)}
+
+/* walker */
+.walker{position:absolute;left:50%;bottom:calc(100% - var(--horizon) - 34px);margin-left:-40px;z-index:5;pointer-events:none;transition:transform .15s}
+.walker.left svg{transform:scaleX(-1)}
+.walker svg{display:block;overflow:visible}
+.walker .leg line{stroke:var(--ink);stroke-width:5;stroke-linecap:round}
+.walker .leg{transform-origin:40px 104px}
+.walker .body{fill:var(--link)}
+.walker .head{fill:var(--wall);stroke:var(--ink);stroke-width:3}
+.walker .scarf{stroke:var(--gold);stroke-width:5;stroke-linecap:round}
+.walker::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:10px;border-radius:50%;background:rgba(0,0,0,.18);z-index:-1}
+.walker.walking .leg-a{animation:step .42s ease-in-out infinite alternate}
+.walker.walking .leg-b{animation:step .42s ease-in-out infinite alternate-reverse}
+.walker.walking svg{animation:bob .21s ease-in-out infinite alternate}
+@keyframes step{from{transform:rotate(-18deg)}to{transform:rotate(18deg)}}
+@keyframes bob{to{translate:0 -3px}}
+
+/* hud */
+.hud{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:grid;justify-items:center;gap:8px;z-index:10}
+.dots{display:flex;gap:2px;padding:0 8px;border-radius:999px;background:var(--wall);border:1px solid var(--rule)}
+.dots button{all:unset;width:30px;height:44px;display:grid;place-items:center;cursor:pointer}
+.dots button::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink-2);opacity:.45}
+.dots button.door-dot::after{border-radius:1px}
+.dots button.on::after{background:var(--link);opacity:1;transform:scale(1.3)}
+.dots button:focus-visible{outline:2px solid var(--link);outline-offset:-6px;border-radius:8px}
+.hint{margin:0;padding:6px 14px;border-radius:999px;background:rgba(33,32,31,.82);color:#FAF9F6;font:400 13px var(--sans);transition:opacity .6s}
+.hint.gone{opacity:0}
+
+/* detail sheet */
+.sheet{border:0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));width:min(100% - 24px,520px);max-height:88vh;background:#FAF9F6;color:#21201F;border-radius:8px}
+.sheet::backdrop{background:rgba(27,39,70,.6)}
+.sheet-art{aspect-ratio:4/5;max-height:50vh;margin:0 auto 16px;border:8px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.1);display:grid;place-items:center;
+  background:repeating-linear-gradient(135deg,#F5F2EA 0 10px,#EFEADF 10px 20px);font:500 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#57534F}
+.sheet-art img{width:100%;height:100%;object-fit:contain;background:#fff}
+.sheet h2{font:400 28px/1.15 var(--serif);letter-spacing:.04em;margin:0 0 4px}
+.sheet-m{margin:0 0 10px;color:#57534F;font-size:14px}
+.sheet-s{margin:0 0 16px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;border:0;background:#21201F;color:#FAF9F6;font:500 15px var(--sans);cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){
+  body,.frame,.plaque,.glow,.hint,.walker{transition:none}
+  .walker.walking .leg-a,.walker.walking .leg-b,.walker.walking svg{animation:none}
+}
