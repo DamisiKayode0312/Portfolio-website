@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Victoria Kayode · Museum Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<a class="skip" href="#work">Skip to the work</a>
+
+<header class="rail">
+  <nav aria-label="Rooms">
+    <ol id="stations">
+      <li><a href="#lobby" data-room="lobby"><i></i><span>lobby</span></a></li>
+      <li><a href="#work" data-room="work"><i></i><span>work</span></a></li>
+      <li><a href="#studio" data-room="studio"><i></i><span>studio</span></a></li>
+      <li><a href="#art" data-room="art"><i></i><span>art</span></a></li>
+      <li><a href="#about" data-room="about"><i></i><span>about</span></a></li>
+    </ol>
+    <span class="track" aria-hidden="true"><b id="trackfill"></b></span>
+  </nav>
+</header>
+
+<div class="shell">
+  <aside class="curator">
+    <h1>Victoria<br>Kayode.</h1>
+    <p class="line">Things I have built, researched and painted.</p>
+    <dl class="where">
+      <div><dt>@ Handshake AI</dt><dd>AI Product &amp; Research Analyst</dd></div>
+      <div><dt>prev @ News Corp</dt><dd>Digital Product &amp; AI Strategy Extern</dd></div>
+      <div><dt>@ Kennesaw State</dt><dd>B.S. Computer Engineering, Cum Laude</dd></div>
+    </dl>
+    <a class="quick" href="#work">Quick tour</a>
+  </aside>
+
+  <main>
+    <section id="lobby" class="room room-lobby" aria-labelledby="lobby-h">
+      <h2 id="lobby-h" class="vh">Lobby</h2>
+      <div class="bento">
+        <a class="tile tile-ticket" href="index.html">
+          <span class="no">01</span>
+          <div class="miniticket" aria-hidden="true">
+            <p class="k"><span>Admission</span><span>Permanent collection</span></p>
+            <p class="t">The Museum of Victoria Kayode</p>
+            <p class="admit">Admit one</p>
+          </div>
+          <span class="cap">Take a ticket and walk the museum <em>→</em></span>
+        </a>
+        <a class="tile tile-shot" id="feature" href="case-study.html?p=locit">
+          <img src="assets/projects/locit/companion-app-screens.jpg" alt="LOCIT companion app: sign-in, live location map and geofence warning screens." loading="eager">
+          <span class="cap">Now showing: LOCIT, a wearable safety tracker <em>→</em></span>
+        </a>
+        <div class="tile tile-now">
+          <p class="lbl">Currently</p>
+          <p>Evaluating how AI models handle computer engineering problems at Handshake AI, and building Fairy Job Mother.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="room room-work" aria-labelledby="work-h">
+      <p class="lbl">Gallery I</p>
+      <h2 id="work-h">Product and Technology</h2>
+      <ul class="works" id="works"></ul>
+    </section>
+
+    <section id="studio" class="room room-studio" aria-labelledby="studio-h">
+      <p class="lbl">Gallery II</p>
+      <h2 id="studio-h">Design Studio</h2>
+      <p class="soon">This room is being installed. Design work, sketches and the AZAD mark will hang here.</p>
+    </section>
+
+    <section id="art" class="room room-art" aria-labelledby="art-h">
+      <p class="lbl">Gallery III</p>
+      <h2 id="art-h">Art Gallery</h2>
+      <ul class="frames" id="frames"></ul>
+    </section>
+
+    <section id="about" class="room room-about" aria-labelledby="about-h">
+      <p class="lbl">Gallery IV &amp; V</p>
+      <h2 id="about-h">About the Curator</h2>
+      <p class="bio">Computer engineer working where product thinking, technology and creativity overlap. I graduated from Kennesaw State in December 2024. Off the clock I paint, draw digitally and take photographs.</p>
+      <p class="draft-note">Draft bio, written from the resume. Replace it with your own words.</p>
+      <h3>Visitor Desk</h3>
+      <ul class="cv">
+        <li><b>AI Product &amp; Research Analyst</b><span>Handshake AI Fellowship · Nov 2025 to now</span></li>
+        <li><b>Digital Product &amp; AI Strategy Extern</b><span>News Corp · Aug to Oct 2025</span></li>
+        <li><b>B.S. Computer Engineering, Cum Laude</b><span>Kennesaw State University · Dec 2024</span></li>
+      </ul>
+      <p class="desk"><a class="btn" href="assets/Victoria_Kayode_Resume.pdf">Download resume</a></p>
+    </section>
+  </main>
+</div>
+<script src="js/home.js" defer></script>
+</body>
+</html>
