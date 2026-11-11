@@ -11,6 +11,8 @@
   function clamp(x,a,b){return Math.max(a,Math.min(b,x));}
   function store(k,v){try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v);}catch(e){return null;}}
   function getJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(u+' '+r.status);return r.json();});}
+  /* one picture frame: content sits behind the transparent opening of Victoria's gilt frame */
+  function frame(kind,inner,lazy){kind=kind||'landscape';return '<span class="pframe pframe--'+kind+'"><span class="pf-art">'+inner+'</span><img class="pf-frame" src="assets/frames/frame-'+kind+'.webp" alt="" aria-hidden="true" draggable="false" decoding="async"'+(lazy===false?'':' loading="lazy"')+'></span>';}
 
   /* ---------- 01 ticket ---------- */
   var entrance=$('#entrance'),ticket=$('#ticket'),stub=$('#stub'),scene=$('#scene');
@@ -105,7 +107,7 @@
       var img=x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" loading="'+(i?'lazy':'eager')+'" style="view-transition-name:hero-'+esc(x.slug)+'">':'<div class="frame-ph">Placeholder · Project image needed</div>';
       return '<li class="exhibit" data-slug="'+esc(x.slug)+'"><a href="case-study.html?p='+encodeURIComponent(x.slug)+'" aria-label="'+esc(x.title)+'. '+esc(x.category)+'. Open the case study">'+
         '<i class="pool" aria-hidden="true"></i><span class="lamp" aria-hidden="true"></span><i class="cone" aria-hidden="true"></i>'+
-        '<span class="gilt lg"><span class="mat">'+img+'</span></span><span class="plate">'+esc(x.title)+'</span><span class="cat">'+esc(x.category)+'</span><span class="teaser">'+esc(x.teaser)+'</span></a></li>';}).join('');
+        frame('landscape',img,i===0)+'<span class="plate">'+esc(x.title)+'</span><span class="cat">'+esc(x.category)+'</span><span class="teaser">'+esc(x.teaser)+'</span></a></li>';}).join('');
     exhibitEls=$$('.exhibit',exhibitsEl);
     dots.innerHTML=exhibitEls.map(function(){return '<i></i>';}).join('');
     exhibitEls.forEach(function(li){li.querySelector('a').addEventListener('click',function(){store('vg-lastFrame',li.dataset.slug);});});
@@ -126,7 +128,7 @@
   function workUpdate(){
     if(!exhibitEls.length)return;
     var vh=innerHeight,c=vh/2,best=0,bd=1e9;
-    exhibitEls.forEach(function(li,i){var g=li.querySelector('.gilt').getBoundingClientRect(),m=(g.top+g.bottom)/2,d=m-c;
+    exhibitEls.forEach(function(li,i){var g=li.querySelector('.pframe').getBoundingClientRect(),m=(g.top+g.bottom)/2,d=m-c;
       var on=d<vh*.7&&d>-vh*.45;
       if(on&&!li.classList.contains('lit')&&!reduce){li.classList.add('igniting');setTimeout(function(){li.classList.remove('igniting');},280);}
       li.classList.toggle('lit',on);
@@ -161,12 +163,12 @@
     art=list;
     wall.innerHTML=list.map(function(a,i){
       var inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy">':'<div class="frame-ph">Placeholder · Artwork from Dami</div>';
-      return '<li data-pop><button type="button" data-i="'+i+'" aria-label="'+esc(a.placeholder?'Artwork placeholder '+(i+1):a.title)+'. Open"><span class="gilt'+(i?' sm':' lg')+'"><span class="mat">'+inner+'</span></span><span class="plq">'+esc(a.title)+'</span></button></li>';}).join('');
+      return '<li data-pop><button type="button" data-i="'+i+'" aria-label="'+esc(a.placeholder?'Artwork placeholder '+(i+1):a.title)+'. Open">'+frame(a.frame||'portrait',inner)+'<span class="plq">'+esc(a.title)+'</span></button></li>';}).join('');
     observePop();
   }
   wall.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
   function showLb(i){lbIndex=(i+art.length)%art.length;var a=art[lbIndex];
-    $('#lb-art').innerHTML='<span class="mat">'+(a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'">':'<div class="frame-ph">Placeholder · Artwork from Dami</div>')+'</span>';
+    $('#lb-art').innerHTML=frame(a.frame||'portrait',a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'">':'<div class="frame-ph">Placeholder · Artwork from Dami</div>',false);
     $('#lb-title').textContent=a.placeholder?'Artwork coming':a.title;
     $('#lb-meta').textContent=[a.medium,a.year].filter(Boolean).join(' · ');
     $('#lb-blurb').textContent=a.placeholder?'This frame is waiting for a piece from Dami: title, year, medium and a short note.':(a.story||'');}

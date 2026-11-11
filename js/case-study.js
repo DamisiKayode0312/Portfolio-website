@@ -57,7 +57,7 @@
     H.push('</div></div>');
 
     H.push('<nav class="next" aria-label="Next exhibit">'+(next?
-      '<a href="case-study.html?p='+encodeURIComponent(next.slug)+'"><span class="thumb gilt sm"><span class="mat">'+(next.image?'<img src="'+esc(next.image.src)+'" alt="">':'<span class="mini-ph">'+esc(next.title.charAt(0))+'</span>')+'</span></span><span class="nt"><span class="lbl">Next exhibit</span><b>'+esc(next.title)+'</b></span><span class="chev" aria-hidden="true">›</span></a>':
+      '<a href="case-study.html?p='+encodeURIComponent(next.slug)+'"><span class="thumb"><span class="pframe pframe--landscape"><span class="pf-art">'+(next.image?'<img src="'+esc(next.image.src)+'" alt="">':'<span class="mini-ph">'+esc(next.title.charAt(0))+'</span>')+'</span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" aria-hidden="true" loading="lazy"></span></span><span class="nt"><span class="lbl">Next exhibit</span><b>'+esc(next.title)+'</b></span><span class="chev" aria-hidden="true">›</span></a>':
       '<a href="index.html#work"><span class="nt"><span class="lbl">End of the collection</span><b>Back to the gallery</b></span><span class="chev" aria-hidden="true">›</span></a>')+'</nav>');
     main.innerHTML=H.join('');
     var t=document.getElementById('title');t.focus({preventScroll:true});

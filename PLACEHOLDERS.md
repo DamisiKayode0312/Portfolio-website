@@ -42,7 +42,7 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 15. Desktop Work gallery: vertical stack (brief's Option B) instead of the horizontal pan.
 16. Doodle swatch colors sampled from storyboard screen 07.
 17. Stack: plain HTML/CSS/JS with no build step, kept from the existing repo.
-18. Palette (Nov 11, from Victoria's reference): stone #CCC4BA, taupe #937D68, brick #6C2724, oxblood #471918, near-black #15100D. Taupe is used for lines only (too faint for text); small text uses a deeper taupe #5A4636. Red rooms use a tone-on-tone damask, a stone crown molding and black-marble nameplates; frames are carved gilt with corner scrolls and a shell cartouche (all drawn in `assets/decor/`, nothing copied from the reference images).
+18. Palette (Nov 11, from Victoria's reference): stone #CCC4BA, taupe #937D68, brick #6C2724, oxblood #471918, near-black #15100D. Taupe is used for lines only (too faint for text); small text uses a deeper taupe #5A4636. Red rooms: Victoria's burgundy damask tile with a stone crown molding and black-marble nameplates. Frames: Victoria's supplied gilt frames (portrait, landscape, oval) in `assets/frames/`, cropped to their edges, halo from background removal cleared, exported as WebP; pictures sit behind the transparent openings. Confirm these frame and damask images are licensed for a public site before deploying.
 
 ## Earlier concepts kept for reference (not linked from the new site)
 

@@ -1,9 +1,49 @@
 {
-  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. Each frame without an image renders as an empty, labelled frame. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, and set placeholder to false.",
+  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. Each frame without an image renders as an empty, labelled frame. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, and set placeholder to false. frame: portrait, landscape or oval (Victoria's gilt frames); pick the one closest to the artwork's shape.",
   "artworks": [
-    { "id": "art1", "title": "Artwork coming", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true },
-    { "id": "art2", "title": "Artwork coming", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true },
-    { "id": "art3", "title": "Artwork coming", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true },
-    { "id": "art4", "title": "Artwork coming", "year": "", "medium": "Awaiting artwork", "image": null, "alt": "", "story": "", "placeholder": true }
+    {
+      "id": "art1",
+      "title": "Artwork coming",
+      "year": "",
+      "medium": "Awaiting artwork",
+      "image": null,
+      "alt": "",
+      "story": "",
+      "placeholder": true,
+      "frame": "portrait"
+    },
+    {
+      "id": "art2",
+      "title": "Artwork coming",
+      "year": "",
+      "medium": "Awaiting artwork",
+      "image": null,
+      "alt": "",
+      "story": "",
+      "placeholder": true,
+      "frame": "landscape"
+    },
+    {
+      "id": "art3",
+      "title": "Artwork coming",
+      "year": "",
+      "medium": "Awaiting artwork",
+      "image": null,
+      "alt": "",
+      "story": "",
+      "placeholder": true,
+      "frame": "oval"
+    },
+    {
+      "id": "art4",
+      "title": "Artwork coming",
+      "year": "",
+      "medium": "Awaiting artwork",
+      "image": null,
+      "alt": "",
+      "story": "",
+      "placeholder": true,
+      "frame": "portrait"
+    }
   ]
 }

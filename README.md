@@ -18,7 +18,7 @@ In this folder run `python3 -m http.server` and open http://localhost:8000. (Ope
 - Earlier concepts, kept for reference: `entrance-v1.html`, `museum.html`, `home.html`, `gallery.html`, `legacy/`
 
 ## Add content
-- **Artwork:** put the file in `assets/art/`, then in `data/art.json` set `image`, `title`, `year`, `medium`, `alt`, `story` and `"placeholder": false`.
+- **Artwork:** put the file in `assets/art/`, then in `data/art.json` set `image`, `title`, `year`, `medium`, `alt`, `story`, `frame` (`portrait`, `landscape` or `oval`) and `"placeholder": false`. The picture is cropped to fill the frame's opening.
 - **A project fact:** add it to the right section in `data/exhibits.json` with `ev` and `src`. Only use `verified` when a document supports it.
 
 ## Deploy (only with Victoria's approval)

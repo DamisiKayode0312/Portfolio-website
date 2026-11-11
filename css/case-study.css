@@ -59,9 +59,8 @@ body{background:var(--parchment)}
 .next a{display:flex;align-items:center;gap:16px;min-height:88px;padding:14px 16px;border-radius:var(--r-img);background:var(--cream);text-decoration:none;color:var(--ink);
   box-shadow:0 0 0 1px var(--taupe);transition:transform var(--t-micro)}
 .next a:hover{transform:translateY(-2px)}
-.next .thumb{width:120px;flex:none}
-.next .thumb .mat{aspect-ratio:4/3}
-.next .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.next .thumb{width:140px;flex:none}
+.next .thumb .pf-frame{filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
 .mini-ph{display:grid;place-items:center;height:100%;font:600 28px var(--font-display);color:var(--burgundy-ink);background:repeating-linear-gradient(135deg,#E4DED6 0 8px,#D8D1C7 8px 16px)}
 .nt{flex:1;display:grid}
 .nt b{font:600 20px var(--font-display);color:var(--burgundy-ink)}
