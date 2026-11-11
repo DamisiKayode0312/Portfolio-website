@@ -44,6 +44,16 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 17. Stack: plain HTML/CSS/JS with no build step, kept from the existing repo.
 18. Palette (Nov 11, from Victoria's reference): stone #CCC4BA, taupe #937D68, brick #6C2724, oxblood #471918, near-black #15100D. Taupe is used for lines only (too faint for text); small text uses a deeper taupe #5A4636. Red rooms: Victoria's burgundy damask tile with a stone crown molding and black-marble nameplates. Frames: Victoria's supplied gilt frames (portrait, landscape, oval) in `assets/frames/`, cropped to their edges, halo from background removal cleared, exported as WebP; pictures sit behind the transparent openings. Confirm these frame and damask images are licensed for a public site before deploying.
 
+## Nov 2026 redesign (clean gallery + scroll-driven exhibition wall)
+
+- Palette: #FAF9F6 page, #F0ECE4 surfaces, #651E28 exhibition wall and buttons, #42151C accents, #282522 text, #6D665F secondary text, #B49359 decorative gold (decoration only on light backgrounds; #D6BE8C for small gold text on burgundy). Type: Bodoni Moda headings, Inter for everything else.
+- Hero ("Victoria Kayode / A curious mind. An evolving collection.") replaces the welcome screen and the scroll-to-open doors.
+- The ticket is kept as the once-per-visit entrance (skip link kept). Confirm, or drop it so the hero is the first screen.
+- Work and Playground are one continuous wall: Gallery I (projects) then Gallery II (Playground art, on damask). Nav order now follows the page: Home · Work · Playground · About.
+- Frame shapes per project (data/exhibits.json `frame`, `small`): LOCIT landscape, Fairy Job Mother portrait, News Corp landscape (small), AI Evaluation oval, Pi logger portrait (small).
+- Reduced motion: the wall becomes a vertical gallery with every exhibit lit; no pinning.
+- The mockups mentioned in the redesign request were not attached; layout follows the written spec. Adjust once they are supplied.
+
 ## Earlier concepts kept for reference (not linked from the new site)
 
 `entrance-v1.html` (first ticket), `museum.html` (scroll walk), `home.html` (station-line layout), `gallery.html` (walkable art hallway), `legacy/` (original portfolio).

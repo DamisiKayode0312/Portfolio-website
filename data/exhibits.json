@@ -1,5 +1,5 @@
 {
-  "_note": "Victoria's Gallery exhibits. Every statement carries evidence: verified (supported by one of her documents), reported (her own statement, no supporting file yet), planned (a plan or capability, not a result), awaiting (missing; renders as a placeholder). Facts come from PORTFOLIO_BUILD_BRIEF.md section 9. Never upgrade an evidence level without a source.",
+  "_note": "Victoria's Gallery exhibits. Every statement carries evidence: verified (supported by one of her documents), reported (her own statement, no supporting file yet), planned (a plan or capability, not a result), awaiting (missing; renders as a placeholder). Facts come from PORTFOLIO_BUILD_BRIEF.md section 9. Never upgrade an evidence level without a source. frame (landscape, portrait, oval) and small set how each exhibit hangs on the wall.",
   "exhibits": [
     {
       "slug": "locit",
@@ -167,7 +167,9 @@
           ],
           "needs": "What Dami would change looking back, in her own words."
         }
-      }
+      },
+      "frame": "landscape",
+      "small": false
     },
     {
       "slug": "fairy-job-mother",
@@ -242,7 +244,9 @@
           "items": [],
           "needs": "Challenges and lessons so far."
         }
-      }
+      },
+      "frame": "portrait",
+      "small": false
     },
     {
       "slug": "news-corp",
@@ -349,7 +353,9 @@
           "items": [],
           "needs": "What she would do next."
         }
-      }
+      },
+      "frame": "landscape",
+      "small": true
     },
     {
       "slug": "ai-evaluation",
@@ -424,7 +430,9 @@
           "items": [],
           "needs": "Lessons."
         }
-      }
+      },
+      "frame": "oval",
+      "small": false
     },
     {
       "slug": "pi-logger",
@@ -499,7 +507,9 @@
           "items": [],
           "needs": "Next steps."
         }
-      }
+      },
+      "frame": "portrait",
+      "small": true
     }
   ]
 }

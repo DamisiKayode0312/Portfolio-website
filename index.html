@@ -8,11 +8,11 @@
 <meta property="og:title" content="Victoria's Gallery · Victoria Kayode">
 <meta property="og:description" content="An exhibition of product, engineering and art by Victoria Kayode.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#471918">
+<meta name="theme-color" content="#FAF9F6">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/site.css">
 <script>
@@ -54,9 +54,9 @@
     <nav aria-label="Sections">
       <ul>
         <li><a href="#home" data-group="home">Home</a></li>
-        <li><a href="#about" data-group="about">About</a></li>
         <li><a href="#work" data-group="work">Work</a></li>
         <li><a href="#playground" data-group="playground">Playground</a></li>
+        <li><a href="#about" data-group="about">About</a></li>
       </ul>
     </nav>
   </div>
@@ -64,47 +64,49 @@
 
 <main id="main">
 
-  <!-- 02 · Welcome + museum doors -->
-  <section id="home" class="welcome" data-tone="cream" data-group="home" aria-labelledby="welcome-h">
-    <div class="doors-track" id="doors-track">
-      <div class="doors-stage">
-        <div class="welcome-copy" id="welcome-copy">
-          <h1 id="welcome-h" tabindex="-1">Welcome to my exhibition.</h1>
-          <p class="lede">I’m Dami, an artist and engineer.</p>
-          <p>A curated collection of projects, experiments and ideas at the intersection of people, technology and everyday life.</p>
-          <p class="fact">Computer engineering graduate, Kennesaw State, Cum Laude 2024.</p>
-        </div>
-        <div class="doorway" aria-hidden="true">
-          <div class="architrave">
-            <div class="opening" id="opening">
-              <div class="interior" id="interior">
-                <i class="corridor-floor"></i><i class="far-frame"></i><i class="bloom" id="bloom"></i>
-              </div>
-              <div class="leaf leaf-l" id="leaf-l"><i class="panel"></i><i class="panel"></i><i class="knob"></i></div>
-              <div class="leaf leaf-r" id="leaf-r"><i class="panel"></i><i class="panel"></i><i class="knob"></i></div>
-              <i class="seam" id="seam"></i>
-            </div>
-          </div>
-        </div>
-        <div class="doors-cta">
-          <p class="caption" id="doors-caption">Scroll to open the museum doors. <span aria-hidden="true">↓</span></p>
-          <button class="btn btn-secondary" id="open-doors" type="button">Open the doors</button>
-        </div>
-      </div>
+  <!-- Hero -->
+  <section id="home" class="hero" data-tone="light" data-group="home" aria-labelledby="hero-h">
+    <div class="hero-in">
+      <p class="eyebrow"><svg viewBox="0 0 48 40" aria-hidden="true"><use href="#museum"/></svg> An exhibition by Dami</p>
+      <h1 id="hero-h" tabindex="-1">Victoria Kayode</h1>
+      <p class="hero-line">A curious mind. An <em>evolving</em> collection.</p>
+      <p class="hero-sub">Engineering, product thinking, and a little imagination.</p>
+      <a class="btn btn-primary" id="enter" href="#work">Enter the collection <span aria-hidden="true">↓</span></a>
     </div>
+    <a class="hero-glimpse" href="#work" tabindex="-1" aria-hidden="true">
+      <span class="pframe pframe--landscape"><span class="pf-art"><img src="assets/projects/locit/companion-app-screens.jpg" alt="" fetchpriority="high"></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" draggable="false"></span>
+      <span class="glimpse-label">Now showing · LOCIT</span>
+    </a>
   </section>
 
-  <!-- 03 · Work gallery -->
-  <section id="work" class="work wall-damask" data-tone="dark" data-group="work" aria-labelledby="work-h">
-    <i class="molding" aria-hidden="true"></i>
-    <div class="work-head">
-      <p class="label">The collection</p>
-      <h2 id="work-h" tabindex="-1">Work</h2>
-      <p class="hint">Browse the frames; tap to explore.</p>
+  <!-- The exhibition: vertical scroll walks one continuous wall sideways -->
+  <section id="work" class="exhibition" data-tone="dark" data-group="work" aria-labelledby="work-h">
+    <div class="ex-stage" id="ex-stage">
+      <div class="ex-wall" id="ex-wall">
+        <div class="ex-item ex-panel ex-intro">
+          <p class="label">Gallery I</p>
+          <h2 id="work-h" tabindex="-1">Product <em>&amp;</em> Technology</h2>
+          <p>Things I have built, researched and designed. Keep scrolling to walk along the wall; select a frame to read its story.</p>
+          <a class="ex-link" href="work.html">View all projects</a>
+        </div>
+        <div class="ex-room ex-room--work" id="ex-projects"></div>
+        <div class="ex-room ex-room--art" id="playground" aria-labelledby="play-h">
+          <div class="ex-item ex-panel ex-intro">
+            <p class="label">Gallery II</p>
+            <h2 id="play-h">The <em>Playground</em></h2>
+            <p>An exhibit for art, experiments and ideas that don’t always fit in a neat box.</p>
+          </div>
+          <div class="ex-art" id="ex-art"></div>
+        </div>
+        <div class="ex-item ex-panel ex-end">
+          <p class="label">End of the exhibition</p>
+          <p class="ex-end-line">Thank you for <em>visiting</em>.</p>
+          <a class="ex-link" href="work.html">View all projects</a>
+          <a class="ex-link" href="#about">Meet the curator ↓</a>
+        </div>
+      </div>
+      <div class="ex-progress" aria-hidden="true"><i id="ex-bar"></i></div>
     </div>
-    <ol class="exhibits" id="exhibits"></ol>
-    <p class="work-more"><a href="work.html">See every project in a quick grid →</a></p>
-    <div class="rail" id="rail" aria-hidden="true"><p class="count" id="count"></p><div class="rail-dots" id="rail-dots"></div></div>
   </section>
 
   <!-- 05 · About -->
@@ -131,21 +133,8 @@
     </div>
   </section>
 
-  <!-- 06 · Playground -->
-  <section id="playground" class="playground wall-damask" data-tone="dark" data-group="playground" aria-labelledby="play-h">
-    <i class="molding" aria-hidden="true"></i>
-    <div class="play-head">
-      <h2 id="play-h">Playground</h2>
-      <p class="lede">An exhibit for art, experiments and ideas that don’t always fit in a neat box.</p>
-    </div>
-    <div class="artwall-wrap">
-      <ul class="artwall" id="artwall"></ul>
-      <div class="curtains" id="curtains" aria-hidden="true"><i class="curtain curtain-l"></i><i class="curtain curtain-r"></i></div>
-    </div>
-  </section>
-
   <!-- 07 · Leave a doodle -->
-  <section id="doodle" class="doodle" data-tone="cream" data-group="playground" aria-labelledby="doodle-h">
+  <section id="doodle" class="doodle" data-tone="cream" data-group="about" aria-labelledby="doodle-h">
     <h2 id="doodle-h" data-pop><span class="flourish" aria-hidden="true">~</span> Leave a doodle <span class="flourish" aria-hidden="true">~</span></h2>
     <p class="sub" data-pop>A space for visitors to create.</p>
     <a class="skip-doodle" href="#contact">Skip the doodle</a>
@@ -195,6 +184,7 @@
   <symbol id="laurel" viewBox="0 0 40 90"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M30 86C14 70 10 46 18 6"/><path d="M22 70c-8 0-12-6-12-10 6 0 11 4 12 10zM20 56c-8-1-11-7-11-11 6 1 10 5 11 11zM19 42c-7-2-10-8-9-12 5 2 9 6 9 12zM19 28c-6-3-8-9-7-13 5 3 8 7 7 13zM24 66c6-4 11-3 13 0-5 3-9 3-13 0zM21 52c6-4 11-4 13-1-5 3-9 4-13 1zM20 38c6-4 10-4 12-1-5 3-8 3-12 1z"/></g></symbol>
 </svg>
 
+<script src="js/exhibition.js" defer></script>
 <script src="js/site.js" defer></script>
 </body>
 </html>

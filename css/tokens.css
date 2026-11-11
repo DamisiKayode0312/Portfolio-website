@@ -1,26 +1,37 @@
-/* Victoria's Gallery design tokens. Swap values here and every screen follows.
-   Gold is never used for text on stone: use --brass or --burgundy-ink. */
+/* Victoria's Gallery design tokens (Nov 2026 direction: clean modern gallery, burgundy exhibition).
+   Swap values here and every page follows. Gold is decoration only on light backgrounds (2.75:1);
+   on burgundy use --gold-light for small text (6.6:1). */
 :root{
-  /* palette from Victoria's reference (Nov 2026): stone CCC4BA, taupe 937D68, brick 6C2724, oxblood 471918, near-black 15100D.
-     Taupe fails as text on stone (2.3:1): use it for lines only; small text uses --brass (5.2:1). */
-  --stone:#CCC4BA; --taupe:#937D68; --brick:#6C2724; --oxblood:#471918; --night:#15100D;
-  --wall-deep:var(--oxblood); --wall:var(--brick); --door:var(--brick); --bordeaux:var(--oxblood); --burgundy-ink:var(--oxblood);
-  --cream:var(--stone); --parchment:#E4DED6; --champagne:var(--stone);
-  --gold:#B8893A; --gold-bright:#D9B865; --brass:#5A4636; --ink:var(--night);
+  --paper:#FAF9F6;      /* main almost-white background */
+  --ivory:#F0ECE4;      /* soft surfaces, museum labels */
+  --burgundy:#651E28;   /* exhibition wall, primary buttons */
+  --wine:#42151C;       /* deep accents */
+  --charcoal:#282522;   /* text */
+  --muted:#6D665F;      /* secondary text on light (5.4:1) */
+  --gold:#B49359;       /* decorative antique gold */
+  --gold-light:#D6BE8C; /* gold for small text on burgundy */
+  --line:#DDD5C8;       /* hairlines on light */
+
+  /* names used by earlier components, mapped onto the new palette */
+  --cream:var(--paper); --parchment:var(--paper); --champagne:var(--ivory);
+  --burgundy-ink:var(--burgundy); --door:var(--burgundy); --wall:var(--burgundy); --wall-deep:var(--wine); --bordeaux:var(--wine);
+  --ink:var(--charcoal); --brass:var(--muted); --gold-bright:var(--gold-light); --taupe:var(--line);
+  --stone:var(--ivory); --oxblood:var(--wine); --brick:var(--burgundy); --night:var(--charcoal);
+
   /* doodle swatches, sampled from storyboard screen 07 */
   --sw-burgundy:#5A101B; --sw-rose:#BD5965; --sw-ochre:#D09641; --sw-green:#737054; --sw-blue:#7A86A6; --sw-lavender:#B69AB7;
 
-  --font-display:"Playfair Display",Georgia,serif;
-  --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-display:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
 
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px; --s9:112px;
-  --gutter:max(16px,env(safe-area-inset-left,0px)); --max:1200px;
-  --r-img:14px; --r-pill:999px; --r-frame:2px;
-  --shadow:0 14px 28px rgba(0,0,0,.28);
+  --gutter:max(20px,env(safe-area-inset-left,0px)); --max:1200px;
+  --r-img:10px; --r-pill:999px;
+  --shadow:0 14px 28px rgba(40,37,34,.18);
 
   --ease-out:cubic-bezier(.2,.7,.2,1); --ease-spring:cubic-bezier(.3,.7,.2,1);
   --t-micro:150ms; --t-reveal:480ms; --t-spot:450ms; --t-move:600ms;
 
-  --nav-h:96px;
+  --nav-h:88px;
 }
-@media (min-width:720px){:root{--gutter:max(24px,env(safe-area-inset-left,0px)); --nav-h:68px}}
+@media (min-width:720px){:root{--gutter:max(32px,env(safe-area-inset-left,0px)); --nav-h:68px}}

@@ -6,7 +6,8 @@ The portfolio of Victoria Kayode, presented as a museum exhibition. Plain HTML, 
 In this folder run `python3 -m http.server` and open http://localhost:8000. (Opening the files directly will not work, because content loads from `data/`.)
 
 ## Structure
-- `index.html`: the visit, screens 01–08: ticket, welcome and doors, work gallery, about and journey, playground, doodle, contact
+- `index.html`: ticket, hero, the exhibition wall (Gallery I projects, Gallery II Playground), about and journey, doodle, contact
+- `js/exhibition.js`: the scroll-driven wall: vertical scroll moves one continuous wall sideways, with exhibit lighting
 - `case-study.html?p=<slug>`: screen 04, one page per project
 - `work.html`: quick grid of every project for recruiters
 - `data/exhibits.json`: projects, with an evidence level on every statement (verified, reported, planned, awaiting)
