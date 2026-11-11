@@ -1,36 +1,25 @@
-# Portfolio: The Museum of Victoria Kayode
+# Victoria's Gallery
 
-A scroll-driven museum portfolio. Plain HTML, CSS, and JavaScript, so there is no build step and nothing to install.
-
-## Structure
-- `index.html` : entrance (museum ticket)
-- `museum.html` : scroll-driven museum walk (mock)
-- `case-study.html?p=<id>` : field-journal case study, filled from `data/projects.json`
-- `data/projects.json`, `data/art.json` : all exhibit content (edit these, not the JS)
-- `legacy/` : the previous portfolio site, kept for reference
-- `CLAUDE.md` : build brief for Claude Code
-- `css/style.css` : all styling (colors are set near the top of the file; the palette will change)
-- `js/main.js` : renders the walk from the data files (scrolling, label sheet, lanyard)
-- `js/passage.js`, `css/passage.css` : door transition from the ticket into the museum
-- `js/case-study.js`, `css/case-study.css` : case-study template
-- `assets/art/` : your art images
-- `assets/projects/` : product images and videos
+The portfolio of Victoria Kayode, presented as a museum exhibition. Plain HTML, CSS and JavaScript: no build step and nothing to install.
 
 ## Run locally
-Run `python3 -m http.server` in this folder and visit http://localhost:8000. (Opening the file directly no longer works, because exhibits load from `data/`.)
+In this folder run `python3 -m http.server` and open http://localhost:8000. (Opening the files directly will not work, because content loads from `data/`.)
 
-## Put it on GitHub
-1. Create a new empty repo on github.com (for example `portfolio`).
-2. In this folder run:
-   git init
-   git add .
-   git commit -m "First version"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/portfolio.git
-   git push -u origin main
+## Structure
+- `index.html`: the visit, screens 01–08: ticket, welcome and doors, work gallery, about and journey, playground, doodle, contact
+- `case-study.html?p=<slug>`: screen 04, one page per project
+- `work.html`: quick grid of every project for recruiters
+- `data/exhibits.json`: projects, with an evidence level on every statement (verified, reported, planned, awaiting)
+- `data/art.json`: artwork (only Victoria's own files)
+- `data/site.json`: résumé, contact links, journey timeline
+- `css/tokens.css`: colors, type, spacing and motion; change the palette here
+- `css/site.css`, `css/case-study.css`, `js/site.js`, `js/case-study.js`
+- `PLACEHOLDERS.md`: everything still missing, plus the defaults chosen
+- Earlier concepts, kept for reference: `entrance-v1.html`, `museum.html`, `home.html`, `gallery.html`, `legacy/`
 
-## Deploy on Cloudflare Pages
-1. In the Cloudflare dashboard go to Workers & Pages, then Create, then Pages, then Connect to Git.
-2. Pick the repo. Framework preset: None. Build command: leave empty. Output directory: `/`.
-3. Save and deploy. Every push to `main` updates the live site.
-4. Optional: add a custom domain under the project's Custom domains tab.
+## Add content
+- **Artwork:** put the file in `assets/art/`, then in `data/art.json` set `image`, `title`, `year`, `medium`, `alt`, `story` and `"placeholder": false`.
+- **A project fact:** add it to the right section in `data/exhibits.json` with `ev` and `src`. Only use `verified` when a document supports it.
+
+## Deploy (only with Victoria's approval)
+Cloudflare Pages: connect the GitHub repo, framework preset None, build command empty, output directory `/`.

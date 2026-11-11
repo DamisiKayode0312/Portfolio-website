@@ -1,0 +1,505 @@
+{
+  "_note": "Victoria's Gallery exhibits. Every statement carries evidence: verified (supported by one of her documents), reported (her own statement, no supporting file yet), planned (a plan or capability, not a result), awaiting (missing; renders as a placeholder). Facts come from PORTFOLIO_BUILD_BRIEF.md section 9. Never upgrade an evidence level without a source.",
+  "exhibits": [
+    {
+      "slug": "locit",
+      "title": "LOCIT",
+      "category": "Engineering · Product Development · Hardware and Software",
+      "featured": true,
+      "teaser": "A smart location-tracking necklace with a companion app for live location and safety alerts.",
+      "image": {
+        "src": "assets/projects/locit/companion-app-screens.jpg",
+        "alt": "Three phone screens from the LOCIT companion app: a teal sign-in screen, a campus map with a location pin, and a geofence screen with an out-of-bounds warning."
+      },
+      "summary": {
+        "idea": {
+          "text": "A smart location-tracking necklace paired with a phone app. It tracks GPS location, watches a geofence and monitors temperature.",
+          "ev": "verified",
+          "src": "Milestone 3 report"
+        },
+        "who": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "Who LOCIT was designed for, in Dami’s words."
+        },
+        "how": {
+          "text": "The necklace uploads sensor data to a web server, which processes and stores it. The app fetches that data to show live location and send boundary, temperature and low-battery alerts.",
+          "ev": "verified",
+          "src": "Milestone 3 report"
+        }
+      },
+      "links": [
+        {
+          "label": "Open the FlutterFlow prototype",
+          "href": "https://app.flutterflow.io/share/locitdraft-nt59sr"
+        }
+      ],
+      "sections": {
+        "problem": {
+          "items": [
+            {
+              "text": "LOCIT was designed to improve personal safety by tracking the wearer’s location and alerting when they cross a set boundary.",
+              "ev": "reported",
+              "src": "Her earlier portfolio site"
+            }
+          ],
+          "needs": "The specific situation or user need that started the project."
+        },
+        "why": {
+          "items": [],
+          "needs": "Why this mattered to the team or to the people it was for."
+        },
+        "role": {
+          "items": [
+            {
+              "text": "I coordinated product requirements, planned functionality, and developed and tested components as part of a four-person team.",
+              "ev": "reported",
+              "src": "Creative brief"
+            },
+            {
+              "text": "Scope: GPS tracking, geofencing, sensors and actuators, safety alerts, application development, requirements gathering, team coordination and system testing.",
+              "ev": "reported",
+              "src": "Creative brief"
+            },
+            {
+              "text": "I designed the team’s AZAD logo.",
+              "ev": "reported",
+              "src": "Her statement"
+            }
+          ],
+          "figures": [
+            {
+              "src": "assets/projects/locit/azad-logo.jpg",
+              "alt": "AZAD team logo: a winged emblem with a power-button icon and a signal-green accent above the word AZAD.",
+              "caption": "AZAD, the LOCIT team mark I designed.",
+              "small": true
+            }
+          ]
+        },
+        "constraints": {
+          "items": [
+            {
+              "text": "The first 3D-printed enclosure was too bulky to wear comfortably as a necklace, so it was reduced in size and iterated until the GPS module, microcontroller and battery fit.",
+              "ev": "verified",
+              "src": "Milestone 3 reports"
+            },
+            {
+              "text": "FlutterFlow could not handle the real-time data coming from AWS.",
+              "ev": "verified",
+              "src": "Milestone 3 report"
+            }
+          ],
+          "needs": "Budget, timeline and course requirements."
+        },
+        "research": {
+          "items": [],
+          "needs": "What user research or usability testing was done, with whom, and what was learned."
+        },
+        "decisions": {
+          "items": [
+            {
+              "text": "Moved data handling out of the app and onto a web server: the necklace uploads sensor data, the server processes and stores it, and the app fetches it.",
+              "ev": "verified",
+              "src": "Milestone 3 report"
+            },
+            {
+              "text": "Refined the geofencing algorithms and accuracy thresholds, because GPS accuracy affected how precisely boundary crossings were detected.",
+              "ev": "verified",
+              "src": "Milestone 3 report"
+            }
+          ],
+          "needs": "Why each choice was made and what alternatives were considered."
+        },
+        "built": {
+          "items": [
+            {
+              "text": "Companion app built in FlutterFlow: home, settings and profile pages, a five-icon bottom navigation bar, and a Google Maps widget meant to connect to the necklace’s GPS. The UI was planned in Figma with a site map and a first design draft.",
+              "ev": "verified",
+              "src": "Milestone 1 report"
+            },
+            {
+              "text": "App features: real-time GPS location, geofencing with boundary-crossing notifications, a temperature alert when the device gets too hot, and a battery alert below 20%.",
+              "ev": "verified",
+              "src": "Milestone 3 report"
+            },
+            {
+              "text": "Necklace enclosure designed in Autodesk Fusion 360 and 3D-printed in PLA, with iterations tested for component fit.",
+              "ev": "verified",
+              "src": "Milestone 3 reports"
+            },
+            {
+              "text": "Camera and facial recognition are not claimed here: one report mentions them and another does not.",
+              "ev": "awaiting",
+              "src": "Documents conflict"
+            }
+          ],
+          "figures": [
+            {
+              "src": "assets/projects/locit/companion-app-screens.jpg",
+              "alt": "LOCIT companion app: sign-in, location tracking and geofence warning screens.",
+              "caption": "Companion app: sign-in, location tracking, geofence warning."
+            }
+          ],
+          "needs": "Photos of the printed prototypes (they are in the milestone reports) and confirmation of whether the camera shipped."
+        },
+        "results": {
+          "items": [
+            {
+              "text": "About 98% GPS accuracy and 100% alert accuracy across more than 20 test scenarios.",
+              "ev": "reported",
+              "src": "Creative brief, no test data yet"
+            },
+            {
+              "text": "About 20% better processing performance after the architecture change.",
+              "ev": "reported",
+              "src": "Creative brief, no test data yet"
+            }
+          ],
+          "needs": "How these were measured, and the test data behind them."
+        },
+        "improve": {
+          "items": [
+            {
+              "text": "Next steps listed at the time: at least 24 hours of battery life on one charge, thorough testing, UI refinement and user testing. These were plans, not results.",
+              "ev": "planned",
+              "src": "Milestone 3 report"
+            }
+          ],
+          "needs": "What Dami would change looking back, in her own words."
+        }
+      }
+    },
+    {
+      "slug": "fairy-job-mother",
+      "title": "Fairy Job Mother",
+      "category": "AI Product · Product Design · Product Management",
+      "featured": true,
+      "teaser": "An AI career assistant for job seekers, with a storybook-inspired identity. In progress.",
+      "image": null,
+      "summary": {
+        "idea": {
+          "text": "An AI-powered career assistant for job seekers navigating applications, with a storybook-inspired identity, interactive animation and a wand motif.",
+          "ev": "reported",
+          "src": "Creative brief"
+        },
+        "who": {
+          "text": "Job seekers navigating applications.",
+          "ev": "reported",
+          "src": "Creative brief"
+        },
+        "how": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "How it works today, once the repository has been reviewed."
+        }
+      },
+      "links": [
+        {
+          "label": "View the repository on GitHub",
+          "href": "https://github.com/DamisiKayode0312/fairy-job-mother"
+        }
+      ],
+      "sections": {
+        "problem": {
+          "items": [],
+          "needs": "The problem job seekers face, in Dami’s words."
+        },
+        "why": {
+          "items": [],
+          "needs": "Why it matters."
+        },
+        "role": {
+          "items": [],
+          "needs": "Her role on the project."
+        },
+        "constraints": {
+          "items": [],
+          "needs": "Constraints."
+        },
+        "research": {
+          "items": [],
+          "needs": "Users, user journeys and research done so far."
+        },
+        "decisions": {
+          "items": [],
+          "needs": "Feature prioritization and design exploration."
+        },
+        "built": {
+          "items": [
+            {
+              "text": "Planned capabilities: resume tailoring, job matching, skill-gap identification, learning recommendations, outreach suggestions, recruiter-ready materials, saved resume versions, application metrics and supporting document uploads. None of these is confirmed as built yet.",
+              "ev": "planned",
+              "src": "Creative brief"
+            }
+          ],
+          "needs": "A review of the repository to mark each feature as implemented, prototype, planned or roadmap."
+        },
+        "results": {
+          "items": [],
+          "needs": "Testing and iteration results."
+        },
+        "improve": {
+          "items": [],
+          "needs": "Challenges and lessons so far."
+        }
+      }
+    },
+    {
+      "slug": "news-corp",
+      "title": "News Corp Product Strategy",
+      "category": "Product Management · User Research · AI Strategy",
+      "featured": true,
+      "teaser": "How news sites personalize with AI, compared with TikTok and Spotify. Externship research and recommendations.",
+      "image": null,
+      "summary": {
+        "idea": {
+          "text": "Studied how news sites personalize content with AI, and compared them with TikTok and Spotify to recommend how news could feel more personal.",
+          "ev": "verified",
+          "src": "Mini case scan; From User to Product Thinker"
+        },
+        "who": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "Who the recommendations were for (team, product, audience)."
+        },
+        "how": {
+          "text": "Hands-on case scans of NY Post and BBC, browsing to see how quickly each changed what it showed, then a side-by-side comparison with TikTok and Spotify.",
+          "ev": "verified",
+          "src": "Mini case scan; From User to Product Thinker"
+        }
+      },
+      "links": [],
+      "sections": {
+        "problem": {
+          "items": [
+            {
+              "text": "How well do news sites personalize compared with the social and streaming apps people use every day?",
+              "ev": "verified",
+              "src": "From User to Product Thinker"
+            }
+          ]
+        },
+        "why": {
+          "items": [],
+          "needs": "Why this mattered to News Corp’s digital teams."
+        },
+        "role": {
+          "items": [
+            {
+              "text": "Analyzed 500+ survey responses, developed five user personas, benchmarked four digital products, and turned the research into recommendations, requirements and user stories.",
+              "ev": "reported",
+              "src": "Creative brief, no files yet"
+            }
+          ],
+          "needs": "Role title and dates."
+        },
+        "constraints": {
+          "items": [],
+          "needs": "Constraints of the externship."
+        },
+        "research": {
+          "items": [
+            {
+              "text": "NY Post: the homepage shifted from politics to entertainment after a few entertainment clicks, with no obvious preference controls. “Trending Now” and the sidebar followed the last click. No chatbot found.",
+              "ev": "verified",
+              "src": "Mini case scan"
+            },
+            {
+              "text": "BBC: shifted more slowly, from politics to science and technology. “My News” exists but has to be found. Related-content boxes reflected browsing. The app’s News Briefs and voice summaries are likely algorithmic.",
+              "ev": "verified",
+              "src": "Mini case scan"
+            },
+            {
+              "text": "Comparison: TikTok’s For You page personalizes most strongly, Spotify is strong, and the news sites are far behind. NY Post’s autoplay video and intrusive ads were the biggest friction.",
+              "ev": "verified",
+              "src": "From User to Product Thinker"
+            },
+            {
+              "text": "Her reflection: she had not realized how quickly news sites change what they show after a few clicks, and even with AI personalization it felt less personal than social media. (Paraphrased; a direct quote needs the source PDF.)",
+              "ev": "verified",
+              "src": "Peer reflection, her entry"
+            }
+          ]
+        },
+        "decisions": {
+          "items": [
+            {
+              "text": "Recommendations for news: make it feel personal, mix in discovery such as weekly roundups or topic playlists, and think mobile-first with quick, swipeable video.",
+              "ev": "verified",
+              "src": "From User to Product Thinker"
+            }
+          ],
+          "needs": "Requirements and user stories."
+        },
+        "built": {
+          "items": [],
+          "needs": "Deliverables: personas, requirements, user stories."
+        },
+        "results": {
+          "items": [
+            {
+              "text": "Projected improvements in content relevance and retention. These are recommendations and projections, not shipped outcomes.",
+              "ev": "planned",
+              "src": "Creative brief"
+            }
+          ],
+          "needs": "Survey data and how projections were estimated."
+        },
+        "improve": {
+          "items": [],
+          "needs": "What she would do next."
+        }
+      }
+    },
+    {
+      "slug": "ai-evaluation",
+      "title": "AI Evaluation and Quality Research",
+      "category": "AI Product Quality · Evaluation · Research",
+      "featured": false,
+      "teaser": "Evaluating how AI models handle technical engineering questions. Handshake AI Fellowship. Method only, by design.",
+      "image": null,
+      "summary": {
+        "idea": {
+          "text": "Evaluating technical AI responses and documenting recurring model errors so they can be fixed.",
+          "ev": "reported",
+          "src": "Creative brief"
+        },
+        "who": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "Who the findings help, described without client names."
+        },
+        "how": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "A non-confidential description of the method."
+        }
+      },
+      "links": [],
+      "sections": {
+        "problem": {
+          "items": [],
+          "needs": "Problem, in general terms."
+        },
+        "why": {
+          "items": [],
+          "needs": "Why it matters."
+        },
+        "role": {
+          "items": [
+            {
+              "text": "Created 100+ evaluation test cases, evaluated technical AI responses for accuracy, clarity and reasoning, identified recurring model errors and documented findings for improvement.",
+              "ev": "reported",
+              "src": "Creative brief"
+            }
+          ],
+          "needs": "Role title and dates."
+        },
+        "constraints": {
+          "items": [
+            {
+              "text": "This work is confidential. Only the method is described here: no prompts, rubrics, data or client names.",
+              "ev": "verified",
+              "src": "Confidentiality rule"
+            }
+          ]
+        },
+        "research": {
+          "items": [],
+          "needs": "What a good evaluation case looks like, in general terms."
+        },
+        "decisions": {
+          "items": [],
+          "needs": "How errors were categorized."
+        },
+        "built": {
+          "items": [],
+          "needs": "How findings were documented."
+        },
+        "results": {
+          "items": [],
+          "needs": "Non-confidential outcomes, if any."
+        },
+        "improve": {
+          "items": [],
+          "needs": "Lessons."
+        }
+      }
+    },
+    {
+      "slug": "pi-logger",
+      "title": "Raspberry Pi Environmental Logger",
+      "category": "Embedded Systems · IoT · Data Engineering",
+      "featured": false,
+      "teaser": "A Raspberry Pi that collects sensor readings and sends them to AWS IoT.",
+      "image": null,
+      "summary": {
+        "idea": {
+          "text": "A Raspberry Pi with environmental sensors that collects readings and sends them to AWS IoT for monitoring.",
+          "ev": "reported",
+          "src": "Creative brief"
+        },
+        "who": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "Who or what it was for (course, personal project)."
+        },
+        "how": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "Sensor list and an architecture sketch."
+        }
+      },
+      "links": [],
+      "sections": {
+        "problem": {
+          "items": [],
+          "needs": "Problem."
+        },
+        "why": {
+          "items": [],
+          "needs": "Why it mattered."
+        },
+        "role": {
+          "items": [
+            {
+              "text": "Sensor integration, AWS IoT connectivity, data collection and monitoring, and reliability testing.",
+              "ev": "reported",
+              "src": "Creative brief"
+            }
+          ]
+        },
+        "constraints": {
+          "items": [],
+          "needs": "Constraints."
+        },
+        "research": {
+          "items": [],
+          "needs": "Research."
+        },
+        "decisions": {
+          "items": [],
+          "needs": "Decisions."
+        },
+        "built": {
+          "items": [],
+          "needs": "Architecture diagram, photos, code link."
+        },
+        "results": {
+          "items": [
+            {
+              "text": "500+ sensor readings a day, over 95% data integrity, and no recorded data loss during a 30-day test.",
+              "ev": "reported",
+              "src": "Creative brief, no test data yet"
+            }
+          ],
+          "needs": "Test logs or a chart."
+        },
+        "improve": {
+          "items": [],
+          "needs": "Next steps."
+        }
+      }
+    }
+  ]
+}

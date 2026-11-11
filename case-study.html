@@ -1,18 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Case study · The Museum of Victoria Kayode</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<title>Case study · Victoria's Gallery</title>
+<meta name="description" content="A project from Victoria's Gallery, the portfolio of Victoria Kayode.">
+<meta name="theme-color" content="#EFDECB">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="css/case-study.css">
+<script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
 <body>
-<nav class="top">
-  <a class="back" id="back" href="museum.html">← Back to the museum</a>
-</nav>
-<main id="journal" class="journal" aria-live="polite">
-  <p class="loading">Opening the field journal…</p>
+<a class="skip" href="#story">Skip to the story</a>
+<header class="cs-top" id="top">
+  <a class="back" id="back" href="index.html#work"><span aria-hidden="true">‹</span> <span class="back-l">Back to gallery</span></a>
+  <span class="mini" id="mini" aria-hidden="true"></span>
+  <span class="progress" aria-hidden="true"><i id="progress"></i></span>
+</header>
+<main id="story" class="cs">
+  <p class="loading">Opening the exhibit…</p>
 </main>
 <script src="js/case-study.js" defer></script>
 </body>

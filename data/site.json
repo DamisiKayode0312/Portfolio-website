@@ -1,0 +1,14 @@
+{
+  "_note": "Site-wide content. Fields with placeholder: true render as placeholders and are listed in PLACEHOLDERS.md.",
+  "brand": "Victoria's Gallery",
+  "legalName": "Victoria Kayode",
+  "resume": { "href": "assets/Victoria_Kayode_Resume.pdf", "placeholder": false, "note": "Taken from the earlier portfolio. It includes her phone number and email: confirm it is the version to publish." },
+  "email": { "value": "", "placeholder": true },
+  "linkedin": { "href": "", "placeholder": true },
+  "github": { "href": "https://github.com/DamisiKayode0312", "placeholder": false, "note": "Derived from the Fairy Job Mother repository link; confirm." },
+  "timeline": [
+    { "label": "Education", "detail": "B.S. Computer Engineering, Kennesaw State University. Cum Laude, December 2024.", "ev": "verified" },
+    { "label": "Engineering", "detail": "LOCIT, a wearable safety necklace (senior capstone), and a Raspberry Pi environmental logger.", "ev": "verified" },
+    { "label": "Product", "detail": "Product and AI strategy externship at News Corp, then the Handshake AI Fellowship in AI evaluation and quality research.", "ev": "reported", "needs": "Dates and role titles" }
+  ]
+}

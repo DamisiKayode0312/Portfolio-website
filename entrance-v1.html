@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Museum of Victoria Kayode</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/ticket.css">
+<link rel="stylesheet" href="css/passage.css">
+</head>
+<body>
+<p class="wallcap">The Museum of Victoria Kayode</p>
+
+<div class="stage" id="stage">
+  <div class="ticket" id="ticket">
+    <div class="main">
+      <div class="kicker"><span>Admission</span><span id="yr">Permanent Collection</span></div>
+      <h1>The Museum of Victoria Kayode</h1>
+      <p class="sub">Things I have built, researched and painted.</p>
+      <div class="fields">
+        <div class="f"><span>Admits</span><b>One visitor</b></div>
+        <div class="f"><span>Date</span><b id="date">Today</b></div>
+        <div class="f"><span>Focus</span><b>Product and technology</b></div>
+        <div class="f"><span>Hours</span><b>Always open</b></div>
+      </div>
+      <ol class="rooms" aria-label="Rooms in this museum">
+        <li><i>I</i>Product and Technology Gallery</li>
+        <li><i>II</i>Design Studio</li>
+        <li><i>III</i>Art Gallery</li>
+        <li><i>IV</i>About the Curator</li>
+        <li><i>V</i>Visitor Desk</li>
+      </ol>
+    </div>
+    <div class="perf" aria-hidden="true"><i></i></div>
+    <div class="stubwrap">
+      <div class="stub" id="stub">
+        <span class="admit">ADMIT ONE</span>
+        <svg class="bars" id="bars" viewBox="0 0 200 46" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="serial"><span id="no">No. 0001</span><span>Not transferable</span></div>
+        <button class="tear" id="tear" type="button"><u aria-hidden="true">↓</u> Pull down or tap to tear</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="doors" id="doors" aria-live="polite">
+  <p>The doors are open.</p>
+  <a class="go" href="museum.html">Walk into the museum</a>
+</div>
+<a class="quick" id="quick" href="home.html">Skip the ticket and see the work</a>
+
+<script src="js/passage.js" defer></script>
+<script src="js/ticket.js" defer></script>
+</body>
+</html>

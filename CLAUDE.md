@@ -1,5 +1,7 @@
 # CLAUDE.md: The Museum of Victoria Kayode
 
+> **Update (Nov 2026):** the site is now "Victoria's Gallery", built from Victoria's PORTFOLIO_BUILD_BRIEF.md (kept locally in `docs/`, not committed). The brief's storyboard, palette and screen sequence supersede the Concept and Design system sections below; the hard rules still apply. See README.md and PLACEHOLDERS.md.
+
 You are continuing a portfolio build for Victoria Kayode (Computer Engineering, B.S., Kennesaw State, Cum Laude, Dec 2024). She is pursuing product management, associate PM, product analysis, AI product and adjacent roles. Her story is the overlap of product thinking, technology and creativity. She also paints, draws digitally and photographs.
 
 ## Concept (approved direction, pending her final sign-off on color and type)

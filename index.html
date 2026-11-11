@@ -1,54 +1,198 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Museum of Victoria Kayode</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/ticket.css">
-<link rel="stylesheet" href="css/passage.css">
+<title>Victoria Kayode · Victoria's Gallery</title>
+<meta name="description" content="Victoria's Gallery: the portfolio of Victoria Kayode, a computer engineer working across product, research and design, and an artist.">
+<meta property="og:title" content="Victoria's Gallery · Victoria Kayode">
+<meta property="og:description" content="An exhibition of product, engineering and art by Victoria Kayode.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#4A1016">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+<script>
+/* Show the ticket once per session, unless arriving at a section link (for example, back from a case study). */
+(function(){var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js');
+  var torn=false;try{torn=sessionStorage.getItem('vg-torn')==='1'}catch(e){}
+  if(!torn&&!location.hash)d.classList.add('ticketing');})();
+</script>
 </head>
 <body>
-<p class="wallcap">The Museum of Victoria Kayode</p>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="stage" id="stage">
-  <div class="ticket" id="ticket">
-    <div class="main">
-      <div class="kicker"><span>Admission</span><span id="yr">Permanent Collection</span></div>
-      <h1>The Museum of Victoria Kayode</h1>
-      <p class="sub">Things I have built, researched and painted.</p>
-      <div class="fields">
-        <div class="f"><span>Admits</span><b>One visitor</b></div>
-        <div class="f"><span>Date</span><b id="date">Today</b></div>
-        <div class="f"><span>Focus</span><b>Product and technology</b></div>
-        <div class="f"><span>Hours</span><b>Always open</b></div>
+<!-- 01 · Exhibition ticket -->
+<div class="entrance" id="entrance" role="region" aria-label="Exhibition ticket">
+  <svg class="entrance-mark" viewBox="0 0 48 40" aria-hidden="true"><use href="#museum"/></svg>
+  <i class="entrance-rule" aria-hidden="true"></i>
+  <div class="ticket-scene" id="scene">
+    <div class="ticket" id="ticket">
+      <div class="ticket-main">
+        <svg class="laurel laurel-l" viewBox="0 0 40 90" aria-hidden="true"><use href="#laurel"/></svg>
+        <svg class="laurel laurel-r" viewBox="0 0 40 90" aria-hidden="true"><use href="#laurel"/></svg>
+        <p class="ticket-title">Victoria’s Gallery</p>
+        <p class="ticket-sub">An exhibition by Dami</p>
       </div>
-      <ol class="rooms" aria-label="Rooms in this museum">
-        <li><i>I</i>Product and Technology Gallery</li>
-        <li><i>II</i>Design Studio</li>
-        <li><i>III</i>Art Gallery</li>
-        <li><i>IV</i>About the Curator</li>
-        <li><i>V</i>Visitor Desk</li>
-      </ol>
-    </div>
-    <div class="perf" aria-hidden="true"><i></i></div>
-    <div class="stubwrap">
-      <div class="stub" id="stub">
-        <span class="admit">ADMIT ONE</span>
-        <svg class="bars" id="bars" viewBox="0 0 200 46" preserveAspectRatio="none" aria-hidden="true"></svg>
-        <div class="serial"><span id="no">No. 0001</span><span>Not transferable</span></div>
-        <button class="tear" id="tear" type="button"><u aria-hidden="true">↓</u> Pull down or tap to tear</button>
+      <div class="perf" aria-hidden="true"><i></i></div>
+      <div class="stub" id="stub" role="button" tabindex="0" aria-label="Tear the ticket to enter the gallery">
+        <span class="orn" aria-hidden="true"></span><span class="admission">Admission</span><span class="orn" aria-hidden="true"></span>
       </div>
     </div>
   </div>
+  <p class="tear-hint" aria-hidden="true">Pull the stub to enter <span class="nudge">↓</span></p>
+  <button class="btn btn-primary" id="tear" type="button">Tear to enter</button>
+  <a class="skip-ticket" id="skip-ticket" href="#home">Skip the ticket →</a>
 </div>
-<div class="doors" id="doors" aria-live="polite">
-  <p>The doors are open.</p>
-  <a class="go" href="museum.html">Walk into the museum</a>
-</div>
-<a class="quick" id="quick" href="home.html">Skip the ticket and see the work</a>
 
-<script src="js/passage.js" defer></script>
-<script src="js/ticket.js" defer></script>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#home"><svg viewBox="0 0 48 40" aria-hidden="true"><use href="#museum"/></svg><span>Victoria’s Gallery</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#home" data-group="home">Home</a></li>
+        <li><a href="#about" data-group="about">About</a></li>
+        <li><a href="#work" data-group="work">Work</a></li>
+        <li><a href="#playground" data-group="playground">Playground</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 02 · Welcome + museum doors -->
+  <section id="home" class="welcome" data-tone="cream" data-group="home" aria-labelledby="welcome-h">
+    <div class="doors-track" id="doors-track">
+      <div class="doors-stage">
+        <div class="welcome-copy" id="welcome-copy">
+          <h1 id="welcome-h" tabindex="-1">Welcome to my exhibition.</h1>
+          <p class="lede">I’m Dami, an artist and engineer.</p>
+          <p>A curated collection of projects, experiments and ideas at the intersection of people, technology and everyday life.</p>
+          <p class="fact">Computer engineering graduate, Kennesaw State, Cum Laude 2024.</p>
+        </div>
+        <div class="doorway" aria-hidden="true">
+          <div class="architrave">
+            <div class="opening" id="opening">
+              <div class="interior" id="interior">
+                <i class="corridor-floor"></i><i class="far-frame"></i><i class="bloom" id="bloom"></i>
+              </div>
+              <div class="leaf leaf-l" id="leaf-l"><i class="panel"></i><i class="panel"></i><i class="knob"></i></div>
+              <div class="leaf leaf-r" id="leaf-r"><i class="panel"></i><i class="panel"></i><i class="knob"></i></div>
+              <i class="seam" id="seam"></i>
+            </div>
+          </div>
+        </div>
+        <div class="doors-cta">
+          <p class="caption" id="doors-caption">Scroll to open the museum doors. <span aria-hidden="true">↓</span></p>
+          <button class="btn btn-secondary" id="open-doors" type="button">Open the doors</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · Work gallery -->
+  <section id="work" class="work" data-tone="dark" data-group="work" aria-labelledby="work-h">
+    <div class="work-head">
+      <p class="label">The collection</p>
+      <h2 id="work-h" tabindex="-1">Work</h2>
+      <p class="hint">Browse the frames; tap to explore.</p>
+    </div>
+    <ol class="exhibits" id="exhibits"></ol>
+    <p class="work-more"><a href="work.html">See every project in a quick grid →</a></p>
+    <div class="rail" id="rail" aria-hidden="true"><p class="count" id="count"></p><div class="rail-dots" id="rail-dots"></div></div>
+  </section>
+
+  <!-- 05 · About -->
+  <section id="about" class="about" data-tone="cream" data-group="about" aria-labelledby="about-h">
+    <div class="about-grid">
+      <div class="about-side">
+        <div class="oval" data-pop><span class="ph-label">Placeholder · Portrait</span></div>
+        <h2 id="about-h" data-pop>Artist. Engineer. Curious by nature.</h2>
+        <div class="about-actions" data-pop>
+          <a class="btn btn-primary" id="resume-about" href="#">Download résumé</a>
+          <a class="btn btn-secondary" href="#contact">Say hello</a>
+        </div>
+      </div>
+      <div class="about-main">
+        <p class="intro" data-pop>I’m Dami, a computer engineer who works across product, research and design, and who paints and draws digitally.</p>
+        <div class="human" data-pop>
+          <h3>Off the clock</h3>
+          <p>I paint, make digital illustrations and take photographs, and I like exploring creative technology.</p>
+          <p class="placeholder">Placeholder · Likes, dislikes and what brought me here, in Dami’s words.</p>
+        </div>
+        <h3 class="journey-h" data-pop>My journey</h3>
+        <ol class="journey" id="journey"><i class="journey-fill" id="journey-fill" aria-hidden="true"></i></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Playground -->
+  <section id="playground" class="playground" data-tone="dark" data-group="playground" aria-labelledby="play-h">
+    <div class="play-head">
+      <h2 id="play-h">Playground</h2>
+      <p class="lede">An exhibit for art, experiments and ideas that don’t always fit in a neat box.</p>
+    </div>
+    <div class="artwall-wrap">
+      <ul class="artwall" id="artwall"></ul>
+      <div class="curtains" id="curtains" aria-hidden="true"><i class="curtain curtain-l"></i><i class="curtain curtain-r"></i></div>
+    </div>
+  </section>
+
+  <!-- 07 · Leave a doodle -->
+  <section id="doodle" class="doodle" data-tone="cream" data-group="playground" aria-labelledby="doodle-h">
+    <h2 id="doodle-h" data-pop><span class="flourish" aria-hidden="true">~</span> Leave a doodle <span class="flourish" aria-hidden="true">~</span></h2>
+    <p class="sub" data-pop>A space for visitors to create.</p>
+    <a class="skip-doodle" href="#contact">Skip the doodle</a>
+    <div class="doodle-layout">
+      <div class="gilt doodle-frame" data-pop>
+        <canvas id="pad" role="img" aria-label="Drawing canvas. Drawing needs a mouse, pen or touch."></canvas>
+      </div>
+      <div class="tools" role="toolbar" aria-label="Doodle tools">
+        <div class="swatches" id="swatches"></div>
+        <button class="tool" id="size" type="button" aria-label="Brush size: medium"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c2 0 4-1 5-3l9-9-3-3-9 9c-2 1-3 3-2 6z"/></svg><span id="size-l">M</span></button>
+        <button class="tool" id="undo" type="button">Undo</button>
+        <button class="tool" id="clear" type="button">Clear</button>
+        <button class="tool" id="save" type="button">Save</button>
+      </div>
+    </div>
+    <p class="doodle-note">Drawing needs a mouse, pen or touch. Doodles stay on your device; nothing is uploaded.</p>
+  </section>
+
+  <!-- 08 · Closing -->
+  <section id="contact" class="closing" data-tone="cream" aria-labelledby="contact-h">
+    <div class="gilt heart-frame" data-pop aria-hidden="true"><svg viewBox="0 0 60 50"><path d="M30 44C12 32 6 24 6 16a11 11 0 0 1 24-4 11 11 0 0 1 24 4c0 8-6 16-24 28z"/></svg></div>
+    <h2 id="contact-h" data-pop>Let’s make something meaningful.</h2>
+    <div class="contact-actions" data-pop id="contact-actions"></div>
+    <p class="caption">Contact and résumé always within reach.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot-mark"><span class="orn" aria-hidden="true"></span> Victoria’s Gallery <span class="orn" aria-hidden="true"></span></p>
+  <p>© 2026 Victoria Kayode · <a href="work.html">Quick view of all work</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+  <div class="gilt lb-frame" id="lb-art"></div>
+  <h2 id="lb-title"></h2>
+  <p class="lb-meta" id="lb-meta"></p>
+  <p id="lb-blurb"></p>
+  <div class="lb-nav">
+    <button class="btn btn-secondary" id="lb-prev" type="button" aria-label="Previous artwork">‹ Prev</button>
+    <button class="btn btn-secondary" id="lb-next" type="button" aria-label="Next artwork">Next ›</button>
+    <button class="btn btn-primary" id="lb-close" type="button">Close</button>
+  </div>
+</dialog>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="museum" viewBox="0 0 48 40"><path d="M24 2 3 13h42L24 2z" fill="currentColor"/><path d="M7 16h4v16H7zM16 16h4v16h-4zM28 16h4v16h-4zM37 16h4v16h-4z" fill="currentColor"/><path d="M3 34h42v4H3z" fill="currentColor"/></symbol>
+  <symbol id="laurel" viewBox="0 0 40 90"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M30 86C14 70 10 46 18 6"/><path d="M22 70c-8 0-12-6-12-10 6 0 11 4 12 10zM20 56c-8-1-11-7-11-11 6 1 10 5 11 11zM19 42c-7-2-10-8-9-12 5 2 9 6 9 12zM19 28c-6-3-8-9-7-13 5 3 8 7 7 13zM24 66c6-4 11-3 13 0-5 3-9 3-13 0zM21 52c6-4 11-4 13-1-5 3-9 4-13 1zM20 38c6-4 10-4 12-1-5 3-8 3-12 1z"/></g></symbol>
+</svg>
+
+<script src="js/site.js" defer></script>
 </body>
 </html>

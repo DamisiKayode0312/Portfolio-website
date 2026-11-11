@@ -1,0 +1,23 @@
+/* Victoria's Gallery design tokens (brief §6). Colors are the brief's DEFAULT palette, sampled from the storyboard;
+   swap here and every screen follows. Gold is never used for text on cream (2.8:1): use --brass or --burgundy-ink. */
+:root{
+  --wall-deep:#4A1016; --wall:#5E1921; --door:#701820; --bordeaux:#642025; --burgundy-ink:#5F1328;
+  --cream:#EFDECB; --parchment:#F3E4D4; --champagne:#EACEAA;
+  --gold:#B27A34; --gold-bright:#C98928; --brass:#705832; --ink:#1A1617;
+  /* doodle swatches, sampled from storyboard screen 07 */
+  --sw-burgundy:#5A101B; --sw-rose:#BD5965; --sw-ochre:#D09641; --sw-green:#737054; --sw-blue:#7A86A6; --sw-lavender:#B69AB7;
+
+  --font-display:"Playfair Display",Georgia,serif;
+  --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px; --s9:112px;
+  --gutter:max(16px,env(safe-area-inset-left,0px)); --max:1200px;
+  --r-img:14px; --r-pill:999px; --r-frame:2px;
+  --shadow:0 14px 28px rgba(0,0,0,.28);
+
+  --ease-out:cubic-bezier(.2,.7,.2,1); --ease-spring:cubic-bezier(.3,.7,.2,1);
+  --t-micro:150ms; --t-reveal:480ms; --t-spot:450ms; --t-move:600ms;
+
+  --nav-h:96px;
+}
+@media (min-width:720px){:root{--gutter:max(24px,env(safe-area-inset-left,0px)); --nav-h:68px}}
