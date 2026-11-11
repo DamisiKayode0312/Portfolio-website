@@ -1,9 +1,12 @@
-/* Victoria's Gallery design tokens (brief §6). Colors are the brief's DEFAULT palette, sampled from the storyboard;
-   swap here and every screen follows. Gold is never used for text on cream (2.8:1): use --brass or --burgundy-ink. */
+/* Victoria's Gallery design tokens. Swap values here and every screen follows.
+   Gold is never used for text on stone: use --brass or --burgundy-ink. */
 :root{
-  --wall-deep:#4A1016; --wall:#5E1921; --door:#701820; --bordeaux:#642025; --burgundy-ink:#5F1328;
-  --cream:#EFDECB; --parchment:#F3E4D4; --champagne:#EACEAA;
-  --gold:#B27A34; --gold-bright:#C98928; --brass:#705832; --ink:#1A1617;
+  /* palette from Victoria's reference (Nov 2026): stone CCC4BA, taupe 937D68, brick 6C2724, oxblood 471918, near-black 15100D.
+     Taupe fails as text on stone (2.3:1): use it for lines only; small text uses --brass (5.2:1). */
+  --stone:#CCC4BA; --taupe:#937D68; --brick:#6C2724; --oxblood:#471918; --night:#15100D;
+  --wall-deep:var(--oxblood); --wall:var(--brick); --door:var(--brick); --bordeaux:var(--oxblood); --burgundy-ink:var(--oxblood);
+  --cream:var(--stone); --parchment:#E4DED6; --champagne:var(--stone);
+  --gold:#B8893A; --gold-bright:#D9B865; --brass:#5A4636; --ink:var(--night);
   /* doodle swatches, sampled from storyboard screen 07 */
   --sw-burgundy:#5A101B; --sw-rose:#BD5965; --sw-ochre:#D09641; --sw-green:#737054; --sw-blue:#7A86A6; --sw-lavender:#B69AB7;
 

@@ -105,7 +105,7 @@
       var img=x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" loading="'+(i?'lazy':'eager')+'" style="view-transition-name:hero-'+esc(x.slug)+'">':'<div class="frame-ph">Placeholder · Project image needed</div>';
       return '<li class="exhibit" data-slug="'+esc(x.slug)+'"><a href="case-study.html?p='+encodeURIComponent(x.slug)+'" aria-label="'+esc(x.title)+'. '+esc(x.category)+'. Open the case study">'+
         '<i class="pool" aria-hidden="true"></i><span class="lamp" aria-hidden="true"></span><i class="cone" aria-hidden="true"></i>'+
-        '<span class="gilt"><span class="mat">'+img+'</span></span><span class="plate">'+esc(x.title)+'</span><span class="cat">'+esc(x.category)+'</span><span class="teaser">'+esc(x.teaser)+'</span></a></li>';}).join('');
+        '<span class="gilt lg"><span class="mat">'+img+'</span></span><span class="plate">'+esc(x.title)+'</span><span class="cat">'+esc(x.category)+'</span><span class="teaser">'+esc(x.teaser)+'</span></a></li>';}).join('');
     exhibitEls=$$('.exhibit',exhibitsEl);
     dots.innerHTML=exhibitEls.map(function(){return '<i></i>';}).join('');
     exhibitEls.forEach(function(li){li.querySelector('a').addEventListener('click',function(){store('vg-lastFrame',li.dataset.slug);});});
@@ -161,7 +161,7 @@
     art=list;
     wall.innerHTML=list.map(function(a,i){
       var inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy">':'<div class="frame-ph">Placeholder · Artwork from Dami</div>';
-      return '<li data-pop><button type="button" data-i="'+i+'" aria-label="'+esc(a.placeholder?'Artwork placeholder '+(i+1):a.title)+'. Open"><span class="gilt"><span class="mat">'+inner+'</span></span><span class="plq">'+esc(a.title)+'</span></button></li>';}).join('');
+      return '<li data-pop><button type="button" data-i="'+i+'" aria-label="'+esc(a.placeholder?'Artwork placeholder '+(i+1):a.title)+'. Open"><span class="gilt'+(i?' sm':' lg')+'"><span class="mat">'+inner+'</span></span><span class="plq">'+esc(a.title)+'</span></button></li>';}).join('');
     observePop();
   }
   wall.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});

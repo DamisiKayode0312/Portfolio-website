@@ -41,6 +41,7 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 14. Contact: no form; mailto + copy once an email exists.
 15. Desktop Work gallery: vertical stack (brief's Option B) instead of the horizontal pan.
 16. Doodle swatch colors sampled from storyboard screen 07.
+18. Palette (Nov 11, from Victoria's reference): stone #CCC4BA, taupe #937D68, brick #6C2724, oxblood #471918, near-black #15100D. Taupe is used for lines only (too faint for text); small text uses a deeper taupe #5A4636. Red rooms use a tone-on-tone damask, a stone crown molding and black-marble nameplates; frames are carved gilt with corner scrolls and a shell cartouche (all drawn in `assets/decor/`, nothing copied from the reference images).
 17. Stack: plain HTML/CSS/JS with no build step, kept from the existing repo.
 
 ## Earlier concepts kept for reference (not linked from the new site)
