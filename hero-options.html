@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hero Options</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  /* Preview page only: three candidate heroes for Victoria's Gallery. */
+  body{background:#1c1416}
+  .opt-tag{position:relative;z-index:50;margin:0;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding:10px var(--gutter);background:#1c1416;color:#F0ECE4;font:500 14px var(--font-body);border-bottom:1px solid rgba(240,236,228,.15)}
+  .opt-tag b{font:600 18px var(--font-display)}
+  .opt-tag span{color:rgba(240,236,228,.7)}
+  .h{position:relative;overflow:hidden;min-height:min(100svh,860px)}
+  .pframe{display:block}
+  .pf-art img{object-position:center}
+  .draft{display:inline-block;font:500 11px var(--font-body);letter-spacing:.06em;color:#8a7a62;border:1px dashed currentColor;border-radius:2px;padding:1px 6px;margin-left:8px;vertical-align:middle}
+
+  /* ---------- Option A: exhibition poster (cream paper, a row of gilt frames, a big two-weight name) ---------- */
+  .ha{background:#EFE8DC;color:#3A1A1E;padding:20px var(--gutter) 40px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:16px}
+  @media (max-width:700px){.ha{grid-template-rows:auto auto auto;align-content:space-between;min-height:auto;gap:40px;padding-bottom:48px}.ha-row{margin-top:24px}}
+  .ha::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.6),transparent 60%),radial-gradient(90% 70% at 50% 120%,rgba(120,80,40,.12),transparent 60%)}
+  .ha-bar{position:relative;display:flex;justify-content:space-between;align-items:center;font:500 13px var(--font-body);letter-spacing:.04em}
+  .ha-bar svg{width:20px;height:16px;vertical-align:-2px;margin-right:8px}
+  .ha-row{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(12px,2vw,28px);overflow:visible;align-self:end}
+  .ha-row .pframe{flex:none}
+  .ha-row .f1{width:clamp(110px,15vw,220px)}
+  .ha-row .f2{width:clamp(180px,26vw,380px)}
+  .ha-row .f3{width:clamp(110px,14vw,200px)}
+  .ha-row .f4{width:clamp(180px,26vw,380px)}
+  .ha-row .f5{width:clamp(110px,15vw,220px)}
+  .ha-name{position:relative;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 .3em;margin:0;line-height:.95;text-align:center}
+  .ha-name .n1{font:400 clamp(44px,8.6vw,124px)/1 var(--font-display);letter-spacing:.06em}
+  .ha-name .n2{font:800 clamp(44px,8.6vw,124px)/1 var(--font-display);letter-spacing:-.01em;text-transform:uppercase}
+  .ha-foot{position:relative;display:grid;gap:14px;align-self:start;padding-top:clamp(8px,3vh,32px);justify-items:center;text-align:center}
+  .ha-foot .line{font:500 15px var(--font-body);letter-spacing:.02em;margin:0;max-width:44ch}
+  .ha-foot .line::before,.ha-foot .line::after{content:"✦";color:#9b7b45;margin:0 12px;font-size:12px}
+  .ha .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .ha .btn-primary{background:#4A1820;border-color:#4A1820;color:#F7F2EA}
+  .ha .btn-secondary{background:transparent;color:#4A1820;border-color:#4A1820}
+  @media (max-width:700px){
+    .ha-row{gap:8px}.ha-row .f1,.ha-row .f5{display:none}
+    .ha-row .f2,.ha-row .f4{width:38vw}.ha-row .f3{width:22vw}
+  }
+
+  /* ---------- Option B: museum of the mind (burgundy damask, scattered gilded frames, gold script name) ---------- */
+  .hb{background:#4A141B;color:#F3E6C8;display:grid;place-items:center;padding:56px var(--gutter)}
+  .hb::before{content:"";position:absolute;inset:0;background:image-set(url(assets/frames/damask.webp) type("image/webp"),url(assets/frames/damask.jpg) type("image/jpeg")) 0 0/var(--damask) var(--damask);opacity:.55}
+  .hb::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 45%,rgba(255,214,150,.18),transparent 70%),radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.45))}
+  .hb .pframe{position:absolute;z-index:1;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+  .hb .s1{width:clamp(150px,21vw,300px);left:-3%;top:10%;transform:rotate(-4deg)}
+  .hb .s2{width:clamp(170px,24vw,340px);right:-4%;top:-4%;transform:rotate(3deg)}
+  .hb .s3{width:clamp(110px,13vw,190px);left:12%;bottom:-6%;transform:rotate(2deg)}
+  .hb .s4{width:clamp(200px,28vw,400px);right:-2%;bottom:-8%;transform:rotate(-2deg)}
+  .hb-in{position:relative;z-index:2;text-align:center;display:grid;justify-items:center;gap:14px;max-width:760px}
+  .hb .eyebrow2{font:400 italic 20px var(--font-display);color:#E6D2A6;margin:0}
+  .hb h2{margin:0;font:italic 500 clamp(56px,10vw,132px)/.95 var(--font-display);color:#F1DDAE;letter-spacing:-.01em;text-shadow:0 2px 0 rgba(90,50,10,.35),0 10px 30px rgba(0,0,0,.35)}
+  .hb h2 small{display:block;font:400 italic clamp(28px,4.6vw,56px)/1.1 var(--font-display);color:#E6D2A6;margin-top:6px}
+  .hb .line{font:400 clamp(17px,2vw,21px)/1.4 var(--font-display);color:#F3E6C8;margin:4px 0 6px;max-width:34ch}
+  .hb .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .hb .btn-primary{background:#F1DDAE;color:#3A1016;border-color:#F1DDAE}
+  .hb .btn-secondary{background:transparent;color:#F1DDAE;border-color:rgba(241,221,174,.7)}
+  @media (max-width:700px){.hb .s1{width:34vw;top:3%;left:-10%}.hb .s2{width:38vw;top:-2%;right:-12%}.hb .s3{display:none}.hb .s4{width:46vw;bottom:-5%;right:-14%}.hb-in{padding:120px 0 150px}}
+
+  /* ---------- Option C: la galerie (cream title panel beside your museum photo, burgundy band) ---------- */
+  .hc{background:#3E1218;display:grid;grid-template-columns:1fr;min-height:auto}
+  .hc-panel{background:#EFE6D8;color:#3A1A1E;display:grid;align-content:center;justify-items:center;text-align:center;gap:14px;padding:56px var(--gutter)}
+  .hc-crest{width:110px}
+  .hc .eyebrow2{font:500 13px var(--font-body);letter-spacing:.04em;color:#6D665F;margin:0}
+  .hc h2{margin:0;font:400 clamp(48px,6.4vw,92px)/.98 var(--font-display);letter-spacing:-.01em}
+  .hc h2 em{font-style:italic}
+  .hc .line{font:400 16px/1.55 var(--font-body);max-width:36ch;margin:0}
+  .hc .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .hc .btn-primary{background:#4A1820;border-color:#4A1820;color:#F7F2EA}
+  .hc .btn-secondary{background:transparent;color:#4A1820;border-color:#4A1820}
+  .hc-photo{position:relative;min-height:62svh}
+  .hc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+  .hc-band{grid-column:1/-1;color:#F0E4CE;text-align:center;padding:36px var(--gutter);font:400 clamp(20px,2.4vw,28px)/1.35 var(--font-display)}
+  .hc-band small{display:block;font:500 12px var(--font-body);letter-spacing:.06em;color:#CFB98F;margin-bottom:8px}
+  @media (min-width:900px){.hc{grid-template-columns:1fr 1fr}.hc-photo{min-height:auto}.hc-panel{min-height:min(88svh,780px)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="museum" viewBox="0 0 48 40"><path fill="currentColor" d="M24 2 2 12v4h44v-4L24 2Zm-17 17v13h4V19H7Zm8 0v13h4V19h-4Zm7 0v13h4V19h-4Zm8 0v13h4V19h-4Zm7 0v13h4V19h-4ZM3 34v4h42v-4H3Z"/></symbol></svg>
+
+<!-- ============ A ============ -->
+<p class="opt-tag"><b>A · Exhibition poster</b><span>Cream paper, a row of gilt frames with your work, a big two-weight name. After the Truehn and Harp Gallery references.</span></p>
+<section class="h ha" aria-label="Option A">
+  <div class="ha-bar"><span><svg aria-hidden="true"><use href="#museum"/></svg>Victoria’s Gallery</span><span>2026 ↗</span></div>
+  <div class="ha-row" aria-hidden="true">
+    <span class="pframe pframe--portrait f1"><span class="pf-art"><img src="assets/art/neon.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-portrait.webp" alt=""></span>
+    <span class="pframe pframe--landscape f2"><span class="pf-art"><img src="assets/projects/locit/app-screens-hd.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt=""></span>
+    <span class="pframe pframe--oval f3"><span class="pf-art"><img src="assets/art/glitter-eye.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-oval.webp" alt=""></span>
+    <span class="pframe pframe--landscape f4"><span class="pf-art"><img src="assets/projects/fairy-job-mother/storybook-hero.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt=""></span>
+    <span class="pframe pframe--portrait f5"><span class="pf-art"><img src="assets/art/candlelight.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-portrait.webp" alt=""></span>
+  </div>
+  <div class="ha-foot">
+    <h1 class="ha-name"><span class="n1">Victoria</span><span class="n2">Kayode</span></h1>
+    <p class="line">Computer engineer working across product, AI and art<span class="draft">draft line</span></p>
+    <div class="actions"><a class="btn btn-primary" href="#">See the work</a><a class="btn btn-secondary" href="#">Résumé</a></div>
+  </div>
+</section>
+
+<!-- ============ B ============ -->
+<p class="opt-tag"><b>B · Museum of the mind</b><span>Burgundy damask, gilded frames drifting in from the edges, your name in gold italic. After the “Museums of the Mind” reference.</span></p>
+<section class="h hb" aria-label="Option B">
+  <span class="pframe pframe--portrait s1" aria-hidden="true"><span class="pf-art"><img src="assets/art/candlelight.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-portrait.webp" alt=""></span>
+  <span class="pframe pframe--landscape s2" aria-hidden="true"><span class="pf-art"><img src="assets/projects/locit/app-screens-hd.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt=""></span>
+  <span class="pframe pframe--oval s3" aria-hidden="true"><span class="pf-art"><img src="assets/art/swordsman.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-oval.webp" alt=""></span>
+  <span class="pframe pframe--landscape s4" aria-hidden="true"><span class="pf-art"><img src="assets/projects/fairy-job-mother/storybook-hero.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt=""></span>
+  <div class="hb-in">
+    <p class="eyebrow2">Welcome to</p>
+    <h2>Victoria Kayode<small>an evolving collection</small></h2>
+    <p class="line">Computer engineer working across product, AI and art<span class="draft" style="color:#d9c08f">draft line</span></p>
+    <div class="actions"><a class="btn btn-primary" href="#">See the work</a><a class="btn btn-secondary" href="#">Résumé</a></div>
+  </div>
+</section>
+
+<!-- ============ C ============ -->
+<p class="opt-tag"><b>C · La Galerie</b><span>A cream title panel beside your museum photo, then a burgundy band. After the La Galerie de Fondation reference.</span></p>
+<section class="h hc" aria-label="Option C">
+  <div class="hc-panel">
+    <span class="pframe pframe--oval hc-crest" aria-hidden="true"><span class="pf-art"><img src="assets/art/glitter-eye.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-oval.webp" alt=""></span>
+    <p class="eyebrow2">Victoria’s Gallery · an exhibition</p>
+    <h2>Victoria<br><em>Kayode</em></h2>
+    <p class="line">Computer engineer working across product, AI and art<span class="draft">draft line</span></p>
+    <div class="actions"><a class="btn btn-primary" href="#">See the work</a><a class="btn btn-secondary" href="#">Résumé</a></div>
+  </div>
+  <div class="hc-photo"><img src="assets/about/museum-visit.webp" alt="Victoria at a museum in front of a deep red gallery wall."></div>
+  <p class="hc-band"><small>What’s on view</small>Things I’ve built, the work I’ve done, and the art I make on the side</p>
+</section>
+</body>
+</html>
