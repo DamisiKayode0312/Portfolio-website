@@ -22,13 +22,35 @@
     if(!reduce)ticket.classList.add('sway');
     setTimeout(function(){$('#tear').focus({preventScroll:true});},reduce?0:700);
   }
-  /* the hero opens like a wall sliding into view: the frames glide in from the right one after another and settle, then the name rises */
+  /* the hero wall scrolls continuously: the five frames are hung twice in one track that slides left forever.
+     The copy is hidden from screen readers and the keyboard. It pauses on hover, on keyboard focus, off screen,
+     and with the pause button; with reduced motion it stays a still, centred row. */
+  var heroRow=$('.poster-row'),heroTrack=null;
+  function setLoop(){if(!heroTrack)return;var w=heroTrack.firstElementChild.getBoundingClientRect().width;heroTrack.style.setProperty('--loop',Math.max(20,w/(innerWidth<700?32:48)).toFixed(1)+'s');}
+  if(heroRow&&!reduce){
+    var set=document.createElement('div');set.className='poster-set';
+    while(heroRow.firstChild)set.appendChild(heroRow.firstChild);
+    var copy=set.cloneNode(true);copy.setAttribute('aria-hidden','true');copy.setAttribute('inert','');
+    $$('a',copy).forEach(function(a){a.setAttribute('tabindex','-1');a.removeAttribute('aria-label');});
+    $$('img',copy).forEach(function(im){im.removeAttribute('fetchpriority');});
+    heroTrack=document.createElement('div');heroTrack.className='poster-track';heroTrack.appendChild(set);heroTrack.appendChild(copy);
+    heroRow.appendChild(heroTrack);heroRow.classList.add('is-marquee');
+    var tog=document.createElement('button');tog.type='button';tog.className='wall-toggle';tog.setAttribute('aria-pressed','false');
+    var icon=function(paused){tog.setAttribute('aria-label',paused?'Play the moving frames':'Pause the moving frames');
+      tog.innerHTML=paused?'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z" fill="currentColor"/></svg>':'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';};
+    icon(false);
+    tog.addEventListener('click',function(){var p=heroRow.classList.toggle('is-paused');tog.setAttribute('aria-pressed',String(p));icon(p);});
+    var wallBox=document.createElement('div');wallBox.className='poster-wall';heroRow.parentNode.insertBefore(wallBox,heroRow);wallBox.appendChild(heroRow);wallBox.appendChild(tog);
+    setLoop();addEventListener('resize',setLoop);
+    $$('img',heroTrack).forEach(function(im){if(!im.complete)im.addEventListener('load',setLoop,{once:true});});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){heroRow.classList.toggle('is-offscreen',!es[0].isIntersecting);}).observe(heroRow);
+  }
+  /* when the hero opens, the wall fades up already moving, then the name rises */
   function heroIn(base){base=base||0;
     if(reduce||!Element.prototype.animate)return;
-    var ease='cubic-bezier(.22,1,.36,1)',fr=$$('.poster-row a').filter(function(a){return a.offsetParent;});
-    fr.forEach(function(a,i){var f=a.firstElementChild;if(!f)return;
-      f.animate([{transform:'translateX(min(46vw,560px))',opacity:0},{opacity:1,offset:.35},{transform:'none',opacity:1}],{duration:1700,delay:base+i*120,easing:ease,fill:'backwards'});});
-    $$('.poster-foot > *').forEach(function(el,i){el.animate([{transform:'translateY(18px)',opacity:0},{transform:'none',opacity:1}],{duration:1000,delay:base+600+i*120,easing:ease,fill:'backwards'});});
+    var ease='cubic-bezier(.22,1,.36,1)';
+    if(heroRow)heroRow.animate([{opacity:0},{opacity:1}],{duration:1200,delay:base,easing:ease,fill:'backwards'});
+    $$('.poster-foot > *').forEach(function(el,i){el.animate([{transform:'translateY(18px)',opacity:0},{transform:'none',opacity:1}],{duration:1000,delay:base+400+i*120,easing:ease,fill:'backwards'});});
   }
   if(!root.classList.contains('ticketing')&&!startHash&&scrollY<40)heroIn();
   var torn=false;
@@ -38,7 +60,7 @@
     if(instant||reduce){entrance.style.transition=reduce?'opacity .2s':'none';entrance.style.opacity='0';heroIn();setTimeout(done,reduce?200:0);return;}
     ticket.classList.remove('sway');ticket.classList.add('tearing');
     stub.classList.add('gone');
-    setTimeout(function(){ticket.classList.add('leave');entrance.classList.add('leaving');heroIn(420);},120);
+    setTimeout(function(){ticket.classList.add('leave');entrance.classList.add('leaving');heroIn(300);},120);
     setTimeout(done,700);
   }
   if(entrance){
