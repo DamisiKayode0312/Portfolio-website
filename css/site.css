@@ -9,7 +9,7 @@ body{margin:0;background:var(--paper);color:var(--charcoal);font:400 16px/1.65 v
 @media (min-width:1024px){body{font-size:17px}}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--font-display);font-weight:500;margin:0;text-wrap:balance;line-height:1.08;letter-spacing:-.005em;color:var(--charcoal)}
+h1,h2,h3{font-family:var(--font-display);font-optical-sizing:auto;font-weight:400;margin:0;text-wrap:balance;line-height:1.05;letter-spacing:-.025em;color:var(--charcoal)}
 em{font-family:var(--font-display);font-style:normal;font-weight:400}
 .hero-line em{font-style:italic}
 p{margin:0}
@@ -117,25 +117,6 @@ p{margin:0}
 section{position:relative}
 
 /* ===== hero ===== */
-.hero{position:relative;overflow:hidden;background:var(--paper);color:var(--charcoal);padding:clamp(28px,6svh,56px) var(--gutter) 0;
-  display:grid;gap:28px;align-content:start}
-.hero-in{position:relative;z-index:1;max-width:var(--max);width:100%;margin:0 auto}
-.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;font:500 13px/1.4 var(--font-body);letter-spacing:.02em;color:var(--muted)}
-.eyebrow svg{width:20px;height:16px;color:var(--gold);flex:none}
-.eyebrow::after{content:"";flex:1;max-width:72px;height:1px;background:var(--gold);opacity:.7}
-.hero h1{font-size:clamp(52px,15vw,112px);line-height:.94;letter-spacing:-.015em;font-weight:500;outline:none;max-width:9ch}
-.hero-line{font:400 clamp(22px,6.2vw,34px)/1.2 var(--font-display);margin:18px 0 10px;max-width:22ch}
-.hero-line em{color:var(--burgundy)}
-.hero-sub{color:var(--muted);font-size:16px;max-width:36ch;margin-bottom:24px}
-.hero-glimpse{position:relative;display:block;width:min(88vw,560px);justify-self:end;margin:0 calc(var(--gutter) * -1) -26% auto;text-decoration:none;transform:rotate(-2deg);transition:transform .4s var(--ease-out)}
-.hero-glimpse:hover{transform:rotate(-1deg) translateY(-6px)}
-.hero-glimpse::before{content:"";position:absolute;inset:-10% 2% 10% -6%;border:1px solid var(--gold);border-radius:999px 999px 0 0;opacity:.55;z-index:-1}
-.glimpse-label{position:absolute;left:8%;top:-6px;transform:translateY(-100%);background:var(--ivory);color:var(--charcoal);font:500 13px/1 var(--font-body);letter-spacing:.02em;padding:8px 10px;border-radius:2px;box-shadow:0 4px 10px rgba(40,37,34,.12)}
-@media (min-width:900px){
-  .hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:end;min-height:min(78svh,760px);padding-bottom:0}
-  .hero-in{align-self:center;padding-bottom:12svh}
-  .hero-glimpse{width:100%;max-width:640px;margin:0 0 -18% 0;justify-self:center}
-}
 
 /* ===== exhibition: one wall, moved sideways by vertical scroll (js/exhibition.js) ===== */
 .exhibition{--gap:7vw;--h:calc(100svh - var(--nav-h) - 250px);position:relative;background:var(--burgundy);color:var(--ivory)}
@@ -396,3 +377,31 @@ section{position:relative}
 .museum-collage .mc-front{right:12%;bottom:0;width:34%;aspect-ratio:3/4;z-index:3;border:4px solid var(--paper)}
 /* headings that receive focus from navigation (tabindex -1) need no ring; real controls keep theirs */
 [tabindex="-1"]:focus{outline:none}
+
+/* ---------- Hero: an exhibition poster. A row of gilt frames with Victoria's work, her name in one light serif with a script swash ---------- */
+.poster{position:relative;overflow:hidden;background:#EFE8DC;color:#2A1418;padding:clamp(32px,7svh,72px) var(--gutter) clamp(40px,7svh,64px);
+  display:grid;grid-template-columns:minmax(0,1fr);align-content:center;gap:clamp(24px,4svh,40px);min-height:calc(100svh - var(--nav-h))}
+.poster::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.6),transparent 60%),radial-gradient(90% 70% at 50% 120%,rgba(120,80,40,.12),transparent 60%)}
+.poster-row{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(12px,2vw,28px)}
+.poster-row a{flex:none;display:block;border-radius:6px;transition:transform .3s var(--ease-out)}
+.poster-row a:hover{transform:translateY(-4px)}
+.poster-row a:focus-visible{outline:2px solid var(--burgundy);outline-offset:6px}
+.poster-row .pframe{width:100%}
+.poster-row .f1,.poster-row .f5{width:clamp(110px,min(15vw,25svh),220px)}
+.poster-row .f2,.poster-row .f4{width:clamp(180px,min(26vw,42svh),380px)}
+.poster-row .f3{width:clamp(110px,min(14vw,23svh),200px)}
+.poster-foot{position:relative;display:grid;gap:14px;justify-items:center;text-align:center}
+.poster-name{margin:0;padding-top:.12em;font:300 clamp(48px,min(9.2vw,15svh),136px)/1 var(--font-display);letter-spacing:-.045em;color:#2A1418;outline:none}
+.poster-name .sw{font:400 1.55em/0 var(--font-script);letter-spacing:0;margin-right:.2em;position:relative;top:.06em}
+.poster-line{margin:0;font:300 clamp(19px,2vw,24px)/1.3 var(--font-display);letter-spacing:-.02em;max-width:46ch}
+.poster .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.poster .btn{font-family:var(--font-display);font-size:17px;font-weight:500;letter-spacing:-.01em}
+.poster .btn-primary{background:#4A1820;border-color:#4A1820;color:#F7F2EA}
+.poster .btn-secondary{background:transparent;color:#4A1820;border-color:#4A1820}
+@media (max-width:700px){
+  .poster{min-height:auto;align-content:start}
+  .poster-row{gap:8px}.poster-row .f1,.poster-row .f5{display:none}
+  .poster-row .f2,.poster-row .f4{width:38vw}.poster-row .f3{width:22vw}
+  .poster-name{font-size:clamp(46px,14vw,64px);line-height:1.05}
+}
+@media (prefers-reduced-motion:reduce){.poster-row a{transition:none}.poster-row a:hover{transform:none}}

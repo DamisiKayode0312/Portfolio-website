@@ -76,7 +76,7 @@
     if(heading){heading.setAttribute('tabindex','-1');setTimeout(function(){heading.focus({preventScroll:true});},behavior==='auto'?0:600);}
     return true;
   }
-  links.concat($$('.brand'),$$('#enter'),$$('.hero-glimpse')).forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1);if(goTo(id))e.preventDefault();});});
+  links.concat($$('.brand'),$$('#enter'),$$('.poster-row a[href^="#"]')).forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1);if(goTo(id))e.preventDefault();});});
 
   /* ---------- the exhibition ---------- */
   var projectsEl=$('#ex-projects'),artEl=$('#salon'),expEl=$('#exp-list'),art=[],lb=$('#lightbox'),lbIndex=0,lbReturn=null;

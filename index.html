@@ -12,7 +12,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Pinyon+Script&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/site.css">
 <script>
@@ -66,18 +66,19 @@
 <main id="main">
 
   <!-- Hero -->
-  <section id="home" class="hero" data-tone="light" data-group="home" aria-labelledby="hero-h">
-    <div class="hero-in">
-      <p class="eyebrow"><svg viewBox="0 0 48 40" aria-hidden="true"><use href="#museum"/></svg> An exhibition by Dami</p>
-      <h1 id="hero-h" tabindex="-1">Victoria Kayode</h1>
-      <p class="hero-line">A curious mind. An <em>evolving</em> collection.</p>
-      <p class="hero-sub">Engineering, product thinking, and a little imagination.</p>
-      <a class="btn btn-primary" id="enter" href="#work">Enter the collection <span aria-hidden="true">↓</span></a>
+  <section id="home" class="poster" data-tone="light" data-group="home" aria-labelledby="hero-h">
+    <div class="poster-row">
+      <a class="f1" href="#playground" aria-label="Firelight, a digital painting. Go to the Playground"><span class="pframe pframe--portrait"><span class="pf-art"><img src="assets/art/neon.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-portrait.webp" alt="" draggable="false"></span></a>
+      <a class="f2" href="case-study.html?p=locit" aria-label="LOCIT case study"><span class="pframe pframe--landscape"><span class="pf-art"><img src="assets/projects/locit/app-screens-hd.webp" alt="" fetchpriority="high"></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" draggable="false"></span></a>
+      <a class="f3" href="#playground" aria-label="Study of an Eye, a digital painting. Go to the Playground"><span class="pframe pframe--oval"><span class="pf-art"><img src="assets/art/glitter-eye.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-oval.webp" alt="" draggable="false"></span></a>
+      <a class="f4" href="case-study.html?p=fairy-job-mother" aria-label="Fairy Job Mother case study"><span class="pframe pframe--landscape"><span class="pf-art"><img src="assets/projects/fairy-job-mother/storybook-hero.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" draggable="false"></span></a>
+      <a class="f5" href="#playground" aria-label="Of the Sky, a digital painting. Go to the Playground"><span class="pframe pframe--portrait"><span class="pf-art"><img src="assets/art/candlelight.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-portrait.webp" alt="" draggable="false"></span></a>
     </div>
-    <a class="hero-glimpse" href="#work" tabindex="-1" aria-hidden="true">
-      <span class="pframe pframe--landscape"><span class="pf-art"><img src="assets/projects/locit/app-screens-hd.webp" alt="" fetchpriority="high"></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" draggable="false"></span>
-      <span class="glimpse-label">Now showing · LOCIT</span>
-    </a>
+    <div class="poster-foot">
+      <h1 class="poster-name" id="hero-h" tabindex="-1"><span class="sw" aria-hidden="true">V</span><span class="sr-only">V</span>ictoria Kayode</h1>
+      <p class="poster-line">Computer engineer working across product, AI and art</p>
+      <div class="actions"><a class="btn btn-primary" id="enter" href="#work">See the work</a><a class="btn btn-secondary" href="assets/Victoria_Kayode_Resume.pdf" download>Résumé</a></div>
+    </div>
   </section>
 
   <!-- The exhibition: vertical scroll walks one continuous wall sideways -->
