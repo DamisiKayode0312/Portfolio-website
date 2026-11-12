@@ -177,11 +177,10 @@
   /* ---------- 08 closing ---------- */
   function renderContact(site){
     var r=site.resume&&site.resume.href,gh=site.github&&site.github.href,em=site.email&&site.email.value,li=site.linkedin&&site.linkedin.href;
-    var resumeBtn=r?'<a class="btn btn-secondary" href="'+esc(r)+'" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Download résumé</a>':'<span class="btn btn-secondary" aria-disabled="true">Résumé coming soon</span>';
-    var html=(em?'<a class="btn btn-primary" href="mailto:'+esc(em)+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>Contact</a><p class="row"><span id="em">'+esc(em)+'</span> <button class="tool" type="button" id="copy-em">Copy</button></p>'
+    var links=[li?'<a href="'+esc(li)+'" target="_blank" rel="noopener">LinkedIn</a>':'',gh?'<a href="'+esc(gh)+'" target="_blank" rel="noopener">GitHub</a>':'',r?'<a href="'+esc(r)+'" download>Résumé</a>':''].filter(Boolean);
+    var html=(em?'<a class="btn btn-primary" href="mailto:'+esc(em)+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>Email me</a><p class="email-line"><span id="em">'+esc(em)+'</span><button class="copy" type="button" id="copy-em">Copy</button></p>'
       :'<span class="btn btn-primary" aria-disabled="true">Contact: email coming soon</span><p class="note">Placeholder · Contact email not supplied yet.</p>')+
-      '<div class="row">'+(li?'<a class="btn btn-secondary" href="'+esc(li)+'">LinkedIn</a>':'<span class="btn btn-secondary" aria-disabled="true">LinkedIn coming soon</span>')+resumeBtn+'</div>'+
-      (gh?'<a class="btn btn-secondary" href="'+esc(gh)+'">GitHub</a>':'');
+      (links.length?'<p class="contact-links">'+links.join('<span aria-hidden="true">·</span>')+'</p>':'');
     $('#contact-actions').innerHTML=html;
     var a=$('#resume-about');if(r){a.href=r;a.setAttribute('download','');}else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.textContent='Résumé coming soon';}
     var cp=$('#copy-em');if(cp)cp.addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(em).then(function(){cp.textContent='Copied';});});

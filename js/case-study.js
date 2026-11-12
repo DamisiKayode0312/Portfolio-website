@@ -18,6 +18,7 @@
   var EVDESC={verified:'supported by one of her documents',reported:'her own statement, supporting file not yet added',planned:'a plan or capability, not a result',awaiting:'not supplied yet'};
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var main=document.getElementById('story');
+  function cap(s){s=String(s||'');return s.charAt(0).toUpperCase()+s.slice(1);}
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function chip(ev,src){return '<span class="chip chip-'+esc(ev)+'" title="'+esc(EVDESC[ev]||'')+'">'+esc(EV[ev]||ev)+'</span>'+(src?'<span class="src">'+esc(src)+'</span>':'');}
   function ph(text){return '<p class="placeholder">Placeholder · '+esc(text)+'</p>';}
@@ -49,10 +50,10 @@
     if(x.image)H.push('<figure class="hero"><img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" style="view-transition-name:hero-'+esc(x.slug)+'"></figure>');
     H.push('</div>');
     H.push('<div class="journal">');
-    H.push('<aside class="index" aria-label="Sections"><p class="lbl">The story</p><ol>'+st.sections.map(function(s){return '<li><a href="#'+esc(s.id)+'">'+esc(s.label)+'</a></li>';}).join('')+'</ol></aside>');
+    H.push('<aside class="index" aria-label="Sections"><p class="lbl">The story</p><ol>'+st.sections.map(function(s){return '<li><a href="#'+esc(s.id)+'">'+esc(cap(s.label))+'</a></li>';}).join('')+'</ol></aside>');
     H.push('<div class="body">');
     st.sections.forEach(function(s,n){
-      H.push('<section class="entry story" id="'+esc(s.id)+'" data-pop><p class="no">'+('0'+(n+1)).slice(-2)+' — '+esc(s.label)+'</p><h2>'+esc(s.headline)+'</h2>');
+      H.push('<section class="entry story" id="'+esc(s.id)+'" data-pop><p class="no">'+('0'+(n+1)).slice(-2)+' · '+esc(cap(s.label))+'</p><h2>'+esc(s.headline)+'</h2>');
       (s.paras||[]).forEach(function(t){H.push('<p class="para">'+esc(t)+'</p>');});
       if(s.stats)H.push('<ul class="stats">'+s.stats.map(function(t){return '<li><b>'+esc(t.n)+'</b><span>'+esc(t.l)+'</span></li>';}).join('')+'</ul>');
       if(s.steps)H.push('<ol class="steps">'+s.steps.map(function(t,k){return '<li><p class="step-t"><span>'+('0'+(k+1)).slice(-2)+' ·</span> '+esc(t.title)+'</p><p>'+esc(t.text)+'</p></li>';}).join('')+'</ol>');
