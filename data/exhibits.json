@@ -231,7 +231,168 @@
         }
       },
       "frame": "landscape",
-      "small": false
+      "small": false,
+      "story": {
+        "intro": "LOCIT was our senior capstone at Kennesaw State: a GPS necklace and companion app that lets a family see where a loved one is, and get an alert if they leave a safe zone. I led our four-person team, AZAD, from design through testing, and wrote the product requirements.",
+        "meta": [
+          [
+            "Role",
+            "Team lead · Product requirements"
+          ],
+          [
+            "Timeline",
+            "Spring – Fall 2024"
+          ],
+          [
+            "Tools",
+            "Python, C, Raspberry Pi, AWS IoT, FlutterFlow, Figma, Fusion 360"
+          ],
+          [
+            "Team",
+            "AZAD · 4 engineers"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "problem",
+            "label": "problem",
+            "headline": "Tracking that still needs a phone",
+            "paras": [
+              "Families with young kids or elderly relatives want to know where their people are. The trackers everyone knows, Apple AirTag and Tile, depend on a phone, and the people we were designing for often don’t carry one.",
+              "So the question became: what would a tracker look like if the wearer didn’t need a phone at all?"
+            ],
+            "sources": "product requirements document"
+          },
+          {
+            "id": "goal",
+            "label": "goal",
+            "headline": "Light enough to forget you’re wearing it",
+            "paras": [
+              "I wrote the requirements with measurable targets, so we could test the prototype against them instead of guessing:"
+            ],
+            "stats": [
+              {
+                "n": "3 ft",
+                "l": "location accuracy target"
+              },
+              {
+                "n": "30 s",
+                "l": "between location updates"
+              },
+              {
+                "n": "<15 g",
+                "l": "target weight"
+              },
+              {
+                "n": "20%",
+                "l": "low-battery alert"
+              }
+            ],
+            "after": [
+              "We also set a 24-hour battery life target, and room for up to three trackers on one phone."
+            ],
+            "sources": "product requirements document; her résumé"
+          },
+          {
+            "id": "challenge",
+            "label": "challenge",
+            "headline": "Everything had to fit in a pendant",
+            "paras": [
+              "Our first 3D-printed enclosure was too bulky to wear as a necklace. We kept shrinking and reprinting it until the GPS module, microcontroller and battery fit.",
+              "We also had to cut scope. UV sensors came out because the parts took too long to arrive, Bluetooth came in, and we revised the requirements to match what we could actually build."
+            ],
+            "figures": [
+              {
+                "src": "assets/projects/locit/concept-sketch.webp",
+                "alt": "Hand sketch of the LOCIT necklace pendant: a round case on a cord, with the circuit board, wiring and modules drawn inside it in red.",
+                "caption": "Early concept sketch: what had to fit inside the pendant.",
+                "small": true
+              }
+            ],
+            "sources": "Milestone 3 reports; product requirements document"
+          },
+          {
+            "id": "process",
+            "label": "process",
+            "headline": "Three decisions that shaped it",
+            "steps": [
+              {
+                "title": "A pendant, not a band",
+                "text": "We compared an armband, a brooch and a sling bag. The pendant won: discreet, comfortable, and close to where a forward-facing camera would need to sit."
+              },
+              {
+                "title": "Take the data off the app",
+                "text": "FlutterFlow couldn’t keep up with real-time data coming straight from AWS. We moved it onto a web server: the necklace uploads, the server stores, the app fetches. Sensor data transfer got about 20% faster."
+              },
+              {
+                "title": "Tune the geofence to the GPS",
+                "text": "GPS accuracy decided how precisely we could catch a boundary crossing, so we refined the geofencing thresholds around it."
+              }
+            ],
+            "after": [
+              "The companion app, built in FlutterFlow, shows live location, sets safe zones, and sends boundary, temperature and low-battery alerts. I modeled the enclosure in Fusion 360 and we printed it in PLA."
+            ],
+            "figures": [
+              {
+                "src": "assets/projects/locit/enclosure-render.webp",
+                "alt": "3D render of the LOCIT pendant enclosure: a smooth, dark, rounded case with a loop for the necklace cord.",
+                "caption": "Enclosure modeled in Fusion 360.",
+                "small": true
+              },
+              {
+                "src": "assets/projects/locit/app-design-screens.webp",
+                "alt": "Three companion app design screens: sign in, geofencing with a Set New Geofence button and previous geofences, and settings for location tracking, geofencing and notifications.",
+                "caption": "App design screens: sign in, geofencing, settings."
+              },
+              {
+                "src": "assets/projects/locit/hardware-diagram.webp",
+                "alt": "Hardware block diagram: temperature, UV and vibration sensors, gyroscope and GPS tracker feed a PCB board, along with LEDs and buttons, a camera, a solar panel and battery, microSD storage and a Bluetooth transceiver; the board drives a display.",
+                "caption": "Planned hardware architecture from the PRD. UV sensors were later dropped.",
+                "small": true
+              }
+            ],
+            "note": "Facial recognition was in the spec and the app designs, but it isn’t counted here as a finished feature.",
+            "sources": "Milestone 1 and 3 reports; product requirements document; her résumé"
+          },
+          {
+            "id": "impact",
+            "label": "impact",
+            "headline": "What we measured",
+            "stats": [
+              {
+                "n": "98%",
+                "l": "location accuracy"
+              },
+              {
+                "n": "100%",
+                "l": "geofence alert accuracy"
+              },
+              {
+                "n": "20+",
+                "l": "test scenarios"
+              },
+              {
+                "n": "~20%",
+                "l": "faster data transfer"
+              }
+            ],
+            "paras": [
+              "We tested GPS tracking and geofencing alerts across more than 20 scenarios, then demoed the system to non-technical audiences."
+            ],
+            "note": "These figures come from our own capstone testing, not from use in the field.",
+            "sources": "her résumé"
+          },
+          {
+            "id": "next",
+            "label": "what’s next",
+            "headline": "Where it would go from here",
+            "paras": [
+              "The list we left ourselves: 24-hour battery life on a single charge, more thorough testing, a more polished app, and testing with real families."
+            ],
+            "sources": "Milestone 3 report"
+          }
+        ]
+      }
     },
     {
       "slug": "fairy-job-mother",

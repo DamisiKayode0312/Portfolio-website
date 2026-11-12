@@ -15,7 +15,7 @@ body{background:var(--parchment)}
 .cs-head{max-width:880px;margin:0 auto}
 .cs .cat{font:600 12px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
 .cs h1{font-size:clamp(36px,10vw,64px);color:var(--burgundy-ink);text-transform:uppercase;letter-spacing:.02em;margin:6px 0 18px;outline:none}
-.hero{margin:0 0 24px}
+.cs .hero{display:block;position:static;overflow:visible;min-height:0;padding:0;background:none;margin:0 0 24px}
 .hero img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:var(--r-img);background:#fff;box-shadow:var(--shadow)}
 .hero-ph{aspect-ratio:16/10;display:grid;place-items:center;text-align:center;border-radius:var(--r-img)}
 .summary{display:grid;gap:18px}
@@ -31,7 +31,7 @@ body{background:var(--parchment)}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 @media (min-width:720px){.summary{grid-template-columns:repeat(3,1fr);gap:28px}}
 
-.journal{margin-top:40px;display:grid;gap:24px}
+.journal{margin-top:40px;display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
 .index{border-top:1px solid var(--taupe);padding-top:16px}
 .index .lbl,.next .lbl{font:600 11px var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:6px;display:block}
 .index ol{margin:0;padding-left:22px;display:grid;gap:0}
@@ -40,7 +40,7 @@ body{background:var(--parchment)}
 .key{margin-top:16px}
 .key ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13px}
 .key li{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.body{display:grid;gap:8px}
+.body{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
 .entry{padding:24px 0;border-top:1px solid var(--taupe)}
 .entry .no{font:italic 400 18px var(--font-display);color:var(--gold-bright);color:var(--brass)}
 .entry h2{font-size:clamp(24px,6.4vw,34px);color:var(--burgundy-ink);margin:2px 0 14px}
@@ -51,7 +51,7 @@ body{background:var(--parchment)}
 .fig figcaption{font-size:14px;color:var(--brass);margin-top:8px}
 .entry .placeholder{max-width:65ch}
 @media (min-width:1024px){
-  .journal{grid-template-columns:260px 1fr;gap:56px;align-items:start}
+  .journal{grid-template-columns:260px minmax(0,1fr);gap:56px;align-items:start}
   .index{position:sticky;top:76px}
 }
 
@@ -67,3 +67,24 @@ body{background:var(--parchment)}
 .chev{font-size:30px;color:var(--burgundy-ink)}
 @media (min-width:1024px){.next{max-width:none}.next a{padding:20px 28px}}
 @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+
+/* Story format (Elaine Yu-style write-up) */
+.story-head .intro{font-size:clamp(17px,4.4vw,20px);line-height:1.6;max-width:62ch;margin:0 0 20px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin:0 0 8px;padding:16px 0;border-top:1px solid var(--taupe);border-bottom:1px solid var(--taupe)}
+.facts dt{font:600 11px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.facts dd{margin:2px 0 0;font-size:15px;line-height:1.45}
+@media (min-width:720px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.story-head .hero{margin-top:24px}
+.entry.story .no{font:500 13px/1.4 var(--font-body);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.entry.story h2{margin-top:6px}
+.para{max-width:65ch;margin:0 0 14px}
+.steps{list-style:none;margin:6px 0 18px;padding:0;display:grid;gap:18px;max-width:65ch}
+.step-t{font:500 20px/1.3 var(--font-display);color:var(--burgundy-ink);margin:0 0 4px}
+.step-t span{font:500 13px var(--font-body);letter-spacing:.1em;color:var(--brass)}
+.stats{list-style:none;margin:8px 0 18px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:760px}
+@media (min-width:720px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stats li{padding:14px 16px;border-radius:var(--r-img);background:var(--cream);box-shadow:0 0 0 1px var(--taupe);display:grid;gap:4px}
+.stats b{font:500 clamp(30px,8vw,40px)/1 var(--font-display);color:var(--burgundy-ink)}
+.stats span{font-size:14px;line-height:1.4;color:var(--muted)}
+.note{max-width:65ch;font-style:italic;color:var(--muted);margin:0 0 12px}
+.sources{font-size:12.5px;line-height:1.5;color:var(--muted);margin:10px 0 0;max-width:65ch}
