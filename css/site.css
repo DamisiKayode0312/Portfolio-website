@@ -63,7 +63,6 @@ p{margin:0}
 .entrance.leaving{opacity:0;transition-delay:.2s}
 .entrance-mark{width:40px;height:34px;color:var(--gold-bright)}
 .entrance-rule{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);margin-bottom:8px}
-.tear-hint{font:400 15px var(--font-body);color:var(--champagne);margin-top:10px}
 .entrance .btn-primary{background:var(--parchment);color:var(--burgundy-ink);border-color:var(--parchment)}
 .skip-ticket{display:inline-flex;align-items:center;min-height:44px;color:var(--champagne);font-size:15px;text-underline-offset:3px}
 
@@ -536,8 +535,6 @@ section{position:relative}
 .tearing .stub{clip-path:polygon(6px 0,100% 0,100% 100%,6px 100%,0 96%,6px 92%,0 88%,6px 84%,0 80%,6px 76%,0 72%,6px 68%,0 64%,6px 60%,0 56%,6px 52%,0 48%,6px 44%,0 40%,6px 36%,0 32%,6px 28%,0 24%,6px 20%,0 16%,6px 12%,0 8%,6px 4%)}
 .stub.gone{transform:translate(260px,30px) rotate(12deg)!important;opacity:0}
 .ticket.leave{transform:rotate(-1deg) rotateX(12deg) scale(.96) translateY(-24px)!important;opacity:0;animation:none}
-.nudge{display:inline-block;width:8px;height:8px;margin-left:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);animation:nudge-x 1.6s ease-in-out 3}
-@keyframes nudge-x{50%{translate:4px 0}}
 /* phones: the same horizontal ticket, scaled down; the QR code stays on wide screens only */
 @media (max-width:719px){
   .ticket-scene{width:min(94vw,520px)}
@@ -558,7 +555,6 @@ section{position:relative}
   .t-row dt{font-size:8.5px;letter-spacing:.08em}
   .t-row--big dd{font-size:clamp(15px,4.6vw,21px)}
   .perf{margin:14px 0;border-left-width:1.5px}
-  .s-qr,.s-fine{display:none}
   .s-times div{flex-direction:column;align-items:flex-start;gap:1px;padding:4px 0}
   .s-times div:first-child{border-bottom-width:1px}
   .s-times dt{font-size:8px;letter-spacing:.08em}
@@ -570,7 +566,6 @@ section{position:relative}
 .entrance{justify-content:safe center;overflow-y:auto}
 @media (max-width:719px){
   .entrance{gap:10px;padding-top:calc(16px + env(safe-area-inset-top,0px))}
-  .tear-hint{margin-top:4px}
 }
 /* fewer words: the title and curator line carry the ticket */
 .t-side{justify-content:center}
@@ -578,3 +573,15 @@ section{position:relative}
 .t-rule{margin:4px 0 clamp(14px,2vw,22px)}
 .t-rows{max-width:460px}
 .t-row--big{border-bottom:0;padding-bottom:0}
+
+/* the stub is now the LinkedIn card: QR code, caption, sign-off */
+.t-rule{margin-bottom:0}
+.s-qr{width:clamp(110px,15vw,150px)}
+@media (max-width:719px){.s-qr{width:clamp(70px,20vw,96px);padding:7px;background-size:12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px}
+  .s-fine{font-size:8.5px;line-height:1.3}}
+/* the pull cue: the stub peels open a little along the perforation, then settles back, to show how to tear it */
+.ticket.peek .stub{animation:peek 1.5s cubic-bezier(.45,0,.25,1) 2;clip-path:polygon(6px 0,100% 0,100% 100%,6px 100%,0 96%,6px 92%,0 88%,6px 84%,0 80%,6px 76%,0 72%,6px 68%,0 64%,6px 60%,0 56%,6px 52%,0 48%,6px 44%,0 40%,6px 36%,0 32%,6px 28%,0 24%,6px 20%,0 16%,6px 12%,0 8%,6px 4%)}
+.ticket.peek .perf{animation:peek-perf 1.5s ease-in-out 2}
+@keyframes peek{0%,18%,100%{transform:none}45%,62%{transform:translate(18px,3px) rotate(4deg)}}
+@keyframes peek-perf{0%,18%,100%{opacity:1}45%,62%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.ticket.peek .stub,.ticket.peek .perf{animation:none;clip-path:none}}

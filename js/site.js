@@ -20,6 +20,8 @@
   if(root.classList.contains('ticketing')){
     setInert(true);
     if(!reduce)ticket.classList.add('sway');
+    /* show how to tear: the stub peels open along the perforation twice, then settles */
+    if(!reduce)setTimeout(function(){if(torn)return;ticket.classList.add('peek');setTimeout(function(){ticket.classList.remove('peek');},3100);},1100);
     setTimeout(function(){$('#tear').focus({preventScroll:true});},reduce?0:700);
   }
   /* the hero wall scrolls continuously: the five frames are hung twice in one track that slides left forever.
@@ -52,7 +54,7 @@
     if(torn)return;torn=true;store('vg-torn','1');
     var done=function(){root.classList.remove('ticketing');setInert(false);entrance.classList.remove('leaving');scrollTo(0,0);var h=$('#hero-h');h&&h.focus({preventScroll:true});update();};
     if(instant||reduce){entrance.style.transition=reduce?'opacity .2s':'none';entrance.style.opacity='0';heroIn();setTimeout(done,reduce?200:0);return;}
-    ticket.classList.remove('sway');ticket.classList.add('tearing');
+    ticket.classList.remove('sway','peek');ticket.classList.add('tearing');
     stub.classList.add('gone');
     setTimeout(function(){ticket.classList.add('leave');entrance.classList.add('leaving');heroIn(300);},120);
     setTimeout(done,700);
@@ -63,7 +65,7 @@
     stub.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();enter(false);}});
     /* drag the stub away to the right; tears past 70px or on a quick flick */
     var drag=null,wide={matches:true}; /* the ticket is horizontal everywhere, so the stub always pulls to the right */
-    stub.addEventListener('pointerdown',function(e){if(torn||reduce)return;drag={x:e.clientX,y:e.clientY,last:wide.matches?e.clientX:e.clientY,lastT:performance.now(),v:0};stub.setPointerCapture(e.pointerId);stub.classList.add('drag');ticket.classList.remove('sway');});
+    stub.addEventListener('pointerdown',function(e){ticket.classList.remove('peek');if(torn||reduce)return;drag={x:e.clientX,y:e.clientY,last:wide.matches?e.clientX:e.clientY,lastT:performance.now(),v:0};stub.setPointerCapture(e.pointerId);stub.classList.add('drag');ticket.classList.remove('sway');});
     stub.addEventListener('pointermove',function(e){if(!drag)return;var w=wide.matches,main=w?e.clientX-drag.x:e.clientY-drag.y,cross=(w?e.clientY-drag.y:e.clientX-drag.x)*.4,d=Math.max(0,main),now=performance.now(),pos=w?e.clientX:e.clientY;
       drag.v=(pos-drag.last)/Math.max(1,now-drag.lastT);drag.last=pos;drag.lastT=now;
       ticket.classList.toggle('tearing',d>8);
