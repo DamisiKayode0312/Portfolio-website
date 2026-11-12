@@ -46,7 +46,7 @@ body{background:var(--parchment)}
 .entry h2{font-size:clamp(24px,6.4vw,34px);color:var(--burgundy-ink);margin:2px 0 14px}
 .item{margin-bottom:16px;max-width:65ch}
 .fig{margin:8px 0 20px;max-width:780px}
-.fig-sm{max-width:240px}
+.fig-sm{max-width:300px}
 .fig img{width:100%;border-radius:var(--r-img);background:#fff;box-shadow:0 0 0 1px rgba(112,88,50,.2)}
 .fig figcaption{font-size:14px;color:var(--brass);margin-top:8px}
 .entry .placeholder{max-width:65ch}

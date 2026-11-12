@@ -99,7 +99,15 @@
               "src": "Milestone 3 report"
             }
           ],
-          "needs": "Budget, timeline and course requirements."
+          "needs": "Budget, timeline and course requirements.",
+          "figures": [
+            {
+              "src": "assets/projects/locit/concept-sketch.webp",
+              "alt": "Hand sketch of the LOCIT necklace pendant: a round case on a cord, with the circuit board, wiring and modules drawn inside it in red.",
+              "caption": "Early concept sketch: what had to fit inside the pendant.",
+              "small": true
+            }
+          ]
         },
         "research": {
           "items": [],
@@ -145,9 +153,15 @@
           ],
           "figures": [
             {
-              "src": "assets/projects/locit/companion-app-screens.jpg",
-              "alt": "LOCIT companion app: sign-in, location tracking and geofence warning screens.",
-              "caption": "Companion app: sign-in, location tracking, geofence warning."
+              "src": "assets/projects/locit/enclosure-render.webp",
+              "alt": "3D render of the LOCIT pendant enclosure: a smooth, dark, rounded case with a loop for the necklace cord.",
+              "caption": "Enclosure modeled in Fusion 360.",
+              "small": true
+            },
+            {
+              "src": "assets/projects/locit/app-design-screens.webp",
+              "alt": "Three companion app design screens: sign in, geofencing with a Set New Geofence button and previous geofences, and settings for location tracking, geofencing and notifications.",
+              "caption": "App design screens: sign in, geofencing, settings."
             }
           ],
           "needs": "Photos of the printed prototypes (they are in the milestone reports) and confirmation of whether the camera shipped."
