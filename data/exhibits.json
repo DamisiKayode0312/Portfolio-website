@@ -52,9 +52,14 @@
         "role": {
           "items": [
             {
-              "text": "I coordinated product requirements, planned functionality, and developed and tested components as part of a four-person team.",
+              "text": "I led a four-person engineering team from design through testing.",
               "ev": "reported",
-              "src": "Creative brief"
+              "src": "Her résumé (Nov 2026)"
+            },
+            {
+              "text": "I wrote the product requirements document, with measurable targets such as 24-hour battery life and geofencing alert accuracy, and tested the prototype against them.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
             },
             {
               "text": "Scope: GPS tracking, geofencing, sensors and actuators, safety alerts, application development, requirements gathering, team coordination and system testing.",
@@ -65,6 +70,11 @@
               "text": "I designed the team’s AZAD logo.",
               "ev": "reported",
               "src": "Her statement"
+            },
+            {
+              "text": "I demoed the system to non-technical audiences.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
             }
           ],
           "figures": [
@@ -145,17 +155,17 @@
         "results": {
           "items": [
             {
-              "text": "About 98% GPS accuracy and 100% alert accuracy across more than 20 test scenarios.",
+              "text": "Tested GPS tracking and geofencing alerts across 20+ scenarios: 98% location accuracy and 100% alert accuracy.",
               "ev": "reported",
-              "src": "Creative brief, no test data yet"
+              "src": "Her résumé (Nov 2026)"
             },
             {
-              "text": "About 20% better processing performance after the architecture change.",
+              "text": "About 20% faster sensor data transfer after replacing the direct AWS integration with a web server, giving faster GPS updates and geofencing alerts.",
               "ev": "reported",
-              "src": "Creative brief, no test data yet"
+              "src": "Her résumé (Nov 2026)"
             }
           ],
-          "needs": "How these were measured, and the test data behind them."
+          "needs": "The test data behind these numbers."
         },
         "improve": {
           "items": [
@@ -176,7 +186,7 @@
       "title": "Fairy Job Mother",
       "category": "AI Product · Product Design · Product Management",
       "featured": true,
-      "teaser": "An AI career assistant for job seekers, with a storybook-inspired identity. In progress.",
+      "teaser": "An AI career assistant that helps recent graduates and career changers connect their experience to job requirements.",
       "image": null,
       "summary": {
         "idea": {
@@ -185,14 +195,14 @@
           "src": "Creative brief"
         },
         "who": {
-          "text": "Job seekers navigating applications.",
+          "text": "Recent graduates and career changers.",
           "ev": "reported",
-          "src": "Creative brief"
+          "src": "Her résumé (Nov 2026)"
         },
         "how": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "How it works today, once the repository has been reviewed."
+          "text": "Live AI features analyze a user’s experience against a job description and suggest resume changes, skill-gap guidance and portfolio projects.",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
         }
       },
       "links": [
@@ -211,8 +221,13 @@
           "needs": "Why it matters."
         },
         "role": {
-          "items": [],
-          "needs": "Her role on the project."
+          "items": [
+            {
+              "text": "I defined the product requirements and designed the user flows in Figma.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            }
+          ]
         },
         "constraints": {
           "items": [],
@@ -229,7 +244,12 @@
         "built": {
           "items": [
             {
-              "text": "Planned capabilities: resume tailoring, job matching, skill-gap identification, learning recommendations, outreach suggestions, recruiter-ready materials, saved resume versions, application metrics and supporting document uploads. None of these is confirmed as built yet.",
+              "text": "Built and deployed live AI features: experience-to-job-description analysis, tailored resume suggestions, skill-gap guidance and portfolio project recommendations.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            },
+            {
+              "text": "Further capabilities in the original plan: resume tailoring, job matching, skill-gap identification, learning recommendations, outreach suggestions, recruiter-ready materials, saved resume versions, application metrics and supporting document uploads. None of these is confirmed as built yet.",
               "ev": "planned",
               "src": "Creative brief"
             }
@@ -237,8 +257,14 @@
           "needs": "A review of the repository to mark each feature as implemented, prototype, planned or roadmap."
         },
         "results": {
-          "items": [],
-          "needs": "Testing and iteration results."
+          "items": [
+            {
+              "text": "Tested with 10+ users and refined the recommendations from their feedback; 7 of 10 users surveyed said they felt clearer presenting their transferable skills on targeted resumes.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            }
+          ],
+          "needs": "Survey details."
         },
         "improve": {
           "items": [],
@@ -253,7 +279,7 @@
       "title": "News Corp Product Strategy",
       "category": "Product Management · User Research · AI Strategy",
       "featured": true,
-      "teaser": "How news sites personalize with AI, compared with TikTok and Spotify. Externship research and recommendations.",
+      "teaser": "AI Product Manager Intern, Aug to Oct 2025. How news sites personalize with AI, compared with TikTok and Spotify, and three feature proposals.",
       "image": null,
       "summary": {
         "idea": {
@@ -262,9 +288,9 @@
           "src": "Mini case scan; From User to Product Thinker"
         },
         "who": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "Who the recommendations were for (team, product, audience)."
+          "text": "News Corp, during her AI Product Manager internship (August to October 2025).",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
         },
         "how": {
           "text": "Hands-on case scans of NY Post and BBC, browsing to see how quickly each changed what it showed, then a side-by-side comparison with TikTok and Spotify.",
@@ -290,9 +316,9 @@
         "role": {
           "items": [
             {
-              "text": "Analyzed 500+ survey responses, developed five user personas, benchmarked four digital products, and turned the research into recommendations, requirements and user stories.",
+              "text": "Analyzed 500+ survey responses and developed five audience personas from reader preferences and trust concerns, then compared content discovery and personalization across four platforms and presented the findings.",
               "ev": "reported",
-              "src": "Creative brief, no files yet"
+              "src": "Her résumé (Nov 2026)"
             }
           ],
           "needs": "Role title and dates."
@@ -331,6 +357,11 @@
               "text": "Recommendations for news: make it feel personal, mix in discovery such as weekly roundups or topic playlists, and think mobile-first with quick, swipeable video.",
               "ev": "verified",
               "src": "From User to Product Thinker"
+            },
+            {
+              "text": "Proposed three features: personalized feeds, weekly topic roundups and short-form video.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
             }
           ],
           "needs": "Requirements and user stories."
@@ -362,7 +393,7 @@
       "title": "AI Evaluation and Quality Research",
       "category": "AI Product Quality · Evaluation · Research",
       "featured": false,
-      "teaser": "Evaluating how AI models handle technical engineering questions. Handshake AI Fellowship. Method only, by design.",
+      "teaser": "AI Evaluation and Technical Research Analyst at Handshake AI since November 2025. Method only, by design.",
       "image": null,
       "summary": {
         "idea": {
@@ -371,14 +402,14 @@
           "src": "Creative brief"
         },
         "who": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "Who the findings help, described without client names."
+          "text": "Model evaluation work at Handshake AI (November 2025 to present). No client names.",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
         },
         "how": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "A non-confidential description of the method."
+          "text": "Write test cases with answer keys and scoring criteria, run them against model outputs, and record incorrect answers and recurring issues in structured reports.",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
         }
       },
       "links": [],
@@ -394,12 +425,21 @@
         "role": {
           "items": [
             {
-              "text": "Created 100+ evaluation test cases, evaluated technical AI responses for accuracy, clarity and reasoning, identified recurring model errors and documented findings for improvement.",
+              "text": "Evaluated 100+ AI test cases across four technical domains, identifying accuracy and reasoning errors and documenting verified corrections.",
               "ev": "reported",
-              "src": "Creative brief"
+              "src": "Her résumé (Nov 2026)"
+            },
+            {
+              "text": "Review 50+ model outputs a month against quality criteria, recording incorrect answers and recurring issues in structured reports.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            },
+            {
+              "text": "Created multistep chart and table tests in SuperAnnotate, using answer keys and scoring criteria to find visual reasoning failures.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
             }
-          ],
-          "needs": "Role title and dates."
+          ]
         },
         "constraints": {
           "items": [
@@ -436,16 +476,16 @@
     },
     {
       "slug": "pi-logger",
-      "title": "Raspberry Pi Environmental Logger",
+      "title": "Raspberry Pi Weather Station",
       "category": "Embedded Systems · IoT · Data Engineering",
       "featured": false,
-      "teaser": "A Raspberry Pi that collects sensor readings and sends them to AWS IoT.",
+      "teaser": "A Raspberry Pi that reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
       "image": null,
       "summary": {
         "idea": {
-          "text": "A Raspberry Pi with environmental sensors that collects readings and sends them to AWS IoT for monitoring.",
+          "text": "A Raspberry Pi weather station for continuous environmental monitoring.",
           "ev": "reported",
-          "src": "Creative brief"
+          "src": "Her résumé (Nov 2026)"
         },
         "who": {
           "text": "",
@@ -453,9 +493,9 @@
           "needs": "Who or what it was for (course, personal project)."
         },
         "how": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "Sensor list and an architecture sketch."
+          "text": "Python on a Raspberry Pi reads temperature, humidity and pressure at 10-second intervals and sends them to AWS IoT and a dashboard.",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
         }
       },
       "links": [],
@@ -490,15 +530,21 @@
           "needs": "Decisions."
         },
         "built": {
-          "items": [],
+          "items": [
+            {
+              "text": "Automated readings in Python, connected to AWS IoT and a dashboard so conditions can be monitored remotely.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            }
+          ],
           "needs": "Architecture diagram, photos, code link."
         },
         "results": {
           "items": [
             {
-              "text": "500+ sensor readings a day, over 95% data integrity, and no recorded data loss during a 30-day test.",
+              "text": "500+ sensor readings a day reach AWS IoT and the dashboard.",
               "ev": "reported",
-              "src": "Creative brief, no test data yet"
+              "src": "Her résumé (Nov 2026)"
             }
           ],
           "needs": "Test logs or a chart."

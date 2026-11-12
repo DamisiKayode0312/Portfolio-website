@@ -8,19 +8,16 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 |---|---|---|
 | About | Portrait (oval frame) | "Placeholder · Portrait" |
 | About | Likes, dislikes, what brought you here (your words) | Placeholder block |
-| About timeline | Dates and role titles for News Corp and Handshake AI | Placeholder note under "Product" |
 | Playground | Optional: year and a short note for each piece; confirm the reference photo in "Painting Study" is OK to show publicly | Titles in place; medium shown, no year |
-| Closing | Contact email | "Contact: email coming soon" (disabled) |
-| Closing | LinkedIn URL | "LinkedIn coming soon" (disabled) |
 | Closing | Confirm GitHub profile `github.com/DamisiKayode0312` | Live link |
-| Résumé | Confirm `assets/Victoria_Kayode_Resume.pdf` is the version to publish (it lists phone and email) | Live download |
-| Work · Fairy Job Mother | Frame image; repo review to classify features | Placeholder frame; features marked Planned |
-| Work · News Corp | Frame image; survey data, personas, requirements, user stories | Placeholder frame and blocks |
+| Résumé | Updated 12 Nov 2026 from her new PDF. It lists her phone number publicly: confirm before deploy | Live download |
+| Work · Fairy Job Mother | Frame image; repo review to confirm the shipped AI features her résumé lists | Résumé claims marked Reported |
+| Work · News Corp | Frame image; how the "20% increase in reader engagement" on her résumé was tested (not on the site until confirmed, since outcomes were treated as projections) | Placeholder frame |
 | LOCIT | "Who it helps"; why it mattered; budget/timeline; research and usability testing; reasons behind decisions; prototype photos (in the milestone PDFs); test data behind the four metrics; your reflection | Placeholder blocks; metrics marked Reported |
 | LOCIT | Camera / facial recognition: did it ship? | Not claimed |
 | News Corp | Direct quote from your peer-reflection entry (needs the PDF) | Paraphrase, marked |
 | AI Evaluation | Non-confidential description of method, dates, role title | Placeholder blocks |
-| Raspberry Pi logger | Architecture, sensor list, photos, code link, dates, test data | Placeholder blocks; metrics marked Reported |
+| Raspberry Pi weather station | Architecture, photos, code link, dates (the earlier 95% integrity / 30-day claims were dropped: not on her résumé) | Résumé facts marked Reported |
 | Project PDFs | `references/project-docs/` was not in the handoff zip | Facts taken from the brief's §9 summary of them |
 
 ## Defaults used (brief §12), easy to change
