@@ -23,7 +23,7 @@
 
   --font-display:"Newsreader",Georgia,"Times New Roman",serif;  /* was "Bodoni Moda" until Nov 2026 */
   --font-script:"Pinyon Script","Snell Roundhand",cursive;
-  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;  /* was "Inter" until Nov 2026 */
 
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px; --s9:112px;
   --gutter:max(20px,env(safe-area-inset-left,0px)); --max:1200px;

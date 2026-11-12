@@ -15,3 +15,7 @@ b,strong{font-weight:500}
 .stats li{box-shadow:var(--soft-lift);background:#FFFDFA}
 .fig img{box-shadow:var(--soft-lift)}
 .lb-label{box-shadow:none}
+.next a{background:#FFFDFA;box-shadow:var(--soft-lift)}
+.tool{border-width:1px;border-color:rgba(101,30,40,.28)}
+/* light type reads thinner on the dark walls, so text there stays at regular weight */
+.exhibition,.entrance,.salon,.lightbox{font-weight:400}
