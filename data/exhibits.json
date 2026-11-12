@@ -394,7 +394,10 @@
       "category": "AI Product · Product Design · Product Management",
       "featured": true,
       "teaser": "An AI career assistant that helps recent graduates and career changers connect their experience to job requirements.",
-      "image": null,
+      "image": {
+        "src": "assets/projects/fairy-job-mother/storybook-hero.webp",
+        "alt": "Fairy Job Mother landing page: the headline “You have more to offer than you think.” beside an open storybook with botanical illustrations, its pages reading “It starts with you” and “There’s more to your story.”"
+      },
       "summary": {
         "idea": {
           "text": "An AI-powered career assistant for job seekers navigating applications, with a storybook-inspired identity, interactive animation and a wand motif.",
@@ -478,7 +481,7 @@
           "needs": "Challenges and lessons so far."
         }
       },
-      "frame": "portrait",
+      "frame": "landscape",
       "small": false,
       "story": {
         "intro": "Fairy Job Mother is an AI career assistant I’m building for recent graduates and career changers. It helps people connect the experience they already have to the job they want, with a storybook-inspired look: interactive animation and a magic wand motif.",
@@ -493,7 +496,7 @@
           ],
           [
             "Tools",
-            "Figma, live AI integration"
+            "Figma, Figma Make, live AI integration"
           ],
           [
             "For",
@@ -519,12 +522,23 @@
                 "text": "I defined the product requirements and designed the user flows in Figma."
               },
               {
+                "title": "A storybook front door",
+                "text": "I prototyped the landing page in Figma Make as an interactive storybook. Visitors turn the pages, from “It starts with you” to “The next page is yours”, and each spread walks through one step of the idea."
+              },
+              {
                 "title": "Live AI features",
                 "text": "I built and deployed AI features that compare a user’s experience with a job description, then suggest tailored resume changes, skill-gap guidance and portfolio projects that would demonstrate the right skills."
               },
               {
                 "title": "Test, then refine",
                 "text": "I tested the web app with more than 10 users and refined the recommendations based on their feedback."
+              }
+            ],
+            "figures": [
+              {
+                "src": "assets/projects/fairy-job-mother/storybook-spread.webp",
+                "alt": "An open storybook spread: “Let’s uncover what you bring” on the left page and “Find where you fit” on the right, each above a hand-drawn bouquet of pink and gold flowers.",
+                "caption": "Turning the page: each spread is one step of the idea"
               }
             ]
           },
@@ -666,7 +680,7 @@
           "needs": "What she would do next."
         }
       },
-      "frame": "landscape",
+      "frame": "portrait",
       "small": true,
       "story": {
         "intro": "As an AI Product Manager Intern at News Corp, I studied how news sites use AI to personalize what readers see, and how that compares with the apps people use every day. Then I turned it into feature recommendations.",
