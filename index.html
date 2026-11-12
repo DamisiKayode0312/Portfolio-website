@@ -56,7 +56,6 @@
       <ul>
         <li><a href="#home" data-group="home">Home</a></li>
         <li><a href="#work" data-group="work">Work</a></li>
-        <li><a href="#experience" data-group="experience">Experience</a></li>
         <li><a href="#about" data-group="about">About</a></li>
         <li><a href="#playground" data-group="playground">Playground</a></li>
       </ul>
@@ -97,46 +96,72 @@
           <p class="label sig">End of Gallery I</p>
           <p class="ex-end-line" data-swash>Thanks for walking through</p>
           <a class="ex-link" href="work.html">View all projects</a>
-          <a class="ex-link" href="#experience">Experience ↓</a>
+          <a class="ex-link" href="#about">About me ↓</a>
         </div>
       </div>
       <div class="ex-progress" aria-hidden="true"><i id="ex-bar"></i></div>
     </div>
   </section>
 
-  <!-- Experience: roles, each with its own case study -->
-  <section id="experience" class="experience" data-tone="light" data-group="experience" aria-labelledby="exp-h">
-    <div class="exp-in">
-      <p class="label" data-pop>Experience</p>
-      <h2 id="exp-h" data-pop data-swash>Where I’ve worked</h2>
-      <ol class="exp-list" id="exp-list"></ol>
-    </div>
-  </section>
-
-  <!-- 05 · About -->
+  <!-- 05 · About: Victoria's story in her words, then where she has worked and spent her time, then where to go next -->
   <section id="about" class="about" data-tone="cream" data-group="about" aria-labelledby="about-h">
-    <div class="about-grid">
-      <div class="about-side">
-        <h2 id="about-h" data-pop data-swash>Artist. Engineer. Curious by nature.</h2>
-        <div class="about-actions" data-pop>
-          <a class="btn btn-primary" id="resume-about" href="#">Download résumé</a>
-          <a class="btn btn-secondary" href="#contact">Say hello</a>
+    <div class="about-in">
+      <div class="about-top">
+        <div class="about-text">
+          <p class="label sig" data-pop>About the curator</p>
+          <h2 id="about-h" data-pop data-swash>I like trying things.</h2>
+          <p class="about-lead" data-pop>I’m Dami, a computer engineer and artist based in Atlanta.</p>
+          <p data-pop>I’ll get curious about something, start learning it, and suddenly I have another project.</p>
+          <p data-pop>For a while, that made choosing a career hard. I enjoyed engineering, but I also liked thinking about how something should look, what it should do, and whether anyone would actually find it useful.</p>
+          <p data-pop>I’ve been drawing since I was a child, and it still shapes how I work. Art taught me to step back, look closely at the details, and think about things differently.</p>
+          <p data-pop>What’s stuck with me through all of it is how much I enjoy figuring out what something should do, working through the details with a team, and testing it until it works. I’m looking for opportunities in product, project engineering, and quality where I can do more of that.</p>
         </div>
-      </div>
-      <div class="about-main">
-        <p class="intro" data-pop>I’m Dami, a computer engineer who works across product, research and design, and who paints and draws digitally.</p>
-        <div class="human" data-pop>
-          <h3>Off the clock</h3>
-          <p>I paint, make digital illustrations and take photographs, and I like exploring creative technology.</p>
-          <p>I love art and museums. This portfolio was inspired by one of my museum trips.</p>
+        <figure class="about-fig" data-pop>
           <div class="museum-collage">
-            <img class="mc-main" data-pop src="assets/about/museum-visit.webp" alt="Victoria at a museum, seen from behind, tying a white hair bow beside a marble statue in front of a deep red gallery wall." loading="lazy" decoding="async">
-            <img class="mc-side" data-pop src="assets/about/portrait-wall.webp" alt="A museum wall hung with rows of nineteenth-century portrait paintings in wooden frames." loading="lazy" decoding="async">
-            <img class="mc-front" data-pop src="assets/about/marble-statue.webp" alt="A white marble statue of a woman standing beside a deer, in a gallery hung with landscape paintings." loading="lazy" decoding="async">
+            <img class="mc-main" src="assets/about/museum-visit.webp" alt="Victoria at a museum, seen from behind, tying a white hair bow beside a marble statue in front of a deep red gallery wall." loading="lazy" decoding="async">
+            <img class="mc-side" src="assets/about/portrait-wall.webp" alt="A museum wall hung with rows of nineteenth-century portrait paintings in wooden frames." loading="lazy" decoding="async">
+            <img class="mc-front" src="assets/about/marble-statue.webp" alt="A white marble statue of a woman standing beside a deer, in a gallery hung with landscape paintings." loading="lazy" decoding="async">
           </div>
-        </div>
-        <h3 class="journey-h" data-pop>My journey</h3>
-        <ol class="journey" id="journey"><i class="journey-fill" id="journey-fill" aria-hidden="true"></i></ol>
+          <figcaption>I spend a lot of time looking at art. It felt right to put my own work in a gallery, too.</figcaption>
+        </figure>
+      </div>
+
+      <div class="about-block" id="experience" data-pop>
+        <p class="skills">Along the way, I’ve worked on <a href="case-study.html?p=news-corp">product research</a>, <a href="case-study.html?p=locit">project planning</a>, <a href="case-study.html?p=pi-logger">hardware and software integration</a>, and <a href="case-study.html?p=ai-evaluation">testing</a>.</p>
+        <p class="label">Experience</p>
+        <ul class="xp-list">
+          <li class="xp"><span class="xp-mark" aria-hidden="true">H</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">Handshake AI</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">AI Evaluation &amp; Technical Research Analyst</span></p><span class="xp-dates">Nov 2025 – present</span></div><ul class="xp-notes"><li>Test how AI models handle technical questions, find where their reasoning breaks, and document corrections. <a href="case-study.html?p=ai-evaluation">How I work</a></li></ul></div></li>
+          <li class="xp"><span class="xp-mark" aria-hidden="true">NC</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">News Corp</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">AI Product Manager Intern</span></p><span class="xp-dates">Aug – Oct 2025</span></div><ul class="xp-notes"><li>Compared how news sites personalize with AI against TikTok and Spotify.</li><li>Built five audience personas from 500+ survey responses and proposed three features. <a href="case-study.html?p=news-corp">Case study</a></li></ul></div></li>
+          <li class="xp"><span class="xp-mark" aria-hidden="true">L</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">LOCIT</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">Team Lead, senior capstone</span></p><span class="xp-dates">Spring – Fall 2024</span></div><ul class="xp-notes"><li>Led our four-person team, AZAD, from design through testing of a GPS necklace and companion app. <a href="case-study.html?p=locit">Case study</a></li></ul></div></li>
+          <li class="xp"><span class="xp-mark xp-mark--script" aria-hidden="true">V</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">Independent practice</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">Digital artist</span></p><span class="xp-dates">Since childhood</span></div><ul class="xp-notes"><li>Digital portraits, paintings and drawings. <a href="#playground">See the Playground</a></li></ul></div></li>
+        </ul>
+        <p class="label">Education</p>
+        <ul class="xp-list">
+          <li class="xp"><span class="xp-mark" aria-hidden="true">KSU</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">Kennesaw State University</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">B.S. Computer Engineering, Cum Laude</span></p><span class="xp-dates">Dec 2024</span></div></div></li>
+        </ul>
+        <p class="label">Communities</p>
+        <ul class="xp-list xp-list--tight">
+          <li class="xp"><span class="xp-mark" aria-hidden="true">NSBE</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">National Society of Black Engineers</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">Member</span></p><span class="xp-dates"></span></div></div></li>
+          <li class="xp"><span class="xp-mark" aria-hidden="true">SWE</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">Society of Women Engineers</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">Member</span></p><span class="xp-dates"></span></div></div></li>
+          <li class="xp"><span class="xp-mark" aria-hidden="true">ASA</span><div class="xp-body"><div class="xp-head"><p class="xp-title"><span class="xp-org">African Students Association</span><span class="xp-sep" aria-hidden="true">/</span><span class="xp-role">Member</span></p><span class="xp-dates"></span></div></div></li>
+        </ul>
+        <a class="about-resume" id="resume-about" href="#">Download my résumé</a>
+      </div>
+
+      <div class="about-block" data-pop>
+        <p class="label">Outside of work you can find me…</p>
+        <ul class="pastimes">
+          <li><span class="p-verb">watching</span> anime</li>
+          <li><span class="p-verb">taking</span> photos</li>
+          <li><span class="p-verb">painting</span> digital portraits, <a href="#playground">see the Playground</a></li>
+          <li><span class="p-verb">wandering</span> through museums</li>
+          <li><span class="p-verb">taking</span> a good nap</li>
+        </ul>
+      </div>
+
+      <div class="about-next" data-pop>
+        <p class="next-big">I’m job hunting right now and always up for a chat about product, engineering or art. <a href="https://www.linkedin.com/in/victoriakayode" target="_blank" rel="noopener">Say hi on LinkedIn<span class="sr-only"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></a></p>
+        <p class="next-small">Or keep walking: <a href="#work">the gallery <span aria-hidden="true">→</span></a> · <a href="#playground">the Playground <span aria-hidden="true">→</span></a></p>
       </div>
     </div>
   </section>

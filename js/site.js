@@ -192,6 +192,7 @@
   /* ---------- 05 journey ---------- */
   var journey=$('#journey'),fill=$('#journey-fill'),nodes=[];
   function renderJourney(items){
+    if(!journey)return;
     journey.insertAdjacentHTML('beforeend',items.map(function(m){return '<li><span class="node" aria-hidden="true"></span><span class="mlabel">'+esc(m.label)+'</span><p class="detail">'+esc(m.detail)+(m.needs?'<span class="needs">Placeholder · '+esc(m.needs)+'</span>':'')+'</p></li>';}).join(''));
     nodes=$$('li',journey);
     if(reduce){nodes.forEach(function(n){n.classList.add('lit');});}
@@ -261,7 +262,7 @@
   addEventListener('resize',function(){requestAnimationFrame(update);});
 
   Promise.all([getJSON('data/exhibits.json'),getJSON('data/art.json'),getJSON('data/site.json')]).then(function(r){
-    var ex=r[0].exhibits;renderExhibition(ex.filter(function(x){return x.kind!=='experience';}));renderExperience(ex.filter(function(x){return x.kind==='experience';}));renderSalon(r[1].artworks);renderJourney(r[2].timeline);renderContact(r[2]);observePop();sizePad();
+    var ex=r[0].exhibits;renderExhibition(ex.filter(function(x){return x.kind!=='experience';}));renderSalon(r[1].artworks);renderJourney(r[2].timeline);renderContact(r[2]);observePop();sizePad();
     /* wait for the display fonts (they change the hero's height) before standing the visitor in front of an exhibit */
     var fontsReady=document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(function(r){setTimeout(r,1500);})]):Promise.resolve();
     fontsReady.then(function(){if(EX)EX.layout();requestAnimationFrame(position);});
