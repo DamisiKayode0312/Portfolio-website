@@ -101,7 +101,7 @@
     artworks.forEach(function(a,i){var w=a.wall||{},c=clamp(w.col||(i%4)+2,2,5);(cols[c]=cols[c]||[]).push({a:a,i:i,size:w.size||'m'});});
     var html=Object.keys(cols).sort().map(function(c){return '<div class="salon-col salon-col--'+c+'">'+cols[c].map(function(p){var a=p.a,kind=a.frame||'portrait';
       var inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy"'+(a.position?' style="object-position:'+esc(a.position)+'"':'')+'>':'<span class="frame-ph">Placeholder · Artwork from Dami</span>';
-      return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" data-pop aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+'<span class="salon-cap">'+esc(a.title)+'</span></button>';}).join('')+'</div>';}).join('');
+      return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+'<span class="salon-cap">'+esc(a.title)+'</span></button>';}).join('')+'</div>';}).join('');
     artEl.insertAdjacentHTML('beforeend',html);
     artEl.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
   }
