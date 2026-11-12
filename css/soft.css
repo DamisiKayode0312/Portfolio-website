@@ -1,0 +1,17 @@
+/* Softer, lighter surface layer (Nov 2026, from Victoria's reference): lighter body type, no hard outlines.
+   Cards and panels are lifted by a faint, wide shadow instead of a 1px line; dividers are barely there. */
+:root{--line:rgba(40,37,34,.08);--soft-lift:0 1px 2px rgba(40,37,34,.04),0 14px 34px -14px rgba(40,37,34,.16);--body-ink:#45403B}
+body{font-weight:300;color:var(--body-ink)}
+b,strong{font-weight:500}
+.label,.card .cat,.exp-role,.lbl-cat{font-weight:400}
+.btn,.contact-links a,.exp-cta{font-weight:500}
+.btn{border-width:1px}
+.btn-secondary,.poster .btn-secondary{border-color:rgba(101,30,40,.28)}
+.btn-secondary:hover,.poster .btn-secondary:hover{border-color:var(--burgundy)}
+.nav,.cs-top{border-bottom-color:rgba(40,37,34,.06)}
+.closing{border-top-color:rgba(40,37,34,.06)}
+.exp-card{background:#FFFDFA;box-shadow:var(--soft-lift)}
+.exp-card:hover{box-shadow:0 1px 2px rgba(40,37,34,.05),0 22px 44px -16px rgba(40,37,34,.22)}
+.stats li{box-shadow:var(--soft-lift);background:#FFFDFA}
+.fig img{box-shadow:var(--soft-lift)}
+.lb-label{box-shadow:none}
