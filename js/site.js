@@ -106,10 +106,18 @@
       return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" data-pop aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+wallLabel(a)+'</button>';}).join('')+'</div>';}).join('');
     artEl.insertAdjacentHTML('beforeend',html);
     artEl.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
-    /* touch screens have no hover: a painting's picture light turns on as it passes the middle of the screen */
-    if(!matchMedia('(hover:hover)').matches&&'IntersectionObserver' in window){
-      var lio=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('is-lit',e.isIntersecting);});},{rootMargin:'-42% 0px -42% 0px'});
-      $$('.salon-piece',artEl).forEach(function(b){lio.observe(b);});
+    /* touch screens have no hover: a painting's picture light turns on as it passes the middle of the screen.
+       Measured against the window on every scroll (not an IntersectionObserver margin, which browsers ignore
+       when the page is shown inside another site's frame, lighting everything on screen) */
+    if(!matchMedia('(hover:hover)').matches){
+      var pieces=$$('.salon-piece',artEl),lt=false,salon=$('#playground');
+      var light=function(){lt=false;var mid=innerHeight/2,band=Math.max(60,innerHeight*.12);
+        pieces.forEach(function(b){var r=b.querySelector('.pframe').getBoundingClientRect();b.classList.toggle('is-lit',r.top<mid+band&&r.bottom>mid-band);});};
+      addEventListener('scroll',function(){if(!lt){lt=true;requestAnimationFrame(light);}},{passive:true});
+      addEventListener('resize',light);light();
+      /* only when this page scrolls itself; a frame that shows the whole page at once would freeze the lights */
+      if(salon&&document.documentElement.scrollHeight-innerHeight>200)salon.classList.add('scroll-lit');
+      else pieces.forEach(function(b){b.classList.remove('is-lit');});
     }
   }
   /* Experience: one card per role, each opening its case study */

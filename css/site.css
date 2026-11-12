@@ -381,8 +381,8 @@ section{position:relative}
 .title-card h2:focus{outline:none}
 /* touch screens: paintings rest a little dim and light up as they pass the middle of the screen */
 @media (hover:none){
-  .salon-piece .pframe{filter:brightness(.7) saturate(.85)}
-  .salon-piece.is-lit .pframe{filter:none}
+  .scroll-lit .salon-piece .pframe{filter:brightness(.7) saturate(.85)}
+  .scroll-lit .salon-piece.is-lit .pframe{filter:none}
   .salon-piece.is-lit::before{opacity:1;background:radial-gradient(ellipse 50% 50% at 50% 42%,rgba(255,226,176,.55),rgba(255,226,176,.22) 45%,rgba(255,226,176,0) 72%)}
   .salon-piece .pframe,.salon-piece::before{transition-duration:.6s}
 }
