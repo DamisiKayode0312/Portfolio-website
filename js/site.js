@@ -106,6 +106,11 @@
       return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" data-pop aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+wallLabel(a)+'</button>';}).join('')+'</div>';}).join('');
     artEl.insertAdjacentHTML('beforeend',html);
     artEl.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
+    /* touch screens have no hover: a painting's picture light turns on as it passes the middle of the screen */
+    if(!matchMedia('(hover:hover)').matches&&'IntersectionObserver' in window){
+      var lio=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('is-lit',e.isIntersecting);});},{rootMargin:'-42% 0px -42% 0px'});
+      $$('.salon-piece',artEl).forEach(function(b){lio.observe(b);});
+    }
   }
   /* Experience: one card per role, each opening its case study */
   function renderExperience(list){
