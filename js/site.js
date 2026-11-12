@@ -96,7 +96,7 @@
     EX=window.Exhibition.create({section:$('#work'),stage:$('#ex-stage'),wall:$('#ex-wall'),items:'.ex-item'});
   }
   /* a museum wall label: title, year, medium, artist (the Playground holds only Victoria's own work) */
-  function wallLabel(a){return '<span class="wall-label" aria-hidden="true"><span class="wl-title">'+esc(a.title)+'</span>'+[a.year,a.medium].filter(Boolean).map(function(t){return '<span class="wl-line">'+esc(t)+'</span>';}).join('')+'<span class="wl-artist">Victoria Kayode</span></span>';}
+  function wallLabel(a){return '<span class="wall-label" aria-hidden="true"><span class="wl-title">“'+esc(a.title)+'”</span>'+[a.year,a.medium].filter(Boolean).map(function(t){return '<span class="wl-line">'+esc(t)+'</span>';}).join('')+'<span class="wl-artist">Victoria Kayode</span></span>';}
   /* Gallery II: a salon hang. Columns of one or two pieces, all centred on one line, beside a title card. */
   function renderSalon(artworks){
     art=artworks;var cols={};
@@ -121,7 +121,7 @@
   }
   function showLb(i){lbIndex=(i+art.length)%art.length;var a=art[lbIndex];
     $('#lb-art').innerHTML=a.image?'<img class="lb-img" src="'+esc(a.image)+'" alt="'+esc(a.alt)+'">':frame(a.frame||'portrait','<div class="frame-ph">Placeholder · Artwork from Dami</div>',false);
-    $('#lb-title').textContent=a.placeholder?'Artwork coming':a.title;
+    $('#lb-title').textContent=a.placeholder?'Artwork coming':'“'+a.title+'”';
     $('#lb-meta').innerHTML=[a.year,a.medium].filter(Boolean).map(esc).join('<br>');
     $('#lb-blurb').textContent=a.placeholder?'This frame is waiting for a piece from Dami: title, year, medium and a short note.':(a.story||'');}
   function openLb(i,from){lbReturn=from;showLb(i);if(lb.showModal)lb.showModal();else lb.setAttribute('open','');$('#lb-close').focus();}
