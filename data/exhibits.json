@@ -18,9 +18,9 @@
           "src": "Milestone 3 report"
         },
         "who": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "Who LOCIT was designed for, in Dami’s words."
+          "text": "Families with young children or elderly relatives who want to locate a loved one in real time, without the wearer needing to carry a phone.",
+          "ev": "verified",
+          "src": "Product requirements document"
         },
         "how": {
           "text": "The necklace uploads sensor data to a web server, which processes and stores it. The app fetches that data to show live location and send boundary, temperature and low-battery alerts.",
@@ -38,16 +38,25 @@
         "problem": {
           "items": [
             {
+              "text": "Families need an easy way to find young children and elderly relatives in real time. The leading trackers, Apple AirTag and Tile, depend on a phone, which the people LOCIT was meant for often don’t carry.",
+              "ev": "verified",
+              "src": "Product requirements document"
+            },
+            {
               "text": "LOCIT was designed to improve personal safety by tracking the wearer’s location and alerting when they cross a set boundary.",
               "ev": "reported",
               "src": "Her earlier portfolio site"
             }
-          ],
-          "needs": "The specific situation or user need that started the project."
+          ]
         },
         "why": {
-          "items": [],
-          "needs": "Why this mattered to the team or to the people it was for."
+          "items": [
+            {
+              "text": "The goal was peace of mind: a lightweight, rechargeable tracker that works on its own, with safe-zone alerts when the wearer wanders too far.",
+              "ev": "verified",
+              "src": "Product requirements document"
+            }
+          ]
         },
         "role": {
           "items": [
@@ -97,9 +106,13 @@
               "text": "FlutterFlow could not handle the real-time data coming from AWS.",
               "ev": "verified",
               "src": "Milestone 3 report"
+            },
+            {
+              "text": "Hard targets for a wearable: under 15 grams, location within 3 feet, updates every 30 seconds, and up to three trackers per phone.",
+              "ev": "verified",
+              "src": "Product requirements document"
             }
           ],
-          "needs": "Budget, timeline and course requirements.",
           "figures": [
             {
               "src": "assets/projects/locit/concept-sketch.webp",
@@ -110,8 +123,18 @@
           ]
         },
         "research": {
-          "items": [],
-          "needs": "What user research or usability testing was done, with whom, and what was learned."
+          "items": [
+            {
+              "text": "Market: the PRD cites nearly half a billion smart wearables sold worldwide in 2023 (Statista) and describes a fragmented market led by Apple AirTag and Tile, both of which need a phone.",
+              "ev": "verified",
+              "src": "Product requirements document"
+            },
+            {
+              "text": "Form factor: compared a necklace pendant, an armband, a pin or brooch, and a sling bag for comfort, discretion and keeping a camera facing forward. The team chose the pendant.",
+              "ev": "verified",
+              "src": "Product requirements document"
+            }
+          ]
         },
         "decisions": {
           "items": [
@@ -124,9 +147,13 @@
               "text": "Refined the geofencing algorithms and accuracy thresholds, because GPS accuracy affected how precisely boundary crossings were detected.",
               "ev": "verified",
               "src": "Milestone 3 report"
+            },
+            {
+              "text": "Cut scope to fit the prototype: ultraviolet sensors were dropped because of long procurement lead times, Bluetooth was added, and the requirements were revised to match what was built.",
+              "ev": "verified",
+              "src": "Product requirements document"
             }
-          ],
-          "needs": "Why each choice was made and what alternatives were considered."
+          ]
         },
         "built": {
           "items": [
@@ -146,9 +173,9 @@
               "src": "Milestone 3 reports"
             },
             {
-              "text": "Camera and facial recognition are not claimed here: one report mentions them and another does not.",
-              "ev": "awaiting",
-              "src": "Documents conflict"
+              "text": "Facial recognition was specified as a requirement and designed into the app screens. Whether it worked in the final prototype is not confirmed here.",
+              "ev": "planned",
+              "src": "Product requirements document; app design screens"
             }
           ],
           "figures": [
@@ -159,12 +186,18 @@
               "small": true
             },
             {
+              "src": "assets/projects/locit/hardware-diagram.webp",
+              "alt": "Hardware block diagram: temperature, UV and vibration sensors, gyroscope and GPS tracker feed a PCB board, along with LEDs and buttons, a camera, a solar panel and battery, microSD storage and a Bluetooth transceiver; the board drives a display.",
+              "caption": "Planned hardware architecture from the PRD. UV sensors were later dropped.",
+              "small": true
+            },
+            {
               "src": "assets/projects/locit/app-design-screens.webp",
               "alt": "Three companion app design screens: sign in, geofencing with a Set New Geofence button and previous geofences, and settings for location tracking, geofencing and notifications.",
               "caption": "App design screens: sign in, geofencing, settings."
             }
           ],
-          "needs": "Photos of the printed prototypes (they are in the milestone reports) and confirmation of whether the camera shipped."
+          "needs": "Photos of the printed prototypes."
         },
         "results": {
           "items": [
@@ -187,6 +220,11 @@
               "text": "Next steps listed at the time: at least 24 hours of battery life on one charge, thorough testing, UI refinement and user testing. These were plans, not results.",
               "ev": "planned",
               "src": "Milestone 3 report"
+            },
+            {
+              "text": "Nice-to-haves left for later: two-way voice with the wearer, a low-battery mode that keeps only location and boundary tracking, and language options.",
+              "ev": "planned",
+              "src": "Product requirements document"
             }
           ],
           "needs": "What Dami would change looking back, in her own words."
