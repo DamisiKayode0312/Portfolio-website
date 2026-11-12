@@ -490,3 +490,10 @@ section{position:relative}
 .xp-notes a{color:var(--burgundy);text-underline-offset:3px;white-space:nowrap}
 @media (max-width:560px){.xp{grid-template-columns:36px minmax(0,1fr);gap:12px}.xp-mark{width:36px;height:36px;font-size:13px}.xp-mark--script{font-size:26px}
   .xp-head{display:grid;gap:2px}.xp-title{display:grid}.xp-sep{display:none}}
+
+/* Experience, its own section again: the same list, sized for a section of its own */
+.experience .exp-in{max-width:880px}
+.experience .skills{margin:0 0 var(--s6)}
+.experience .xp-list:first-of-type{margin-top:var(--s2)}
+.experience .xp-list + .label{margin:var(--s6) 0 var(--s3);font-size:15px}
+.experience .xp-list{margin-bottom:0}
