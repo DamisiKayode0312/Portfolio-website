@@ -148,7 +148,7 @@ section{position:relative}
 
 .ex-exhibit .ex-open{background:none;border:0;padding:0;font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-decoration:none;color:inherit;border-radius:4px}
 .ex-exhibit .ex-open:focus-visible{outline:3px solid var(--gold-light);outline-offset:10px}
-.ex-exhibit .pframe{width:var(--w);filter:brightness(calc(.6 + .4 * var(--light,0)));transition:transform .35s var(--ease-out)}
+.ex-exhibit .pframe{width:var(--w);filter:brightness(calc(.6 + .46 * var(--light,0)));transition:transform .35s var(--ease-out)}
 .ex-exhibit .ex-open:hover .pframe{transform:translateY(-4px)}
 .ex-exhibit.f-landscape{--w:min(74vw,calc(var(--h) * 1.333),640px)}
 .ex-exhibit.f-portrait{--w:min(58vw,calc(var(--h) * .75),420px)}
@@ -157,9 +157,9 @@ section{position:relative}
 .ex-exhibit.f-landscape.is-small{--w:min(66vw,calc(var(--h) * 1.05),500px)}
 /* warm spotlight behind the frame, never on top of the artwork */
 .ex-spot{position:absolute;z-index:-1;left:50%;top:44%;width:170%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%;
-  background:radial-gradient(closest-side,rgba(255,222,165,.34),rgba(214,178,120,.14) 55%,transparent 100%);opacity:var(--light,0)}
+  background:radial-gradient(closest-side,rgba(255,226,176,.55),rgba(255,226,176,.22) 45%,rgba(255,226,176,0) 72%);opacity:var(--light,0)}
 .ex-spot::before{content:"";position:absolute;left:50%;bottom:58%;width:46%;height:120%;transform:translateX(-50%);
-  background:linear-gradient(rgba(255,226,170,.16),transparent 80%);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%)}
+  background:linear-gradient(rgba(255,226,176,.26),transparent 80%);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%)}
 /* the museum label */
 .ex-label{display:block;margin-top:20px;width:min(72vw,300px);padding:12px 16px 14px;background:var(--ivory);color:var(--charcoal);text-align:left;border-radius:2px;
   box-shadow:0 8px 18px rgba(30,8,12,.35);opacity:calc(.4 + .6 * var(--light,0));transform:translateY(calc((1 - var(--light,0)) * 8px))}
