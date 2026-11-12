@@ -1,49 +1,11 @@
 {
-  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. Each frame without an image renders as an empty, labelled frame. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, and set placeholder to false. frame: portrait, landscape or oval (Victoria's gilt frames); pick the one closest to the artwork's shape.",
+  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, frame (portrait, landscape or oval) and placeholder false. 'position' (optional) sets which part of the picture stays visible inside the frame opening (CSS object-position, default top). Titles below are descriptive working titles marked 'Untitled (...)' until Victoria supplies the real ones; year and story are left empty until she does.",
   "artworks": [
-    {
-      "id": "art1",
-      "title": "Artwork coming",
-      "year": "",
-      "medium": "Awaiting artwork",
-      "image": null,
-      "alt": "",
-      "story": "",
-      "placeholder": true,
-      "frame": "portrait"
-    },
-    {
-      "id": "art2",
-      "title": "Artwork coming",
-      "year": "",
-      "medium": "Awaiting artwork",
-      "image": null,
-      "alt": "",
-      "story": "",
-      "placeholder": true,
-      "frame": "landscape"
-    },
-    {
-      "id": "art3",
-      "title": "Artwork coming",
-      "year": "",
-      "medium": "Awaiting artwork",
-      "image": null,
-      "alt": "",
-      "story": "",
-      "placeholder": true,
-      "frame": "oval"
-    },
-    {
-      "id": "art4",
-      "title": "Artwork coming",
-      "year": "",
-      "medium": "Awaiting artwork",
-      "image": null,
-      "alt": "",
-      "story": "",
-      "placeholder": true,
-      "frame": "portrait"
-    }
+    { "id": "candlelight", "title": "Untitled (Candlelight)", "year": "", "medium": "Digital painting", "image": "assets/art/candlelight.webp", "alt": "Digital painting of a woman with long dark curls in a yellow robe, standing among white flowers and lit candles beneath a cloudy blue sky.", "story": "", "placeholder": false, "frame": "portrait", "position": "center 20%" },
+    { "id": "glitter-eye", "title": "Untitled (Glitter eye)", "year": "", "medium": "Digital painting", "image": "assets/art/glitter-eye.webp", "alt": "Close-up digital painting of an eye under glossy pink eyeshadow scattered with iridescent glitter.", "story": "", "placeholder": false, "frame": "oval", "position": "center" },
+    { "id": "headscarf", "title": "Untitled (Headscarf)", "year": "", "medium": "Digital drawing", "image": "assets/art/headscarf.webp", "alt": "Black and white drawing of a woman in a headscarf with wavy hair, framed by red magnolia branches.", "story": "", "placeholder": false, "frame": "portrait", "position": "center" },
+    { "id": "neon", "title": "Untitled (Neon)", "year": "", "medium": "Digital painting", "image": "assets/art/neon.webp", "alt": "Neon digital portrait of a woman with glowing golden hair and violet skin, hands at her face, surrounded by light and bokeh.", "story": "", "placeholder": false, "frame": "portrait", "position": "center 30%" },
+    { "id": "swordsman", "title": "Untitled (Swordsman)", "year": "", "medium": "Digital painting", "image": "assets/art/swordsman.webp", "alt": "Digital painting of a white-haired swordsman in a black headband and a robe embroidered with gold dragons, a sword across his shoulder.", "story": "", "placeholder": false, "frame": "oval", "position": "center" },
+    { "id": "lips-study", "title": "Untitled (Study: photo and painting)", "year": "", "medium": "Digital painting study", "image": "assets/art/lips-study.webp", "alt": "A reference photo of red lips with vampire fangs above Victoria's digital painting of the same lips, labelled Photo and Painting.", "story": "", "placeholder": false, "frame": "portrait", "position": "center" }
   ]
 }

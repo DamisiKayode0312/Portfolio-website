@@ -98,7 +98,7 @@
         frame(kind,img,i!==0)+label(x.category,x.title,x.teaser,'Read the case study',x.image?'':'Project image needed')+'</a></div>';}).join('');
     art=artworks;
     artEl.innerHTML=artworks.map(function(a,i){
-      var kind=a.frame||'portrait',inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy">':'<span class="frame-ph">Placeholder · Artwork from Dami</span>';
+      var kind=a.frame||'portrait',inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy"'+(a.position?' style="object-position:'+esc(a.position)+'"':'')+'>':'<span class="frame-ph">Placeholder · Artwork from Dami</span>';
       return '<div class="ex-item ex-exhibit f-'+kind+(i%2?' is-small':'')+'"><span class="ex-spot" aria-hidden="true"></span>'+
         '<button class="ex-open" type="button" data-i="'+i+'" aria-label="'+esc(a.placeholder?'Artwork coming, frame '+(i+1):a.title)+'. View details">'+
         frame(kind,inner)+label(a.placeholder?'Playground':[a.medium,a.year].filter(Boolean).join(' · '),a.placeholder?'Artwork coming':a.title,'',
@@ -117,7 +117,7 @@
     positioned=true;update();
   }
   function showLb(i){lbIndex=(i+art.length)%art.length;var a=art[lbIndex];
-    $('#lb-art').innerHTML=frame(a.frame||'portrait',a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'">':'<div class="frame-ph">Placeholder · Artwork from Dami</div>',false);
+    $('#lb-art').innerHTML=a.image?'<img class="lb-img" src="'+esc(a.image)+'" alt="'+esc(a.alt)+'">':frame(a.frame||'portrait','<div class="frame-ph">Placeholder · Artwork from Dami</div>',false);
     $('#lb-title').textContent=a.placeholder?'Artwork coming':a.title;
     $('#lb-meta').textContent=[a.medium,a.year].filter(Boolean).join(' · ');
     $('#lb-blurb').textContent=a.placeholder?'This frame is waiting for a piece from Dami: title, year, medium and a short note.':(a.story||'');}

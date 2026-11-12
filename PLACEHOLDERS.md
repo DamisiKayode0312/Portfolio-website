@@ -9,7 +9,7 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 | About | Portrait (oval frame) | "Placeholder · Portrait" |
 | About | Likes, dislikes, what brought you here (your words) | Placeholder block |
 | About timeline | Dates and role titles for News Corp and Handshake AI | Placeholder note under "Product" |
-| Playground | Artwork files with title, year, medium, short note | Four "Artwork coming" frames |
+| Playground | Real titles, year and a short note for the six pieces received 12 Nov 2026; confirm the reference photo in the lips study is OK to show publicly | Working titles "Untitled (…)", medium only, no year |
 | Closing | Contact email | "Contact: email coming soon" (disabled) |
 | Closing | LinkedIn URL | "LinkedIn coming soon" (disabled) |
 | Closing | Confirm GitHub profile `github.com/DamisiKayode0312` | Live link |
