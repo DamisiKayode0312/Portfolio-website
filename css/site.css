@@ -505,3 +505,6 @@ section{position:relative}
 .xp-note a{color:var(--burgundy);text-underline-offset:3px;white-space:nowrap}
 .experience .about-resume{margin-top:var(--s5)}
 .tc-note{margin:var(--s2) 0 0;font-size:15px;line-height:1.45}
+.xp-mark--logo{padding:0}
+/* marks sit straight on the page, no tile behind them */
+.experience .xp-mark{background:transparent;box-shadow:none;border-radius:0}
