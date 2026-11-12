@@ -503,7 +503,7 @@
           "needs": "Challenges and lessons so far."
         }
       },
-      "frame": "landscape",
+      "frame": "portrait",
       "small": false,
       "story": {
         "intro": "Fairy Job Mother is an AI career assistant I’m building for recent graduates and career changers. It helps people connect the experience they already have to the job they want, with a storybook-inspired look: interactive animation and a magic wand motif.",
@@ -590,7 +590,13 @@
           }
         ]
       },
-      "kind": "project"
+      "kind": "project",
+      "wall": {
+        "video": "assets/projects/fairy-job-mother/wand-loop.mp4",
+        "poster": "assets/projects/fairy-job-mother/wand-poster.webp",
+        "alt": "Fairy Job Mother’s wand, a yellow star on a twisted lilac handle, swishing in a loop of golden sparkles.",
+        "webm": "assets/projects/fairy-job-mother/wand-loop.webm"
+      }
     },
     {
       "slug": "pi-logger",

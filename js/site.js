@@ -109,16 +109,28 @@
     return '<span class="ex-label"><span class="lbl-cat">'+esc(cat)+'</span><span class="lbl-title">'+esc(title)+'</span>'+(meta?'<span class="lbl-meta">'+esc(meta)+'</span>':'')+
       (missing?'<span class="lbl-missing">'+esc(missing)+'</span>':'')+'<span class="lbl-cta">'+esc(cta)+'</span></span>';
   }
+  /* films on the wall play only while they are on screen (checked on scroll, which also works inside the preview frame) */
+  var films=[];
+  function filmsUpdate(){films.forEach(function(v){var r=v.getBoundingClientRect(),on=r.right>0&&r.left<innerWidth&&r.bottom>0&&r.top<innerHeight;
+    if(on&&v.paused){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}else if(!on&&!v.paused)v.pause();});}
   function renderExhibition(projects){
     projectsEl.innerHTML=projects.map(function(x,i){
       var kind=x.frame||'landscape';
+      /* a project can hang a short looping film instead of a still (Fairy Job Mother's wand); with reduced motion only its still shows */
+      if(x.wall&&x.wall.video){
+        var img=reduce?'<img class="wall-film" src="'+esc(x.wall.poster)+'" alt="'+esc(x.wall.alt)+'" loading="lazy">':
+          '<video class="wall-film" muted loop playsinline preload="metadata" poster="'+esc(x.wall.poster)+'" aria-label="'+esc(x.wall.alt)+'"><source src="'+esc(x.wall.video)+'" type="video/mp4">'+(x.wall.webm?'<source src="'+esc(x.wall.webm)+'" type="video/webm">':'')+'</video>';
+        var has=true;
+      }else{
       var img=x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" '+(i?'loading="lazy" ':'')+'style="view-transition-name:hero-'+esc(x.slug)+'">':'<span class="frame-ph">Placeholder · Project image needed</span>';
+      var has=!!x.image;}
       return '<div class="ex-item ex-exhibit f-'+kind+(x.small?' is-small':'')+'" data-slug="'+esc(x.slug)+'"><span class="ex-spot" aria-hidden="true"></span>'+
         '<a class="ex-open" href="case-study.html?p='+encodeURIComponent(x.slug)+'" aria-label="'+esc(x.title)+'. '+esc(x.category)+'. Read the case study">'+
-        frame(kind,img,i!==0)+label(x.category,x.title,x.teaser,'Read the case study',x.image?'':'Project image needed')+'</a></div>';}).join('');
+        frame(kind,img,i!==0)+label(x.category,x.title,x.teaser,'Read the case study',has?'':'Project image needed')+'</a></div>';}).join('');
     /* remember which exhibit was opened, to come back to it */
     projectsEl.addEventListener('click',function(e){var it=e.target.closest('.ex-exhibit');if(it)store('vg-lastFrame',it.dataset.slug);});
     EX=window.Exhibition.create({section:$('#work'),stage:$('#ex-stage'),wall:$('#ex-wall'),items:'.ex-item'});
+    films=$$('video.wall-film',projectsEl);filmsUpdate();if(films.length)setInterval(filmsUpdate,400);
   }
   /* a museum wall label: title, year, medium, artist (the Playground holds only Victoria's own work) */
   function wallLabel(a){return '<span class="wall-label" aria-hidden="true"><span class="wl-title">“'+esc(a.title)+'”</span>'+[a.year,a.medium].filter(Boolean).map(function(t){return '<span class="wl-line">'+esc(t)+'</span>';}).join('')+'<span class="wl-artist">Victoria Kayode</span></span>';}
@@ -257,7 +269,7 @@
 
   /* ---------- one scroll loop ---------- */
   var ticking=false;
-  function update(){ticking=false;navUpdate();journeyUpdate();if(EX&&bar)bar.style.transform='scaleX('+EX.progress.toFixed(4)+')';}
+  function update(){ticking=false;navUpdate();journeyUpdate();filmsUpdate();if(EX&&bar)bar.style.transform='scaleX('+EX.progress.toFixed(4)+')';}
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
   addEventListener('resize',function(){requestAnimationFrame(update);});
 
