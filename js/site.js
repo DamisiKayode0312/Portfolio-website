@@ -61,8 +61,8 @@
     $('#tear').addEventListener('click',function(){enter(false);});
     $('#skip-ticket').addEventListener('click',function(e){e.preventDefault();enter(true);});
     stub.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();enter(false);}});
-    /* drag the stub away: to the right on wide screens, down on phones; tears past 70px or on a quick flick */
-    var drag=null,wide=matchMedia('(min-width:720px)');
+    /* drag the stub away to the right; tears past 70px or on a quick flick */
+    var drag=null,wide={matches:true}; /* the ticket is horizontal everywhere, so the stub always pulls to the right */
     stub.addEventListener('pointerdown',function(e){if(torn||reduce)return;drag={x:e.clientX,y:e.clientY,last:wide.matches?e.clientX:e.clientY,lastT:performance.now(),v:0};stub.setPointerCapture(e.pointerId);stub.classList.add('drag');ticket.classList.remove('sway');});
     stub.addEventListener('pointermove',function(e){if(!drag)return;var w=wide.matches,main=w?e.clientX-drag.x:e.clientY-drag.y,cross=(w?e.clientY-drag.y:e.clientX-drag.x)*.4,d=Math.max(0,main),now=performance.now(),pos=w?e.clientX:e.clientY;
       drag.v=(pos-drag.last)/Math.max(1,now-drag.lastT);drag.last=pos;drag.lastT=now;
