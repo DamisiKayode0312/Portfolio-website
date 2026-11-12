@@ -173,7 +173,7 @@
               "src": "Milestone 3 reports"
             },
             {
-              "text": "Facial recognition was specified as a requirement and designed into the app screens. Whether it worked in the final prototype is not confirmed here.",
+              "text": "Facial recognition was specified as a requirement, designed into the app screens, and worked in the final prototype (confirmed by Victoria, Nov 2026).",
               "ev": "planned",
               "src": "Product requirements document; app design screens"
             }
@@ -334,7 +334,7 @@
               }
             ],
             "after": [
-              "The companion app, built in FlutterFlow, shows live location, sets safe zones, and sends boundary, temperature and low-battery alerts. I also designed our team’s AZAD logo."
+              "The companion app, built in FlutterFlow, shows live location, sets safe zones, and sends boundary, temperature and low-battery alerts. A small camera in the pendant runs facial recognition, identifying people the wearer comes into contact with, which gives families more assurance. I also designed our team’s AZAD logo."
             ],
             "figures": [
               {
@@ -348,8 +348,7 @@
                 "caption": "Prototype hardware: GPS, USB, processor and power",
                 "small": true
               }
-            ],
-            "note": "Facial recognition was in the spec and the app designs, but I’m not counting it as a finished feature."
+            ]
           },
           {
             "id": "impact",
@@ -387,6 +386,16 @@
                 "caption": "A GPS track recorded during field testing",
                 "small": true
               }
+            ]
+          },
+          {
+            "id": "reflection",
+            "label": "what I learned",
+            "headline": "Not every feature is worth building",
+            "paras": [
+              "Our first plan had a lot in it: GPS, a camera, temperature and UV sensors, a solar panel, a display and a speaker. Each one made sense on paper. In practice, every addition brought weight, cost and power draw to something that was meant to be light enough to forget you’re wearing.",
+              "The features that mattered were the ones the whole idea depended on: knowing where someone is, and knowing when they’ve left a safe place. When we cut the UV sensors and revised the requirements, the product didn’t get worse. It got clearer.",
+              "If I did it again, I’d rank every feature against that core job in the PRD itself, not just set targets for it, and I’d plan the power budget from the first sketch. Our battery lasted about 2 hours against the 24-hour target I’d written, and that gap would decide whether a family keeps using it."
             ]
           },
           {

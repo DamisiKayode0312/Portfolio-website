@@ -14,7 +14,7 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 | Work · Fairy Job Mother | Frame image; repo review to confirm the shipped AI features her résumé lists | Résumé claims marked Reported |
 | Work · News Corp | Frame image; how the "20% increase in reader engagement" on her résumé was tested (not on the site until confirmed, since outcomes were treated as projections) | Placeholder frame |
 | LOCIT | "Who it helps"; why it mattered; budget/timeline; research and usability testing; reasons behind decisions; prototype photos (in the milestone PDFs); test data behind the four metrics; your reflection | Placeholder blocks; metrics marked Reported |
-| LOCIT | Camera / facial recognition: did it ship? | Not claimed |
+| LOCIT | Camera / facial recognition: did it ship? | Yes, confirmed by Victoria (Nov 2026); described per the PRD |
 | News Corp | Direct quote from your peer-reflection entry (needs the PDF) | Paraphrase, marked |
 | AI Evaluation | Non-confidential description of method, dates, role title | Placeholder blocks |
 | Raspberry Pi weather station | Architecture, photos, code link, dates (the earlier 95% integrity / 30-day claims were dropped: not on her résumé) | Résumé facts marked Reported |
