@@ -510,7 +510,7 @@
         "meta": [
           [
             "Role",
-            "Product requirements · Product design"
+            "Product owner · Requirements · Design"
           ],
           [
             "Status",
@@ -532,6 +532,36 @@
             "headline": "Experience that doesn’t translate",
             "paras": [
               "Recent graduates and career changers often have relevant experience, but struggle to connect it to what a job description is asking for, or to know which projects would prove the skills they’re missing."
+            ]
+          },
+          {
+            "id": "principle",
+            "label": "key decision",
+            "headline": "Every claim has to trace back to you",
+            "paras": [
+              "The rule I built everything around: anything Fairy Job Mother says about your background has to point to something you actually wrote. If you trained two new associates and made a closing checklist, it can help you say that more clearly. It can’t add a 30% productivity gain you never mentioned."
+            ],
+            "steps": [
+              {
+                "title": "“Not evidenced”, never “you can’t”",
+                "text": "When a job asks for something your experience doesn’t show, it says “Not evidenced in the text.” Missing evidence isn’t missing ability."
+              },
+              {
+                "title": "One project, not a course list",
+                "text": "It picks one important gap and turns it into a small project you can start, with a clear deliverable."
+              },
+              {
+                "title": "A sample for recruiters",
+                "text": "Reviewers can walk through a fictional example without sharing anything personal, and it still works if the AI is switched off."
+              }
+            ]
+          },
+          {
+            "id": "scope",
+            "label": "scope",
+            "headline": "What I left out on purpose",
+            "paras": [
+              "No job boards, auto-apply, accounts, payments or résumé uploads in the first release. Pasting text is less convenient than uploading a file, but there’s no parsing or storage to build or protect. A feature stays out unless it improves the core path from your experience to a next step."
             ]
           },
           {
@@ -585,7 +615,7 @@
             "label": "what’s next",
             "headline": "Still being written",
             "paras": [
-              "On the roadmap: job matching, learning recommendations, outreach suggestions, saved resume versions and application metrics."
+              "Next, I want to widen testing beyond the first group of users. Only then will I add things like résumé file uploads, saved plans and more career directions, and each one has to earn its place by making the path from your experience to a next step clearer."
             ]
           }
         ]

@@ -11,7 +11,7 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 | Playground | Optional: year and a short note for each piece; confirm the reference photo in "Painting Study" is OK to show publicly | Titles in place; medium shown, no year |
 | Closing | Confirm GitHub profile `github.com/DamisiKayode0312` | Live link |
 | Résumé | Updated 12 Nov 2026 from her new PDF. It lists her phone number publicly: confirm before deploy | Live download |
-| Work · Fairy Job Mother | Frame image; repo review to confirm the shipped AI features her résumé lists | Résumé claims marked Reported |
+| Work · Fairy Job Mother | Live AI built and tested: confirmed by Victoria (Nov 2026), after PRD v1.0 (26 Oct 2026). PRD decisions (evidence rule, scope cuts) added to the case study | Done |
 | Work · News Corp | Frame image; how the "20% increase in reader engagement" on her résumé was tested (not on the site until confirmed, since outcomes were treated as projections) | Placeholder frame |
 | LOCIT | "Who it helps"; why it mattered; budget/timeline; research and usability testing; reasons behind decisions; prototype photos (in the milestone PDFs); test data behind the four metrics; your reflection | Placeholder blocks; metrics marked Reported |
 | LOCIT | Camera / facial recognition: did it ship? | Yes, confirmed by Victoria (Nov 2026); described per the PRD |
