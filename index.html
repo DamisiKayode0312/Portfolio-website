@@ -142,7 +142,6 @@
         <div class="title-card">
           <p class="label">Gallery II</p>
           <h2 id="play-h" tabindex="-1">The Playground</h2>
-          <p>Digital paintings and drawings by Victoria Kayode.</p>
           <p class="tc-hint">Select a piece to see it up close</p>
         </div>
       </div>
@@ -184,9 +183,12 @@
 
 <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
   <div class="lb-frame" id="lb-art"></div>
-  <h2 id="lb-title"></h2>
-  <p class="lb-meta" id="lb-meta"></p>
-  <p id="lb-blurb"></p>
+  <div class="wall-label lb-label">
+    <h2 class="wl-title" id="lb-title"></h2>
+    <p class="wl-lines" id="lb-meta"></p>
+    <p class="wl-artist">Victoria Kayode</p>
+    <p class="wl-story" id="lb-blurb"></p>
+  </div>
   <div class="lb-nav">
     <button class="btn btn-secondary" id="lb-prev" type="button" aria-label="Previous artwork">‹ Prev</button>
     <button class="btn btn-secondary" id="lb-next" type="button" aria-label="Next artwork">Next ›</button>

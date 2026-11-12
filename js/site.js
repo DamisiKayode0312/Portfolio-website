@@ -95,13 +95,15 @@
     projectsEl.addEventListener('click',function(e){var it=e.target.closest('.ex-exhibit');if(it)store('vg-lastFrame',it.dataset.slug);});
     EX=window.Exhibition.create({section:$('#work'),stage:$('#ex-stage'),wall:$('#ex-wall'),items:'.ex-item'});
   }
+  /* a museum wall label: title, year, medium, artist (the Playground holds only Victoria's own work) */
+  function wallLabel(a){return '<span class="wall-label" aria-hidden="true"><span class="wl-title">'+esc(a.title)+'</span>'+[a.year,a.medium].filter(Boolean).map(function(t){return '<span class="wl-line">'+esc(t)+'</span>';}).join('')+'<span class="wl-artist">Victoria Kayode</span></span>';}
   /* Gallery II: a salon hang. Columns of one or two pieces, all centred on one line, beside a title card. */
   function renderSalon(artworks){
     art=artworks;var cols={};
     artworks.forEach(function(a,i){var w=a.wall||{},c=clamp(w.col||(i%4)+2,2,5);(cols[c]=cols[c]||[]).push({a:a,i:i,size:w.size||'m'});});
     var html=Object.keys(cols).sort().map(function(c){return '<div class="salon-col salon-col--'+c+'">'+cols[c].map(function(p){var a=p.a,kind=a.frame||'portrait';
       var inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy"'+(a.position?' style="object-position:'+esc(a.position)+'"':'')+'>':'<span class="frame-ph">Placeholder · Artwork from Dami</span>';
-      return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+'<span class="salon-cap">'+esc(a.title)+'</span></button>';}).join('')+'</div>';}).join('');
+      return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" data-pop aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+wallLabel(a)+'</button>';}).join('')+'</div>';}).join('');
     artEl.insertAdjacentHTML('beforeend',html);
     artEl.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
   }
@@ -120,7 +122,7 @@
   function showLb(i){lbIndex=(i+art.length)%art.length;var a=art[lbIndex];
     $('#lb-art').innerHTML=a.image?'<img class="lb-img" src="'+esc(a.image)+'" alt="'+esc(a.alt)+'">':frame(a.frame||'portrait','<div class="frame-ph">Placeholder · Artwork from Dami</div>',false);
     $('#lb-title').textContent=a.placeholder?'Artwork coming':a.title;
-    $('#lb-meta').textContent=[a.medium,a.year].filter(Boolean).join(' · ');
+    $('#lb-meta').innerHTML=[a.year,a.medium].filter(Boolean).map(esc).join('<br>');
     $('#lb-blurb').textContent=a.placeholder?'This frame is waiting for a piece from Dami: title, year, medium and a short note.':(a.story||'');}
   function openLb(i,from){lbReturn=from;showLb(i);if(lb.showModal)lb.showModal();else lb.setAttribute('open','');$('#lb-close').focus();}
   $('#lb-prev').addEventListener('click',function(){showLb(lbIndex-1);});
