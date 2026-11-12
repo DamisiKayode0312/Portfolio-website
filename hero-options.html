@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Inter:wght@400;500;600&family=Inter+Tight:wght@700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..400&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/site.css">
 <style>
@@ -48,11 +48,14 @@
     .ha-row .f2,.ha-row .f4{width:38vw}.ha-row .f3{width:22vw}
   }
 
-  /* ---------- Option A2: same poster, mixed type (gold Bodoni italic + heavy tight grotesk) ---------- */
-  .ha2 .ha-name{gap:0 .22em;align-items:baseline}
-  .ha2 .ha-name .n1{font:italic 500 clamp(52px,9.4vw,136px)/1 var(--font-display);letter-spacing:-.01em;color:#9A7536}
-  .ha2 .ha-name .n2{font:900 clamp(48px,8.8vw,128px)/.9 "Inter Tight",var(--font-body);letter-spacing:-.04em;color:#2A1418}
-
+  /* ---------- Option A2: same poster, one serif in the Shopify Editions style: light, tight, with a script swash initial ---------- */
+  .ha2{--shop:"Newsreader",Georgia,serif}
+  .ha2 .ha-name{display:block;font:300 clamp(56px,9.2vw,136px)/1 var(--shop);font-optical-sizing:auto;letter-spacing:-.045em;color:#2A1418}
+  .ha2 .ha-name .sw{font:400 1.55em/0 "Pinyon Script",cursive;letter-spacing:0;margin-right:.2em;position:relative;top:.06em;color:#2A1418}
+  .ha2 .ha-foot .line{font:300 clamp(19px,2vw,24px)/1.3 var(--shop);letter-spacing:-.02em}
+  .ha2 .ha-foot .line::before,.ha2 .ha-foot .line::after{content:none}
+  .ha2 .btn{font-family:var(--shop);font-weight:500;letter-spacing:-.01em;font-size:17px}
+  @media (max-width:700px){.ha2 .ha-name{font-size:clamp(48px,14vw,64px);line-height:1.05}}
   /* ---------- Option B: museum of the mind (burgundy damask, scattered gilded frames, gold script name) ---------- */
   .hb{background:#4A141B;color:#F3E6C8;display:grid;place-items:center;padding:56px var(--gutter)}
   .hb::before{content:"";position:absolute;inset:0;background:image-set(url(assets/frames/damask.webp) type("image/webp"),url(assets/frames/damask.jpg) type("image/jpeg")) 0 0/var(--damask) var(--damask);opacity:.55}
@@ -112,7 +115,7 @@
 </section>
 
 <!-- ============ A2 ============ -->
-<p class="opt-tag"><b>A2 · Poster, mixed type</b><span>Same poster. “Victoria” in gold Bodoni italic, “KAYODE” in a heavy, tight grotesk (Inter Tight, a free stand-in for the Shopify Editions look). Museum plus modern.</span></p>
+<p class="opt-tag"><b>A2 · Shopify-style serif</b><span>Same poster, one font only: a light, tightly spaced serif with a script swash “V”, like the Shopify Editions headlines (Newsreader + Pinyon Script, free stand-ins).</span></p>
 <section class="h ha ha2" aria-label="Option A2">
   <div class="ha-bar"><span><svg aria-hidden="true"><use href="#museum"/></svg>Victoria’s Gallery</span><span>2026 ↗</span></div>
   <div class="ha-row" aria-hidden="true">
@@ -123,7 +126,7 @@
     <span class="pframe pframe--portrait f5"><span class="pf-art"><img src="assets/art/candlelight.webp" alt=""></span><img class="pf-frame" src="assets/frames/frame-portrait.webp" alt=""></span>
   </div>
   <div class="ha-foot">
-    <h1 class="ha-name"><span class="n1">Victoria</span><span class="n2">Kayode</span></h1>
+    <h1 class="ha-name"><span class="sw">V</span>ictoria Kayode</h1>
     <p class="line">Computer engineer working across product, AI and art<span class="draft">draft line</span></p>
     <div class="actions"><a class="btn btn-primary" href="#">See the work</a><a class="btn btn-secondary" href="#">Résumé</a></div>
   </div>
