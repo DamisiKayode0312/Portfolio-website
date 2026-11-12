@@ -257,9 +257,6 @@ section{position:relative}
 
 /* ===== 08 closing ===== */
 .closing{background:var(--cream);color:var(--ink);padding:var(--s7) var(--gutter) var(--s7);text-align:center;border-top:1px solid var(--taupe)}
-.heart-frame{width:190px;margin:0 auto 18px}
-.heart-frame .pf-art{display:grid;place-items:center;background:#EFEAE3}
-.heart-frame svg{display:block;width:62%;fill:none;stroke:var(--burgundy-ink);stroke-width:2.5;stroke-linecap:round}
 .closing h2{font-size:clamp(28px,8vw,56px);color:var(--burgundy-ink);max-width:16ch;margin:0 auto 22px}
 .contact-actions{display:grid;gap:12px;justify-items:center;max-width:420px;margin:0 auto 16px}
 .contact-actions .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
