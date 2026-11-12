@@ -393,6 +393,7 @@ section{position:relative}
 .poster-foot{position:relative;display:grid;gap:14px;justify-items:center;text-align:center}
 .poster-name{margin:0;padding-top:.12em;font:300 clamp(48px,min(9.2vw,15svh),136px)/1 var(--font-display);letter-spacing:-.045em;color:#2A1418;outline:none}
 .poster-name .sw{font:400 1.55em/0 var(--font-script);letter-spacing:0;margin-right:.2em;position:relative;top:.06em}
+.poster-name .sw-k{margin-right:-.02em}
 .poster-line{margin:0;font:300 clamp(19px,2vw,24px)/1.3 var(--font-display);letter-spacing:-.02em;max-width:46ch;text-wrap:balance}
 .poster .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .poster .btn-primary{background:#4A1820;border-color:#4A1820;color:#F7F2EA}
