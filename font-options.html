@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Type options</title>
+<!-- Preview only, not linked from the site: three ways to make the serif consistent and use the script accent more -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Pinyon+Script&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#EFE8DC;--ink:#2A1418;--wine:#4A1820;--burg:#6C2724;--brass:#8A6A3E;--muted:#5A4636;--ivory:#F3EDE3;
+  --serif:"Newsreader",Georgia,serif;--script:"Pinyon Script",cursive;--sans:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#E4DCCF;color:var(--ink);font:400 16px/1.5 var(--sans)}
+.top{padding:32px 24px 8px;max-width:1500px;margin:0 auto}
+.top h1{font:300 40px/1.1 var(--serif);letter-spacing:-.03em;margin:0 0 6px}
+.top p{margin:0;color:var(--muted);max-width:70ch}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:24px;max-width:1500px;margin:0 auto}
+@media (max-width:1100px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.cols{grid-template-columns:minmax(0,1fr)}}
+.col{background:var(--paper);border-radius:12px;padding:24px 20px 28px;display:grid;gap:22px;align-content:start}
+.tag{font:600 13px var(--sans);color:var(--wine)}
+.tag small{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:2px;line-height:1.4}
+.blk{border-top:1px solid rgba(42,20,24,.12);padding-top:16px}
+.cap{font:500 12px var(--sans);color:var(--muted);margin:0 0 8px}
+.label{font:500 13px var(--sans);color:var(--muted);margin:0 0 4px}
+p.body{margin:6px 0 0;font-size:15px;color:#3b2a2c}
+.wall{background:var(--burg);color:var(--ivory);padding:18px 16px;border-radius:6px}
+.wall .label{color:#E6C98F}
+.card{background:#F7F2EA;color:var(--ink);padding:12px 14px;border-radius:2px;box-shadow:0 6px 14px rgba(30,8,12,.12)}
+.card .cat{font:500 11px var(--sans);color:var(--muted)}
+.stats{display:flex;gap:18px}
+.stats div{display:grid}
+.stats span{font:400 12px var(--sans);color:var(--muted)}
+.foot{display:flex;gap:10px;align-items:center;justify-content:center}
+.sw{font-family:var(--script);font-weight:400;font-style:normal;letter-spacing:0;line-height:0;font-size:1.5em;position:relative;top:.06em;margin-right:.12em}
+.scr{font-family:var(--script);font-weight:400;font-style:normal;letter-spacing:0;font-size:1.3em;line-height:.8}
+
+/* NOW: what the site does today */
+.now h2{font:400 34px/1.05 var(--serif);letter-spacing:-.025em;margin:0}
+.now .h1{font:400 44px/1.05 var(--serif);letter-spacing:0;margin:0}
+.now .h3{font:500 20px/1.3 var(--serif);margin:0}
+.now .lt{font:500 21px/1.15 var(--serif)}
+.now .co{font:500 28px/1.1 var(--serif)}
+.now .tc{font:600 30px/1.1 var(--serif);letter-spacing:-.025em}
+.now .end{font:400 34px/1.1 var(--serif)}
+.now .stats b{font:500 32px/1 var(--serif)}
+.now .artist{font:600 15px var(--serif)}
+.now .fm{font:600 18px var(--serif)}
+
+/* A, B, C share one serif voice: light and tight for anything big, regular for small titles, nothing heavier */
+.v h2{font:300 36px/1.05 var(--serif);letter-spacing:-.035em;margin:0}
+.v .h1{font:300 46px/1.02 var(--serif);letter-spacing:-.04em;margin:0}
+.v .h3{font:400 20px/1.3 var(--serif);letter-spacing:-.01em;margin:0}
+.v .lt{font:400 21px/1.15 var(--serif);letter-spacing:-.01em}
+.v .co{font:300 30px/1.1 var(--serif);letter-spacing:-.03em}
+.v .tc{font:300 32px/1.1 var(--serif);letter-spacing:-.035em}
+.v .end{font:300 34px/1.1 var(--serif);letter-spacing:-.035em}
+.v .stats b{font:300 34px/1 var(--serif);letter-spacing:-.03em}
+.v .artist{font:400 15px var(--serif)}
+.v .fm{font:400 18px var(--serif)}
+.a h2,.a .h1,.a .tc,.b h2,.b .h1,.b .tc{padding-top:.22em}
+/* B: script signature on small moments */
+.b .label.sig,.b .cap.sig{font:400 22px/1 var(--script);color:inherit;letter-spacing:0;margin-bottom:6px}
+.b .wall .label.sig{color:#E6C98F}
+.b .artist{font:400 22px/1 var(--script)}
+.b .fm{font:400 26px/1 var(--script)}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Type options</h1>
+  <p>Left: the site today. A, B and C each give the serif one voice (light and tight for big text, regular for small titles, no medium or semibold), then use the script accent in different amounts. Labels and buttons stay in Inter in every option.</p>
+</div>
+<div class="cols">
+
+  <!-- NOW -->
+  <section class="col now">
+    <p class="tag">Now<small>Four serif weights, mixed spacing, script only on V, K and the ticket</small></p>
+    <div class="blk"><p class="cap">Section heading</p><p class="label">Gallery I</p><h2>Product &amp; Technology</h2><p class="body">Things I have built and designed.</p></div>
+    <div class="blk"><p class="cap">Case-study title</p><p class="label">Case study</p><p class="h1">LOCIT</p><p class="h3" style="margin-top:12px">A pendant, not a band</p>
+      <div class="stats" style="margin-top:12px"><div><b>3 ft</b><span>accuracy</span></div><div><b>30 s</b><span>alerts</span></div></div></div>
+    <div class="blk wall"><p class="label">Gallery II</p><p class="tc">The Playground</p></div>
+    <div class="blk"><p class="cap">Exhibit label and art label</p><div class="card"><p class="cat">Engineering · Hardware</p><span class="lt">LOCIT</span></div>
+      <div class="card" style="margin-top:10px"><span class="lt"><i>“Firelight”</i></span><p class="cat" style="margin:4px 0 0">Digital painting</p><p class="artist" style="margin:4px 0 0">Victoria Kayode</p></div></div>
+    <div class="blk"><p class="cap">Experience</p><span class="co">Handshake AI</span></div>
+    <div class="blk"><p class="end">Thanks for walking through</p></div>
+    <div class="blk"><p class="cap">Footer</p><p class="fm foot">Victoria’s Gallery</p></div>
+  </section>
+
+  <!-- A -->
+  <section class="col v a">
+    <p class="tag">A · Swash initials<small>One serif voice. A script capital opens each page title and section heading, like your name.</small></p>
+    <div class="blk"><p class="cap">Section heading</p><p class="label">Gallery I</p><h2><span class="sw">P</span>roduct &amp; Technology</h2><p class="body">Things I have built and designed.</p></div>
+    <div class="blk"><p class="cap">Case-study title</p><p class="label">Case study</p><p class="h1"><span class="sw">L</span>OCIT</p><p class="h3" style="margin-top:12px">A pendant, not a band</p>
+      <div class="stats" style="margin-top:12px"><div><b>3 ft</b><span>accuracy</span></div><div><b>30 s</b><span>alerts</span></div></div></div>
+    <div class="blk wall"><p class="label">Gallery II</p><p class="tc"><span class="sw">T</span>he Playground</p></div>
+    <div class="blk"><p class="cap">Exhibit label and art label</p><div class="card"><p class="cat">Engineering · Hardware</p><span class="lt">LOCIT</span></div>
+      <div class="card" style="margin-top:10px"><span class="lt"><i>“Firelight”</i></span><p class="cat" style="margin:4px 0 0">Digital painting</p><p class="artist" style="margin:4px 0 0">Victoria Kayode</p></div></div>
+    <div class="blk"><p class="cap">Experience</p><span class="co">Handshake AI</span></div>
+    <div class="blk"><p class="end"><span class="sw">T</span>hanks for walking through</p></div>
+    <div class="blk"><p class="cap">Footer</p><p class="fm foot">Victoria’s Gallery</p></div>
+  </section>
+
+  <!-- B -->
+  <section class="col v b">
+    <p class="tag">B · Swash initials + signatures<small>A, plus the script for small personal moments: gallery names, your name on art labels, the footer.</small></p>
+    <div class="blk"><p class="cap">Section heading</p><p class="label sig">Gallery I</p><h2><span class="sw">P</span>roduct &amp; Technology</h2><p class="body">Things I have built and designed.</p></div>
+    <div class="blk"><p class="cap">Case-study title</p><p class="label">Case study</p><p class="h1"><span class="sw">L</span>OCIT</p><p class="h3" style="margin-top:12px">A pendant, not a band</p>
+      <div class="stats" style="margin-top:12px"><div><b>3 ft</b><span>accuracy</span></div><div><b>30 s</b><span>alerts</span></div></div></div>
+    <div class="blk wall"><p class="label sig">Gallery II</p><p class="tc"><span class="sw">T</span>he Playground</p></div>
+    <div class="blk"><p class="cap">Exhibit label and art label</p><div class="card"><p class="cat">Engineering · Hardware</p><span class="lt">LOCIT</span></div>
+      <div class="card" style="margin-top:10px"><span class="lt"><i>“Firelight”</i></span><p class="cat" style="margin:4px 0 0">Digital painting</p><p class="artist" style="margin:6px 0 0">Victoria Kayode</p></div></div>
+    <div class="blk"><p class="cap">Experience</p><span class="co">Handshake AI</span></div>
+    <div class="blk"><p class="end"><span class="sw">T</span>hanks for walking through</p></div>
+    <div class="blk"><p class="cap">Footer</p><p class="fm foot">Victoria’s Gallery</p></div>
+  </section>
+
+  <!-- C -->
+  <section class="col v c">
+    <p class="tag">C · Script words<small>One serif voice. One key word in each heading is set in script instead of a single letter.</small></p>
+    <div class="blk"><p class="cap">Section heading</p><p class="label">Gallery I</p><h2>Product &amp; <span class="scr">Technology</span></h2><p class="body">Things I have built and designed.</p></div>
+    <div class="blk"><p class="cap">Case-study title</p><p class="label">Case study</p><p class="h1">LOCIT</p><p class="h3" style="margin-top:12px">A pendant, not a band</p>
+      <div class="stats" style="margin-top:12px"><div><b>3 ft</b><span>accuracy</span></div><div><b>30 s</b><span>alerts</span></div></div></div>
+    <div class="blk wall"><p class="label">Gallery II</p><p class="tc">The <span class="scr">Playground</span></p></div>
+    <div class="blk"><p class="cap">Exhibit label and art label</p><div class="card"><p class="cat">Engineering · Hardware</p><span class="lt">LOCIT</span></div>
+      <div class="card" style="margin-top:10px"><span class="lt"><i>“Firelight”</i></span><p class="cat" style="margin:4px 0 0">Digital painting</p><p class="artist" style="margin:4px 0 0">Victoria Kayode</p></div></div>
+    <div class="blk"><p class="cap">Experience</p><p class="end" style="font-size:30px">Where I’ve <span class="scr">worked</span></p></div>
+    <div class="blk"><p class="end">Thanks for <span class="scr">walking</span> through</p></div>
+    <div class="blk"><p class="cap">Footer</p><p class="fm foot">Victoria’s Gallery</p></div>
+  </section>
+</div>
+</body>
+</html>
