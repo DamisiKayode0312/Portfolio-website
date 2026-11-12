@@ -125,7 +125,10 @@ section{position:relative}
 .ex-stage{position:sticky;top:var(--nav-h);height:calc(100svh - var(--nav-h));overflow:clip;display:flex;align-items:center;
   background:linear-gradient(rgba(66,21,28,.55),transparent 22%,transparent 70%,rgba(66,21,28,.6)),var(--burgundy)}
 .ex-stage::before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--gold);opacity:.5;z-index:1}
-.ex-wall{display:flex;align-items:center;gap:var(--gap);height:100%;will-change:transform}
+.ex-wall{position:relative;display:flex;align-items:center;gap:var(--gap);height:100%;flex:none;width:max-content;min-width:100%;will-change:transform}
+/* Gallery I hangs on the same damask as the Playground; the paper travels with the frames as you walk */
+.ex-wall::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:image-set(url(../assets/frames/damask.webp) type("image/webp"),url(../assets/frames/damask.jpg) type("image/jpeg")) 0 0/var(--damask) var(--damask);opacity:.5}
 .ex-room{display:flex;align-items:center;gap:var(--gap);height:100%;position:relative}
 .ex-art{display:flex;align-items:center;gap:var(--gap);height:100%}
 /* the Playground room hangs on damask, fading in and out at its edges */
