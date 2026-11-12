@@ -491,9 +491,17 @@ section{position:relative}
 @media (max-width:560px){.xp{grid-template-columns:36px minmax(0,1fr);gap:12px}.xp-mark{width:36px;height:36px;font-size:13px}.xp-mark--script{font-size:26px}
   .xp-head{display:grid;gap:2px}.xp-title{display:grid}.xp-sep{display:none}}
 
-/* Experience, its own section again: the same list, sized for a section of its own */
-.experience .exp-in{max-width:880px}
-.experience .skills{margin:0 0 var(--s6)}
-.experience .xp-list:first-of-type{margin-top:var(--s2)}
-.experience .xp-list + .label{margin:var(--s6) 0 var(--s3);font-size:15px}
-.experience .xp-list{margin-bottom:0}
+
+/* Experience as an open list: burgundy names, quiet dividers, generous space; one column everywhere */
+.experience .exp-in{max-width:820px}
+.experience .skills{margin:var(--s3) 0 var(--s7)}
+.xp-group{margin-top:var(--s6)}
+.xp-group .label{margin:0 0 var(--s3);font-size:15px}
+.experience .xp-list{gap:0;margin:0}
+.experience .xp-list>li{padding:var(--s4) 0;border-top:1px solid var(--line)}
+.experience .xp-list>li:last-child{border-bottom:1px solid var(--line)}
+.experience .xp-org{color:var(--burgundy-ink)}
+.xp-note{margin:0;font-size:17px;line-height:1.55;color:var(--body-ink,var(--charcoal))}
+.xp-note a{color:var(--burgundy);text-underline-offset:3px;white-space:nowrap}
+.experience .about-resume{margin-top:var(--s5)}
+.tc-note{margin:var(--s2) 0 0;font-size:15px;line-height:1.45}

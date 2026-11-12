@@ -107,7 +107,7 @@
   var projectsEl=$('#ex-projects'),artEl=$('#salon'),expEl=$('#exp-list'),art=[],lb=$('#lightbox'),lbIndex=0,lbReturn=null;
   function label(cat,title,meta,cta,missing){
     return '<span class="ex-label"><span class="lbl-cat">'+esc(cat)+'</span><span class="lbl-title">'+esc(title)+'</span>'+(meta?'<span class="lbl-meta">'+esc(meta)+'</span>':'')+
-      (missing?'<span class="lbl-missing">'+esc(missing)+'</span>':'')+'<span class="lbl-cta">'+esc(cta)+' <span aria-hidden="true">→</span></span></span>';
+      (missing?'<span class="lbl-missing">'+esc(missing)+'</span>':'')+'<span class="lbl-cta">'+esc(cta)+'</span></span>';
   }
   function renderExhibition(projects){
     projectsEl.innerHTML=projects.map(function(x,i){
@@ -147,7 +147,7 @@
   }
   /* Experience: one card per role, each opening its case study */
   function renderExperience(list){
-    expEl.innerHTML=list.map(function(x){return '<li data-pop><a class="exp-card" href="case-study.html?p='+encodeURIComponent(x.slug)+'"><span class="exp-co">'+esc(x.company)+'</span><span class="exp-role">'+esc(x.role)+'</span><span class="exp-dates">'+esc(x.dates)+'</span><span class="exp-sum">'+esc(x.summary)+'</span><span class="exp-cta">Read the case study <span aria-hidden="true">→</span></span></a></li>';}).join('');
+    expEl.innerHTML=list.map(function(x){return '<li data-pop><a class="exp-card" href="case-study.html?p='+encodeURIComponent(x.slug)+'"><span class="exp-co">'+esc(x.company)+'</span><span class="exp-role">'+esc(x.role)+'</span><span class="exp-dates">'+esc(x.dates)+'</span><span class="exp-sum">'+esc(x.summary)+'</span><span class="exp-cta">Read the case study</span></a></li>';}).join('');
   }
   /* after content renders, settle where the address asked for; back from a case study, the visitor stands in front of that exhibit */
   function position(){
@@ -241,7 +241,7 @@
       :'<span class="btn btn-primary" aria-disabled="true">Contact: email coming soon</span><p class="note">Placeholder · Contact email not supplied yet.</p>')+
       (links.length?'<p class="contact-links">'+links.join('<span aria-hidden="true">·</span>')+'</p>':'');
     $('#contact-actions').innerHTML=html;
-    var a=$('#resume-about');if(r){a.href=r;a.setAttribute('download','');}else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.textContent='Résumé coming soon';}
+    var a=$('#resume-about');if(!a){}else if(r){a.href=r;a.setAttribute('download','');}else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.textContent='Résumé coming soon';}
     var cp=$('#copy-em');if(cp)cp.addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(em).then(function(){cp.textContent='Copied';});});
   }
 

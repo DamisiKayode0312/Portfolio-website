@@ -32,7 +32,7 @@
   }).catch(function(){main.innerHTML='<p class="placeholder">The exhibit could not load. Run <code>python3 -m http.server</code> in the project folder and open http://localhost:8000.</p>';});
 
   function figs(list){return (list||[]).map(function(f){return '<figure class="fig'+(f.small?' fig-sm':'')+'"><img src="'+esc(f.src)+'" alt="'+esc(f.alt)+'" loading="lazy"><figcaption>'+esc(f.caption)+'</figcaption></figure>';}).join('');}
-  function linksHtml(x){return x.links&&x.links.length?'<p class="links">'+x.links.map(function(l){return '<a class="btn btn-secondary" href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(l.label)+' <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>';}).join('')+'</p>':'';}
+  function linksHtml(x){return x.links&&x.links.length?'<p class="links">'+x.links.map(function(l){return '<a class="btn btn-secondary" href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(l.label)+'<span class="sr-only"> (opens in a new tab)</span></a>';}).join('')+'</p>':'';}
   function nextHtml(next){return '<nav class="next" aria-label="Next exhibit">'+(next?
       '<a href="case-study.html?p='+encodeURIComponent(next.slug)+'"><span class="thumb"><span class="pframe pframe--landscape"><span class="pf-art">'+(next.image?'<img src="'+esc(next.image.src)+'" alt="">':'<span class="mini-ph">'+esc(next.title.charAt(0))+'</span>')+'</span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" aria-hidden="true" loading="lazy"></span></span><span class="nt"><span class="lbl">Next exhibit</span><b>'+esc(next.title)+'</b></span><span class="chev" aria-hidden="true">›</span></a>':
       '<a href="index.html#work"><span class="nt"><span class="lbl">End of the collection</span><b>Back to the gallery</b></span><span class="chev" aria-hidden="true">›</span></a>')+'</nav>';}
@@ -79,7 +79,7 @@
     var S=x.summary||{};
     H.push('<div class="summary">'+[['idea','The idea'],['who','Who it helps'],['how','How it works']].map(function(k){var b=S[k[0]]||{};
       return '<div class="sblock" data-pop><h2>'+k[1]+'</h2>'+(b.text?'<p>'+esc(b.text)+'</p><p class="meta">'+chip(b.ev,b.src)+'</p>':ph(b.needs||'Awaiting material'))+'</div>';}).join('')+'</div>');
-    if(x.links&&x.links.length)H.push('<p class="links">'+x.links.map(function(l){return '<a class="btn btn-secondary" href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(l.label)+' <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>';}).join('')+'</p>');
+    if(x.links&&x.links.length)H.push('<p class="links">'+x.links.map(function(l){return '<a class="btn btn-secondary" href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(l.label)+'<span class="sr-only"> (opens in a new tab)</span></a>';}).join('')+'</p>');
     H.push('</div>');
 
     H.push('<div class="journal">');
