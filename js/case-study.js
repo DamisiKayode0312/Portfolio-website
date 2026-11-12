@@ -68,6 +68,7 @@
 
   function render(x,next){
     document.title=x.title+' · Victoria’s Gallery';
+    if(x.kind==='experience'){var bk=document.getElementById('back');bk.href='index.html#experience';bk.querySelector('.back-l').textContent='Back to experience';}
     document.getElementById('mini').innerHTML='Gallery · '+esc(x.title);
     if(x.story)return renderStory(x,next);
     document.getElementById('mini').innerHTML='Gallery · '+esc(x.title);

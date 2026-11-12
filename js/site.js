@@ -64,18 +64,13 @@
     sections.forEach(function(s){var r=s.getBoundingClientRect();if(r.top<=line&&r.bottom>line)tone=s.dataset.tone;if(r.top<=probe&&r.bottom>probe)cur=s;});
     nav.classList.toggle('on-dark',tone==='dark');
     var group=cur?cur.dataset.group:null,id=cur?cur.id:null;
-    if(id==='work'&&inPlayground()){group='playground';id='playground';}
     links.forEach(function(a){if(a.dataset.group===group)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
     if(positioned&&id&&location.hash!=='#'+id&&!root.classList.contains('ticketing')){try{history.replaceState(null,'','#'+id);}catch(e){}}
   }
-  /* the Playground room is "current" once its opening panel reaches the middle of the screen */
-  function inPlayground(){var p=$('#playground .ex-intro');if(!p)return false;var r=p.getBoundingClientRect();
-    return EX&&!EX.disabled?r.left<innerWidth*.6:r.top<innerHeight*.4;}
-  /* go to a section; Work and Playground are places on the moving wall */
+  /* go to a section; Work is the top of the moving wall */
   function goTo(id,instant){
     var behavior=instant||reduce?'auto':'smooth',target=null,heading=null;
-    if(id==='playground'&&EX){target=EX.scrollYFor($('#playground .ex-intro'));heading=$('#play-h');}
-    else if(id==='work'&&EX){var w=$('#work');target=w.getBoundingClientRect().top+scrollY-nav.offsetHeight;heading=$('#work-h');}
+    if(id==='work'&&EX){var w=$('#work');target=w.getBoundingClientRect().top+scrollY-nav.offsetHeight;heading=$('#work-h');}
     else{var t=document.getElementById(id);if(!t)return false;target=t.getBoundingClientRect().top+scrollY-nav.offsetHeight+1;heading=t.querySelector('h1,h2');}
     scrollTo({top:target,behavior:behavior});try{history.replaceState(null,'','#'+id);}catch(_){}
     if(heading){heading.setAttribute('tabindex','-1');setTimeout(function(){heading.focus({preventScroll:true});},behavior==='auto'?0:600);}
@@ -84,29 +79,35 @@
   links.concat($$('.brand'),$$('#enter'),$$('.hero-glimpse')).forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1);if(goTo(id))e.preventDefault();});});
 
   /* ---------- the exhibition ---------- */
-  var projectsEl=$('#ex-projects'),artEl=$('#ex-art'),art=[],lb=$('#lightbox'),lbIndex=0,lbReturn=null;
+  var projectsEl=$('#ex-projects'),artEl=$('#salon'),expEl=$('#exp-list'),art=[],lb=$('#lightbox'),lbIndex=0,lbReturn=null;
   function label(cat,title,meta,cta,missing){
     return '<span class="ex-label"><span class="lbl-cat">'+esc(cat)+'</span><span class="lbl-title">'+esc(title)+'</span>'+(meta?'<span class="lbl-meta">'+esc(meta)+'</span>':'')+
       (missing?'<span class="lbl-missing">'+esc(missing)+'</span>':'')+'<span class="lbl-cta">'+esc(cta)+' <span aria-hidden="true">→</span></span></span>';
   }
-  function renderExhibition(projects,artworks){
+  function renderExhibition(projects){
     projectsEl.innerHTML=projects.map(function(x,i){
       var kind=x.frame||'landscape';
       var img=x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" '+(i?'loading="lazy" ':'')+'style="view-transition-name:hero-'+esc(x.slug)+'">':'<span class="frame-ph">Placeholder · Project image needed</span>';
       return '<div class="ex-item ex-exhibit f-'+kind+(x.small?' is-small':'')+'" data-slug="'+esc(x.slug)+'"><span class="ex-spot" aria-hidden="true"></span>'+
         '<a class="ex-open" href="case-study.html?p='+encodeURIComponent(x.slug)+'" aria-label="'+esc(x.title)+'. '+esc(x.category)+'. Read the case study">'+
         frame(kind,img,i!==0)+label(x.category,x.title,x.teaser,'Read the case study',x.image?'':'Project image needed')+'</a></div>';}).join('');
-    art=artworks;
-    artEl.innerHTML=artworks.map(function(a,i){
-      var kind=a.frame||'portrait',inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy"'+(a.position?' style="object-position:'+esc(a.position)+'"':'')+'>':'<span class="frame-ph">Placeholder · Artwork from Dami</span>';
-      return '<div class="ex-item ex-exhibit f-'+kind+(i%2?' is-small':'')+'"><span class="ex-spot" aria-hidden="true"></span>'+
-        '<button class="ex-open" type="button" data-i="'+i+'" aria-label="'+esc(a.placeholder?'Artwork coming, frame '+(i+1):a.title)+'. View details">'+
-        frame(kind,inner)+label(a.placeholder?'Playground':[a.medium,a.year].filter(Boolean).join(' · '),a.placeholder?'Artwork coming':a.title,'',
-          'View details',a.placeholder?'Artwork needed':'')+'</button></div>';}).join('');
     /* remember which exhibit was opened, to come back to it */
     projectsEl.addEventListener('click',function(e){var it=e.target.closest('.ex-exhibit');if(it)store('vg-lastFrame',it.dataset.slug);});
-    artEl.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
     EX=window.Exhibition.create({section:$('#work'),stage:$('#ex-stage'),wall:$('#ex-wall'),items:'.ex-item'});
+  }
+  /* Gallery II: a salon hang. Columns of one or two pieces, all centred on one line, beside a title card. */
+  function renderSalon(artworks){
+    art=artworks;var cols={};
+    artworks.forEach(function(a,i){var w=a.wall||{},c=clamp(w.col||(i%4)+2,2,5);(cols[c]=cols[c]||[]).push({a:a,i:i,size:w.size||'m'});});
+    var html=Object.keys(cols).sort().map(function(c){return '<div class="salon-col salon-col--'+c+'">'+cols[c].map(function(p){var a=p.a,kind=a.frame||'portrait';
+      var inner=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.alt)+'" loading="lazy"'+(a.position?' style="object-position:'+esc(a.position)+'"':'')+'>':'<span class="frame-ph">Placeholder · Artwork from Dami</span>';
+      return '<button class="salon-piece size-'+esc(p.size)+' f-'+kind+'" type="button" data-i="'+p.i+'" data-pop aria-label="'+esc(a.title)+(a.medium?', '+esc(a.medium):'')+'. View it up close">'+frame(kind,inner)+'<span class="salon-cap">'+esc(a.title)+'</span></button>';}).join('')+'</div>';}).join('');
+    artEl.insertAdjacentHTML('beforeend',html);
+    artEl.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(b)openLb(+b.dataset.i,b);});
+  }
+  /* Experience: one card per role, each opening its case study */
+  function renderExperience(list){
+    expEl.innerHTML=list.map(function(x){return '<li data-pop><a class="exp-card" href="case-study.html?p='+encodeURIComponent(x.slug)+'"><span class="exp-co">'+esc(x.company)+'</span><span class="exp-role">'+esc(x.role)+'</span><span class="exp-dates">'+esc(x.dates)+'</span><span class="exp-sum">'+esc(x.summary)+'</span><span class="exp-cta">Read the case study <span aria-hidden="true">→</span></span></a></li>';}).join('');
   }
   /* after content renders, settle where the address asked for; back from a case study, the visitor stands in front of that exhibit */
   function position(){
@@ -203,7 +204,7 @@
   addEventListener('resize',function(){requestAnimationFrame(update);});
 
   Promise.all([getJSON('data/exhibits.json'),getJSON('data/art.json'),getJSON('data/site.json')]).then(function(r){
-    renderExhibition(r[0].exhibits,r[1].artworks);renderJourney(r[2].timeline);renderContact(r[2]);observePop();sizePad();
+    var ex=r[0].exhibits;renderExhibition(ex.filter(function(x){return x.kind!=='experience';}));renderExperience(ex.filter(function(x){return x.kind==='experience';}));renderSalon(r[1].artworks);renderJourney(r[2].timeline);renderContact(r[2]);observePop();sizePad();
     /* wait for the display fonts (they change the hero's height) before standing the visitor in front of an exhibit */
     var fontsReady=document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(function(r){setTimeout(r,1500);})]):Promise.resolve();
     fontsReady.then(function(){if(EX)EX.layout();requestAnimationFrame(position);});

@@ -46,8 +46,8 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 - Palette: #FAF9F6 page, #F0ECE4 surfaces, #651E28 exhibition wall and buttons, #42151C accents, #282522 text, #6D665F secondary text, #B49359 decorative gold (decoration only on light backgrounds; #D6BE8C for small gold text on burgundy). Type: Bodoni Moda headings, Inter for everything else.
 - Hero ("Victoria Kayode / A curious mind. An evolving collection.") replaces the welcome screen and the scroll-to-open doors.
 - The ticket is kept as the once-per-visit entrance (skip link kept). Confirm, or drop it so the hero is the first screen.
-- Work and Playground are one continuous wall: Gallery I (projects) then Gallery II (Playground art, on damask). Nav order now follows the page: Home · Work · Playground · About.
-- Frame shapes per project (data/exhibits.json `frame`, `small`): LOCIT landscape, Fairy Job Mother portrait, News Corp landscape (small), AI Evaluation oval, Pi logger portrait (small).
+- Home page order: Hero → Gallery I projects wall (LOCIT, Fairy Job Mother, Weather Station; scroll-driven) → Experience (Handshake AI, News Corp cards linking to their case studies) → About → Gallery II Playground (static salon hang on damask with a title card) → Doodle → Contact. Nav: Home · Work · Experience · About · Playground (Home hidden under 380px wide).
+- Frame shapes (data/exhibits.json `frame`, `small`): LOCIT landscape, Fairy Job Mother landscape, Weather Station portrait (small). Experience roles have no frames.
 - Reduced motion: the wall becomes a vertical gallery with every exhibit lit; no pinning.
 - The mockups mentioned in the redesign request were not attached; layout follows the written spec. Adjust once they are supplied.
 

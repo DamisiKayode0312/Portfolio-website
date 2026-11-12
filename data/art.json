@@ -1,18 +1,6 @@
 {
-  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, frame (portrait, landscape or oval) and placeholder false. 'position' (optional) sets which part of the picture stays visible inside the frame opening (CSS object-position, default top). Titles are Victoria's (12 Nov 2026); year and story are left empty until she supplies them.",
+  "_note": "Art Gallery content. Only Victoria's own supplied files go here: never generated or stand-in artwork. To hang a piece: put the file in assets/art/, set image, title, year, medium, alt, story, frame (portrait, landscape or oval) and placeholder false. 'position' (optional) sets which part of the picture stays visible inside the frame opening (CSS object-position, default top). Titles are Victoria's (12 Nov 2026); year and story are left empty until she supplies them. 'wall' places a piece in the salon hang: col 2-5 (col 1 is the title card) and size s, m, l or xl; pieces in one column stack, and every column is centred on the same line.",
   "artworks": [
-    {
-      "id": "candlelight",
-      "title": "Of the Sky",
-      "year": "",
-      "medium": "Digital painting",
-      "image": "assets/art/candlelight.webp",
-      "alt": "Digital painting of a woman with long dark curls in a yellow robe, standing among white flowers and lit candles beneath a cloudy blue sky.",
-      "story": "",
-      "placeholder": false,
-      "frame": "portrait",
-      "position": "center 20%"
-    },
     {
       "id": "glitter-eye",
       "title": "Study of an Eye",
@@ -23,19 +11,11 @@
       "story": "",
       "placeholder": false,
       "frame": "oval",
-      "position": "center"
-    },
-    {
-      "id": "headscarf",
-      "title": "Portrait Sketch",
-      "year": "",
-      "medium": "Digital drawing",
-      "image": "assets/art/headscarf.webp",
-      "alt": "Black and white drawing of a woman in a headscarf with wavy hair, framed by red magnolia branches.",
-      "story": "",
-      "placeholder": false,
-      "frame": "portrait",
-      "position": "center"
+      "position": "center",
+      "wall": {
+        "col": 2,
+        "size": "s"
+      }
     },
     {
       "id": "neon",
@@ -47,7 +27,43 @@
       "story": "",
       "placeholder": false,
       "frame": "portrait",
-      "position": "center 30%"
+      "position": "center 30%",
+      "wall": {
+        "col": 2,
+        "size": "m"
+      }
+    },
+    {
+      "id": "candlelight",
+      "title": "Of the Sky",
+      "year": "",
+      "medium": "Digital painting",
+      "image": "assets/art/candlelight.webp",
+      "alt": "Digital painting of a woman with long dark curls in a yellow robe, standing among white flowers and lit candles beneath a cloudy blue sky.",
+      "story": "",
+      "placeholder": false,
+      "frame": "portrait",
+      "position": "center 20%",
+      "wall": {
+        "col": 3,
+        "size": "xl"
+      }
+    },
+    {
+      "id": "headscarf",
+      "title": "Portrait Sketch",
+      "year": "",
+      "medium": "Digital drawing",
+      "image": "assets/art/headscarf.webp",
+      "alt": "Black and white drawing of a woman in a headscarf with wavy hair, framed by red magnolia branches.",
+      "story": "",
+      "placeholder": false,
+      "frame": "portrait",
+      "position": "center",
+      "wall": {
+        "col": 4,
+        "size": "l"
+      }
     },
     {
       "id": "swordsman",
@@ -59,7 +75,11 @@
       "story": "",
       "placeholder": false,
       "frame": "oval",
-      "position": "center"
+      "position": "center",
+      "wall": {
+        "col": 5,
+        "size": "s"
+      }
     },
     {
       "id": "lips-study",
@@ -71,7 +91,11 @@
       "story": "",
       "placeholder": false,
       "frame": "portrait",
-      "position": "center"
+      "position": "center",
+      "wall": {
+        "col": 5,
+        "size": "m"
+      }
     }
   ]
 }

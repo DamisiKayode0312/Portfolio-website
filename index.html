@@ -55,8 +55,9 @@
       <ul>
         <li><a href="#home" data-group="home">Home</a></li>
         <li><a href="#work" data-group="work">Work</a></li>
-        <li><a href="#playground" data-group="playground">Playground</a></li>
+        <li><a href="#experience" data-group="experience">Experience</a></li>
         <li><a href="#about" data-group="about">About</a></li>
+        <li><a href="#playground" data-group="playground">Playground</a></li>
       </ul>
     </nav>
   </div>
@@ -86,26 +87,27 @@
         <div class="ex-item ex-panel ex-intro">
           <p class="label">Gallery I</p>
           <h2 id="work-h" tabindex="-1">Product &amp; Technology</h2>
-          <p>Things I have built, researched and designed. Keep scrolling to walk along the wall; select a frame to read its story.</p>
+          <p>Things I have built and designed. Keep scrolling to walk along the wall; select a frame to read its story.</p>
           <a class="ex-link" href="work.html">View all projects</a>
         </div>
         <div class="ex-room ex-room--work" id="ex-projects"></div>
-        <div class="ex-room ex-room--art" id="playground" aria-labelledby="play-h">
-          <div class="ex-item ex-panel ex-intro">
-            <p class="label">Gallery II</p>
-            <h2 id="play-h">The Playground</h2>
-            <p>An exhibit for art, experiments and ideas that don’t always fit in a neat box.</p>
-          </div>
-          <div class="ex-art" id="ex-art"></div>
-        </div>
         <div class="ex-item ex-panel ex-end">
-          <p class="label">End of the exhibition</p>
-          <p class="ex-end-line">Thank you for visiting</p>
+          <p class="label">End of Gallery I</p>
+          <p class="ex-end-line">Thanks for walking through</p>
           <a class="ex-link" href="work.html">View all projects</a>
-          <a class="ex-link" href="#about">Meet the curator ↓</a>
+          <a class="ex-link" href="#experience">Experience ↓</a>
         </div>
       </div>
       <div class="ex-progress" aria-hidden="true"><i id="ex-bar"></i></div>
+    </div>
+  </section>
+
+  <!-- Experience: roles, each with its own case study -->
+  <section id="experience" class="experience" data-tone="light" data-group="experience" aria-labelledby="exp-h">
+    <div class="exp-in">
+      <p class="label" data-pop>Experience</p>
+      <h2 id="exp-h" data-pop>Where I’ve worked</h2>
+      <ol class="exp-list" id="exp-list"></ol>
     </div>
   </section>
 
@@ -129,6 +131,20 @@
         </div>
         <h3 class="journey-h" data-pop>My journey</h3>
         <ol class="journey" id="journey"><i class="journey-fill" id="journey-fill" aria-hidden="true"></i></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery II: the Playground, a salon hang of Victoria's own artwork -->
+  <section id="playground" class="salon" data-tone="dark" data-group="playground" aria-labelledby="play-h">
+    <div class="salon-wall" id="salon">
+      <div class="salon-col salon-col--1">
+        <div class="title-card" data-pop>
+          <p class="label">Gallery II</p>
+          <h2 id="play-h" tabindex="-1">The Playground</h2>
+          <p>Digital paintings and drawings by Victoria Kayode.</p>
+          <p class="tc-hint">Select a piece to see it up close</p>
+        </div>
       </div>
     </div>
   </section>

@@ -386,7 +386,8 @@
             ]
           }
         ]
-      }
+      },
+      "kind": "project"
     },
     {
       "slug": "fairy-job-mother",
@@ -567,7 +568,277 @@
             ]
           }
         ]
-      }
+      },
+      "kind": "project"
+    },
+    {
+      "slug": "pi-logger",
+      "title": "Raspberry Pi Weather Station",
+      "category": "Embedded Systems · IoT · Data Engineering",
+      "featured": false,
+      "teaser": "A Raspberry Pi that reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
+      "image": null,
+      "summary": {
+        "idea": {
+          "text": "A Raspberry Pi weather station for continuous environmental monitoring.",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
+        },
+        "who": {
+          "text": "",
+          "ev": "awaiting",
+          "needs": "Who or what it was for (course, personal project)."
+        },
+        "how": {
+          "text": "Python on a Raspberry Pi reads temperature, humidity and pressure at 10-second intervals and sends them to AWS IoT and a dashboard.",
+          "ev": "reported",
+          "src": "Her résumé (Nov 2026)"
+        }
+      },
+      "links": [],
+      "sections": {
+        "problem": {
+          "items": [],
+          "needs": "Problem."
+        },
+        "why": {
+          "items": [],
+          "needs": "Why it mattered."
+        },
+        "role": {
+          "items": [
+            {
+              "text": "Sensor integration, AWS IoT connectivity, data collection and monitoring, and reliability testing.",
+              "ev": "reported",
+              "src": "Creative brief"
+            }
+          ]
+        },
+        "constraints": {
+          "items": [],
+          "needs": "Constraints."
+        },
+        "research": {
+          "items": [],
+          "needs": "Research."
+        },
+        "decisions": {
+          "items": [],
+          "needs": "Decisions."
+        },
+        "built": {
+          "items": [
+            {
+              "text": "Automated readings in Python, connected to AWS IoT and a dashboard so conditions can be monitored remotely.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            }
+          ],
+          "needs": "Architecture diagram, photos, code link."
+        },
+        "results": {
+          "items": [
+            {
+              "text": "500+ sensor readings a day reach AWS IoT and the dashboard.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            }
+          ],
+          "needs": "Test logs or a chart."
+        },
+        "improve": {
+          "items": [],
+          "needs": "Next steps."
+        }
+      },
+      "frame": "portrait",
+      "small": true,
+      "story": {
+        "intro": "A Raspberry Pi weather station I built to monitor conditions remotely. It reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
+        "meta": [
+          [
+            "Tools",
+            "Python, Raspberry Pi, AWS IoT"
+          ],
+          [
+            "Measures",
+            "Temperature, humidity, pressure"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "process",
+            "label": "process",
+            "headline": "From sensor to dashboard",
+            "steps": [
+              {
+                "title": "Automate the readings",
+                "text": "I wrote Python on the Raspberry Pi to read temperature, humidity and pressure at 10-second intervals."
+              },
+              {
+                "title": "Send them to the cloud",
+                "text": "I connected the readings to AWS IoT and a dashboard, so conditions can be checked from anywhere."
+              }
+            ]
+          },
+          {
+            "id": "impact",
+            "label": "impact",
+            "headline": "Always on",
+            "stats": [
+              {
+                "n": "10 s",
+                "l": "between readings"
+              },
+              {
+                "n": "500+",
+                "l": "readings a day"
+              }
+            ]
+          }
+        ]
+      },
+      "kind": "project"
+    },
+    {
+      "slug": "ai-evaluation",
+      "title": "AI Evaluation and Quality Research",
+      "category": "AI Product Quality · Evaluation · Research",
+      "featured": false,
+      "teaser": "AI Evaluation and Technical Research Analyst at Handshake AI since November 2025. Method only, by design.",
+      "image": null,
+      "summary": "I test how AI models handle technical questions, find where their reasoning breaks, and document corrections. The work is confidential, so the case study covers method only.",
+      "links": [],
+      "sections": {
+        "problem": {
+          "items": [],
+          "needs": "Problem, in general terms."
+        },
+        "why": {
+          "items": [],
+          "needs": "Why it matters."
+        },
+        "role": {
+          "items": [
+            {
+              "text": "Evaluated 100+ AI test cases across four technical domains, identifying accuracy and reasoning errors and documenting verified corrections.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            },
+            {
+              "text": "Review 50+ model outputs a month against quality criteria, recording incorrect answers and recurring issues in structured reports.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            },
+            {
+              "text": "Created multistep chart and table tests in SuperAnnotate, using answer keys and scoring criteria to find visual reasoning failures.",
+              "ev": "reported",
+              "src": "Her résumé (Nov 2026)"
+            }
+          ]
+        },
+        "constraints": {
+          "items": [
+            {
+              "text": "This work is confidential. Only the method is described here: no prompts, rubrics, data or client names.",
+              "ev": "verified",
+              "src": "Confidentiality rule"
+            }
+          ]
+        },
+        "research": {
+          "items": [],
+          "needs": "What a good evaluation case looks like, in general terms."
+        },
+        "decisions": {
+          "items": [],
+          "needs": "How errors were categorized."
+        },
+        "built": {
+          "items": [],
+          "needs": "How findings were documented."
+        },
+        "results": {
+          "items": [],
+          "needs": "Non-confidential outcomes, if any."
+        },
+        "improve": {
+          "items": [],
+          "needs": "Lessons."
+        }
+      },
+      "frame": "oval",
+      "small": false,
+      "story": {
+        "intro": "At Handshake AI I test how AI models handle technical questions, find where their reasoning breaks, and document corrections so the models can be improved. The work is confidential, so this page covers how I work, not what I’ve seen.",
+        "meta": [
+          [
+            "Role",
+            "AI Evaluation & Technical Research Analyst"
+          ],
+          [
+            "Timeline",
+            "Nov 2025 – present"
+          ],
+          [
+            "Tools",
+            "SuperAnnotate"
+          ],
+          [
+            "Location",
+            "Remote"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "process",
+            "label": "process",
+            "headline": "How I test a model",
+            "steps": [
+              {
+                "title": "Write the test",
+                "text": "I write test cases with an answer key and scoring criteria."
+              },
+              {
+                "title": "Run and score",
+                "text": "I run them against model outputs and judge each answer for accuracy, clarity and reasoning."
+              },
+              {
+                "title": "Document the pattern",
+                "text": "I record incorrect answers, verified corrections and recurring issues in structured reports."
+              },
+              {
+                "title": "Test what it sees",
+                "text": "I build multistep chart and table tests in SuperAnnotate to find where visual reasoning fails."
+              }
+            ]
+          },
+          {
+            "id": "impact",
+            "label": "scope",
+            "headline": "By the numbers",
+            "stats": [
+              {
+                "n": "100+",
+                "l": "test cases evaluated"
+              },
+              {
+                "n": "4",
+                "l": "technical domains"
+              },
+              {
+                "n": "50+",
+                "l": "model outputs reviewed a month"
+              }
+            ],
+            "note": "No prompts, rubrics, data or client names are shared here."
+          }
+        ]
+      },
+      "kind": "experience",
+      "company": "Handshake AI",
+      "role": "AI Evaluation & Technical Research Analyst",
+      "dates": "Nov 2025 – present · Remote"
     },
     {
       "slug": "news-corp",
@@ -576,23 +847,7 @@
       "featured": true,
       "teaser": "AI Product Manager Intern, Aug to Oct 2025. How news sites personalize with AI, compared with TikTok and Spotify, and three feature proposals.",
       "image": null,
-      "summary": {
-        "idea": {
-          "text": "Studied how news sites personalize content with AI, and compared them with TikTok and Spotify to recommend how news could feel more personal.",
-          "ev": "verified",
-          "src": "Mini case scan; From User to Product Thinker"
-        },
-        "who": {
-          "text": "News Corp, during her AI Product Manager internship (August to October 2025).",
-          "ev": "reported",
-          "src": "Her résumé (Nov 2026)"
-        },
-        "how": {
-          "text": "Hands-on case scans of NY Post and BBC, browsing to see how quickly each changed what it showed, then a side-by-side comparison with TikTok and Spotify.",
-          "ev": "verified",
-          "src": "Mini case scan; From User to Product Thinker"
-        }
-      },
+      "summary": "I studied how news sites personalize with AI compared with TikTok and Spotify, built five audience personas from 500+ survey responses, and proposed three features.",
       "links": [],
       "sections": {
         "problem": {
@@ -774,287 +1029,11 @@
             "note": "These were recommendations with projected benefits, not shipped features."
           }
         ]
-      }
-    },
-    {
-      "slug": "ai-evaluation",
-      "title": "AI Evaluation and Quality Research",
-      "category": "AI Product Quality · Evaluation · Research",
-      "featured": false,
-      "teaser": "AI Evaluation and Technical Research Analyst at Handshake AI since November 2025. Method only, by design.",
-      "image": null,
-      "summary": {
-        "idea": {
-          "text": "Evaluating technical AI responses and documenting recurring model errors so they can be fixed.",
-          "ev": "reported",
-          "src": "Creative brief"
-        },
-        "who": {
-          "text": "Model evaluation work at Handshake AI (November 2025 to present). No client names.",
-          "ev": "reported",
-          "src": "Her résumé (Nov 2026)"
-        },
-        "how": {
-          "text": "Write test cases with answer keys and scoring criteria, run them against model outputs, and record incorrect answers and recurring issues in structured reports.",
-          "ev": "reported",
-          "src": "Her résumé (Nov 2026)"
-        }
       },
-      "links": [],
-      "sections": {
-        "problem": {
-          "items": [],
-          "needs": "Problem, in general terms."
-        },
-        "why": {
-          "items": [],
-          "needs": "Why it matters."
-        },
-        "role": {
-          "items": [
-            {
-              "text": "Evaluated 100+ AI test cases across four technical domains, identifying accuracy and reasoning errors and documenting verified corrections.",
-              "ev": "reported",
-              "src": "Her résumé (Nov 2026)"
-            },
-            {
-              "text": "Review 50+ model outputs a month against quality criteria, recording incorrect answers and recurring issues in structured reports.",
-              "ev": "reported",
-              "src": "Her résumé (Nov 2026)"
-            },
-            {
-              "text": "Created multistep chart and table tests in SuperAnnotate, using answer keys and scoring criteria to find visual reasoning failures.",
-              "ev": "reported",
-              "src": "Her résumé (Nov 2026)"
-            }
-          ]
-        },
-        "constraints": {
-          "items": [
-            {
-              "text": "This work is confidential. Only the method is described here: no prompts, rubrics, data or client names.",
-              "ev": "verified",
-              "src": "Confidentiality rule"
-            }
-          ]
-        },
-        "research": {
-          "items": [],
-          "needs": "What a good evaluation case looks like, in general terms."
-        },
-        "decisions": {
-          "items": [],
-          "needs": "How errors were categorized."
-        },
-        "built": {
-          "items": [],
-          "needs": "How findings were documented."
-        },
-        "results": {
-          "items": [],
-          "needs": "Non-confidential outcomes, if any."
-        },
-        "improve": {
-          "items": [],
-          "needs": "Lessons."
-        }
-      },
-      "frame": "oval",
-      "small": false,
-      "story": {
-        "intro": "At Handshake AI I test how AI models handle technical questions, find where their reasoning breaks, and document corrections so the models can be improved. The work is confidential, so this page covers how I work, not what I’ve seen.",
-        "meta": [
-          [
-            "Role",
-            "AI Evaluation & Technical Research Analyst"
-          ],
-          [
-            "Timeline",
-            "Nov 2025 – present"
-          ],
-          [
-            "Tools",
-            "SuperAnnotate"
-          ],
-          [
-            "Location",
-            "Remote"
-          ]
-        ],
-        "sections": [
-          {
-            "id": "process",
-            "label": "process",
-            "headline": "How I test a model",
-            "steps": [
-              {
-                "title": "Write the test",
-                "text": "I write test cases with an answer key and scoring criteria."
-              },
-              {
-                "title": "Run and score",
-                "text": "I run them against model outputs and judge each answer for accuracy, clarity and reasoning."
-              },
-              {
-                "title": "Document the pattern",
-                "text": "I record incorrect answers, verified corrections and recurring issues in structured reports."
-              },
-              {
-                "title": "Test what it sees",
-                "text": "I build multistep chart and table tests in SuperAnnotate to find where visual reasoning fails."
-              }
-            ]
-          },
-          {
-            "id": "impact",
-            "label": "scope",
-            "headline": "By the numbers",
-            "stats": [
-              {
-                "n": "100+",
-                "l": "test cases evaluated"
-              },
-              {
-                "n": "4",
-                "l": "technical domains"
-              },
-              {
-                "n": "50+",
-                "l": "model outputs reviewed a month"
-              }
-            ],
-            "note": "No prompts, rubrics, data or client names are shared here."
-          }
-        ]
-      }
-    },
-    {
-      "slug": "pi-logger",
-      "title": "Raspberry Pi Weather Station",
-      "category": "Embedded Systems · IoT · Data Engineering",
-      "featured": false,
-      "teaser": "A Raspberry Pi that reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
-      "image": null,
-      "summary": {
-        "idea": {
-          "text": "A Raspberry Pi weather station for continuous environmental monitoring.",
-          "ev": "reported",
-          "src": "Her résumé (Nov 2026)"
-        },
-        "who": {
-          "text": "",
-          "ev": "awaiting",
-          "needs": "Who or what it was for (course, personal project)."
-        },
-        "how": {
-          "text": "Python on a Raspberry Pi reads temperature, humidity and pressure at 10-second intervals and sends them to AWS IoT and a dashboard.",
-          "ev": "reported",
-          "src": "Her résumé (Nov 2026)"
-        }
-      },
-      "links": [],
-      "sections": {
-        "problem": {
-          "items": [],
-          "needs": "Problem."
-        },
-        "why": {
-          "items": [],
-          "needs": "Why it mattered."
-        },
-        "role": {
-          "items": [
-            {
-              "text": "Sensor integration, AWS IoT connectivity, data collection and monitoring, and reliability testing.",
-              "ev": "reported",
-              "src": "Creative brief"
-            }
-          ]
-        },
-        "constraints": {
-          "items": [],
-          "needs": "Constraints."
-        },
-        "research": {
-          "items": [],
-          "needs": "Research."
-        },
-        "decisions": {
-          "items": [],
-          "needs": "Decisions."
-        },
-        "built": {
-          "items": [
-            {
-              "text": "Automated readings in Python, connected to AWS IoT and a dashboard so conditions can be monitored remotely.",
-              "ev": "reported",
-              "src": "Her résumé (Nov 2026)"
-            }
-          ],
-          "needs": "Architecture diagram, photos, code link."
-        },
-        "results": {
-          "items": [
-            {
-              "text": "500+ sensor readings a day reach AWS IoT and the dashboard.",
-              "ev": "reported",
-              "src": "Her résumé (Nov 2026)"
-            }
-          ],
-          "needs": "Test logs or a chart."
-        },
-        "improve": {
-          "items": [],
-          "needs": "Next steps."
-        }
-      },
-      "frame": "portrait",
-      "small": true,
-      "story": {
-        "intro": "A Raspberry Pi weather station I built to monitor conditions remotely. It reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
-        "meta": [
-          [
-            "Tools",
-            "Python, Raspberry Pi, AWS IoT"
-          ],
-          [
-            "Measures",
-            "Temperature, humidity, pressure"
-          ]
-        ],
-        "sections": [
-          {
-            "id": "process",
-            "label": "process",
-            "headline": "From sensor to dashboard",
-            "steps": [
-              {
-                "title": "Automate the readings",
-                "text": "I wrote Python on the Raspberry Pi to read temperature, humidity and pressure at 10-second intervals."
-              },
-              {
-                "title": "Send them to the cloud",
-                "text": "I connected the readings to AWS IoT and a dashboard, so conditions can be checked from anywhere."
-              }
-            ]
-          },
-          {
-            "id": "impact",
-            "label": "impact",
-            "headline": "Always on",
-            "stats": [
-              {
-                "n": "10 s",
-                "l": "between readings"
-              },
-              {
-                "n": "500+",
-                "l": "readings a day"
-              }
-            ]
-          }
-        ]
-      }
+      "kind": "experience",
+      "company": "News Corp",
+      "role": "AI Product Manager Intern",
+      "dates": "Aug – Oct 2025 · Remote"
     }
   ]
 }
