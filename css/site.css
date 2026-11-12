@@ -71,8 +71,10 @@ p{margin:0}
 .ticket-main{border-radius:10px 10px 0 0;padding:36px 44px 30px;text-align:center;filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
 .ticket-main::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   background:radial-gradient(60% 50% at var(--hx,30%) var(--hy,20%),rgba(255,255,255,.45),transparent 70%);mix-blend-mode:soft-light}
-.ticket-title{font:600 clamp(34px,10vw,46px)/1.02 var(--font-display);letter-spacing:-.01em}
-.ticket-sub{font:italic 400 clamp(16px,4.6vw,20px) var(--font-display);margin-top:10px;color:var(--brass)}
+.ticket-title{font:300 clamp(36px,10.5vw,50px)/1.05 var(--font-display);letter-spacing:-.045em;padding-top:.15em}
+.ticket-title .sw{font:400 1.5em/0 var(--font-script);letter-spacing:0;margin-right:.16em;position:relative;top:.06em}
+.ticket-title .sw-g{margin-right:.02em}
+.ticket-sub{font:300 clamp(17px,4.8vw,21px) var(--font-display);letter-spacing:-.02em;margin-top:10px;color:var(--brass)}
 .laurel{position:absolute;top:22px;width:22px;height:52px;color:var(--gold)}
 .laurel-l{left:16px}.laurel-r{right:16px;transform:scaleX(-1)}
 .perf{position:relative;height:0;z-index:2}
