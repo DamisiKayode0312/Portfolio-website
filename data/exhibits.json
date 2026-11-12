@@ -233,7 +233,7 @@
       "frame": "landscape",
       "small": false,
       "story": {
-        "intro": "LOCIT was our senior capstone at Kennesaw State: a GPS necklace and companion app that lets a family see where a loved one is, and get an alert if they leave a safe zone. The name stands for Location Integrated Tracker, and it’s a pun on “locket”, since the tracker is worn as a pendant. I led our four-person team, AZAD, from design through testing, and wrote the product requirements.",
+        "intro": "LOCIT was my senior capstone at Kennesaw State: a GPS necklace and companion app that lets a family see where a loved one is, and get an alert if they leave a safe zone. The name stands for Location Integrated Tracker, and it’s a pun on “locket”, since the tracker is worn as a pendant. I led our four-person team, AZAD, from design through testing.",
         "meta": [
           [
             "Role",
@@ -260,15 +260,14 @@
             "paras": [
               "Families with young kids or elderly relatives want to know where their people are. The trackers everyone knows, Apple AirTag and Tile, depend on a phone, and the people we were designing for often don’t carry one.",
               "So the question became: what would a tracker look like if the wearer didn’t need a phone at all?"
-            ],
-            "sources": "product requirements document"
+            ]
           },
           {
             "id": "goal",
             "label": "goal",
             "headline": "Light enough to forget you’re wearing it",
             "paras": [
-              "I wrote the requirements with measurable targets, so we could test the prototype against them instead of guessing:"
+              "I wrote the product requirements document with measurable targets, so I could test the prototype against them instead of guessing:"
             ],
             "stats": [
               {
@@ -284,22 +283,21 @@
                 "l": "target weight"
               },
               {
-                "n": "20%",
-                "l": "low-battery alert"
+                "n": "24 h",
+                "l": "battery life target"
               }
             ],
             "after": [
-              "We also set a 24-hour battery life target, and room for up to three trackers on one phone."
-            ],
-            "sources": "product requirements document; her résumé"
+              "It also called for an alert when the battery drops below 20%, and room for up to three trackers on one phone."
+            ]
           },
           {
             "id": "challenge",
             "label": "challenge",
             "headline": "Everything had to fit in a pendant",
             "paras": [
-              "Our first 3D-printed enclosure was too bulky to wear as a necklace. We kept shrinking and reprinting it until the GPS module, microcontroller and battery fit.",
-              "We also had to cut scope. UV sensors came out because the parts took too long to arrive, Bluetooth came in, and we revised the requirements to match what we could actually build."
+              "The first 3D-printed enclosure was too bulky to wear as a necklace. I designed the enclosure in Fusion 360, and we kept shrinking and reprinting it until the GPS module, microcontroller and battery fit.",
+              "We also had to cut scope. UV sensors came out because the parts took too long to arrive, Bluetooth came in, and the requirements were revised to match what we could actually build."
             ],
             "figures": [
               {
@@ -307,9 +305,14 @@
                 "alt": "Hand sketch of the LOCIT necklace pendant: a round case on a cord, with the circuit board, wiring and modules drawn inside it in red.",
                 "caption": "Early concept sketch: what had to fit inside the pendant.",
                 "small": true
+              },
+              {
+                "src": "assets/projects/locit/enclosure-render.webp",
+                "alt": "3D render of the LOCIT pendant enclosure: a smooth, dark, rounded case with a loop for the necklace cord.",
+                "caption": "Enclosure modeled in Fusion 360.",
+                "small": true
               }
-            ],
-            "sources": "Milestone 3 reports; product requirements document"
+            ]
           },
           {
             "id": "process",
@@ -322,7 +325,7 @@
               },
               {
                 "title": "Take the data off the app",
-                "text": "FlutterFlow couldn’t keep up with real-time data coming straight from AWS. We moved it onto a web server: the necklace uploads, the server stores, the app fetches. Sensor data transfer got about 20% faster."
+                "text": "FlutterFlow couldn’t keep up with real-time data coming straight from AWS. I replaced the direct AWS integration with a web server: the necklace uploads, the server stores, the app fetches. Sensor data transfer got about 20% faster, so GPS updates and geofence alerts arrived sooner."
               },
               {
                 "title": "Tune the geofence to the GPS",
@@ -330,15 +333,9 @@
               }
             ],
             "after": [
-              "The companion app, built in FlutterFlow, shows live location, sets safe zones, and sends boundary, temperature and low-battery alerts. I modeled the enclosure in Fusion 360 and we printed it in PLA."
+              "The companion app, built in FlutterFlow, shows live location, sets safe zones, and sends boundary, temperature and low-battery alerts. I also designed our team’s AZAD logo."
             ],
             "figures": [
-              {
-                "src": "assets/projects/locit/enclosure-render.webp",
-                "alt": "3D render of the LOCIT pendant enclosure: a smooth, dark, rounded case with a loop for the necklace cord.",
-                "caption": "Enclosure modeled in Fusion 360.",
-                "small": true
-              },
               {
                 "src": "assets/projects/locit/app-design-screens.webp",
                 "alt": "Three companion app design screens: sign in, geofencing with a Set New Geofence button and previous geofences, and settings for location tracking, geofencing and notifications.",
@@ -351,13 +348,12 @@
                 "small": true
               }
             ],
-            "note": "Facial recognition was in the spec and the app designs, but it isn’t counted here as a finished feature.",
-            "sources": "Milestone 1 and 3 reports; product requirements document; her résumé"
+            "note": "Facial recognition was in the spec and the app designs, but I’m not counting it as a finished feature."
           },
           {
             "id": "impact",
             "label": "impact",
-            "headline": "What we measured",
+            "headline": "What I measured",
             "stats": [
               {
                 "n": "98%",
@@ -377,10 +373,9 @@
               }
             ],
             "paras": [
-              "We tested GPS tracking and geofencing alerts across more than 20 scenarios, then demoed the system to non-technical audiences."
+              "I tested GPS tracking and geofencing alerts across more than 20 scenarios, then demoed the system to non-technical audiences."
             ],
-            "note": "These figures come from our own capstone testing, not from use in the field.",
-            "sources": "her résumé"
+            "note": "These figures come from our own capstone testing, not from use in the field."
           },
           {
             "id": "next",
@@ -388,8 +383,7 @@
             "headline": "Where it would go from here",
             "paras": [
               "The list we left ourselves: 24-hour battery life on a single charge, more thorough testing, a more polished app, and testing with real families."
-            ],
-            "sources": "Milestone 3 report"
+            ]
           }
         ]
       }
@@ -485,7 +479,81 @@
         }
       },
       "frame": "portrait",
-      "small": false
+      "small": false,
+      "story": {
+        "intro": "Fairy Job Mother is an AI career assistant I’m building for recent graduates and career changers. It helps people connect the experience they already have to the job they want, with a storybook-inspired look: interactive animation and a magic wand motif.",
+        "meta": [
+          [
+            "Role",
+            "Product requirements · Product design"
+          ],
+          [
+            "Status",
+            "In progress"
+          ],
+          [
+            "Tools",
+            "Figma, live AI integration"
+          ],
+          [
+            "For",
+            "Recent graduates and career changers"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "problem",
+            "label": "problem",
+            "headline": "Experience that doesn’t translate",
+            "paras": [
+              "Recent graduates and career changers often have relevant experience, but struggle to connect it to what a job description is asking for, or to know which projects would prove the skills they’re missing."
+            ]
+          },
+          {
+            "id": "process",
+            "label": "process",
+            "headline": "From flows to live AI",
+            "steps": [
+              {
+                "title": "Requirements and flows",
+                "text": "I defined the product requirements and designed the user flows in Figma."
+              },
+              {
+                "title": "Live AI features",
+                "text": "I built and deployed AI features that compare a user’s experience with a job description, then suggest tailored resume changes, skill-gap guidance and portfolio projects that would demonstrate the right skills."
+              },
+              {
+                "title": "Test, then refine",
+                "text": "I tested the web app with more than 10 users and refined the recommendations based on their feedback."
+              }
+            ]
+          },
+          {
+            "id": "impact",
+            "label": "impact",
+            "headline": "Early signal",
+            "stats": [
+              {
+                "n": "10+",
+                "l": "users tested"
+              },
+              {
+                "n": "7 of 10",
+                "l": "felt clearer presenting transferable skills"
+              }
+            ],
+            "note": "From a small survey of early testers."
+          },
+          {
+            "id": "next",
+            "label": "what’s next",
+            "headline": "Still being written",
+            "paras": [
+              "On the roadmap: job matching, learning recommendations, outreach suggestions, saved resume versions and application metrics."
+            ]
+          }
+        ]
+      }
     },
     {
       "slug": "news-corp",
@@ -599,7 +667,100 @@
         }
       },
       "frame": "landscape",
-      "small": true
+      "small": true,
+      "story": {
+        "intro": "As an AI Product Manager Intern at News Corp, I studied how news sites use AI to personalize what readers see, and how that compares with the apps people use every day. Then I turned it into feature recommendations.",
+        "meta": [
+          [
+            "Role",
+            "AI Product Manager Intern"
+          ],
+          [
+            "Timeline",
+            "Aug – Oct 2025"
+          ],
+          [
+            "Methods",
+            "Surveys, personas, competitive analysis"
+          ],
+          [
+            "Location",
+            "Remote"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "problem",
+            "label": "problem",
+            "headline": "Why doesn’t news feel personal?",
+            "paras": [
+              "People spend their days in feeds that learn what they like. I wanted to know how well news sites personalize compared with TikTok and Spotify, and what that gap means for readers."
+            ]
+          },
+          {
+            "id": "research",
+            "label": "research",
+            "headline": "Readers first, then the products",
+            "stats": [
+              {
+                "n": "500+",
+                "l": "survey responses analyzed"
+              },
+              {
+                "n": "5",
+                "l": "audience personas"
+              },
+              {
+                "n": "4",
+                "l": "platforms compared"
+              }
+            ],
+            "paras": [
+              "I started with readers: I analyzed survey responses and built five audience personas from their preferences and trust concerns. Then I tested the products myself."
+            ],
+            "steps": [
+              {
+                "title": "New York Post",
+                "text": "After a few entertainment clicks, the homepage swung from politics to entertainment, with no obvious way to set preferences. “Trending Now” and the sidebar followed my last click."
+              },
+              {
+                "title": "BBC",
+                "text": "It shifted more slowly, from politics to science and tech. A “My News” feature exists, but you have to go looking for it."
+              },
+              {
+                "title": "TikTok and Spotify",
+                "text": "TikTok’s For You page personalizes most strongly, and Spotify is strong too. Both news sites were far behind, and the Post’s autoplay video and intrusive ads were the biggest friction."
+              }
+            ],
+            "after": [
+              "What surprised me: how quickly a news site changes what it shows after a few clicks, and how it still felt less personal than social media."
+            ]
+          },
+          {
+            "id": "recommendation",
+            "label": "recommendation",
+            "headline": "Make news feel like it knows you",
+            "paras": [
+              "I recommended making the experience feel personal, mixing in discovery, and designing mobile-first with quick, swipeable video. That became three feature proposals:"
+            ],
+            "steps": [
+              {
+                "title": "Personalized feeds",
+                "text": "A feed shaped by what each reader actually engages with."
+              },
+              {
+                "title": "Weekly topic roundups",
+                "text": "Discovery built in, like a playlist for the week’s news."
+              },
+              {
+                "title": "Short-form video",
+                "text": "Quick, swipeable stories for the way people read on their phones."
+              }
+            ],
+            "note": "These were recommendations with projected benefits, not shipped features."
+          }
+        ]
+      }
     },
     {
       "slug": "ai-evaluation",
@@ -685,7 +846,73 @@
         }
       },
       "frame": "oval",
-      "small": false
+      "small": false,
+      "story": {
+        "intro": "At Handshake AI I test how AI models handle technical questions, find where their reasoning breaks, and document corrections so the models can be improved. The work is confidential, so this page covers how I work, not what I’ve seen.",
+        "meta": [
+          [
+            "Role",
+            "AI Evaluation & Technical Research Analyst"
+          ],
+          [
+            "Timeline",
+            "Nov 2025 – present"
+          ],
+          [
+            "Tools",
+            "SuperAnnotate"
+          ],
+          [
+            "Location",
+            "Remote"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "process",
+            "label": "process",
+            "headline": "How I test a model",
+            "steps": [
+              {
+                "title": "Write the test",
+                "text": "I write test cases with an answer key and scoring criteria."
+              },
+              {
+                "title": "Run and score",
+                "text": "I run them against model outputs and judge each answer for accuracy, clarity and reasoning."
+              },
+              {
+                "title": "Document the pattern",
+                "text": "I record incorrect answers, verified corrections and recurring issues in structured reports."
+              },
+              {
+                "title": "Test what it sees",
+                "text": "I build multistep chart and table tests in SuperAnnotate to find where visual reasoning fails."
+              }
+            ]
+          },
+          {
+            "id": "impact",
+            "label": "scope",
+            "headline": "By the numbers",
+            "stats": [
+              {
+                "n": "100+",
+                "l": "test cases evaluated"
+              },
+              {
+                "n": "4",
+                "l": "technical domains"
+              },
+              {
+                "n": "50+",
+                "l": "model outputs reviewed a month"
+              }
+            ],
+            "note": "No prompts, rubrics, data or client names are shared here."
+          }
+        ]
+      }
     },
     {
       "slug": "pi-logger",
@@ -768,7 +995,52 @@
         }
       },
       "frame": "portrait",
-      "small": true
+      "small": true,
+      "story": {
+        "intro": "A Raspberry Pi weather station I built to monitor conditions remotely. It reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
+        "meta": [
+          [
+            "Tools",
+            "Python, Raspberry Pi, AWS IoT"
+          ],
+          [
+            "Measures",
+            "Temperature, humidity, pressure"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "process",
+            "label": "process",
+            "headline": "From sensor to dashboard",
+            "steps": [
+              {
+                "title": "Automate the readings",
+                "text": "I wrote Python on the Raspberry Pi to read temperature, humidity and pressure at 10-second intervals."
+              },
+              {
+                "title": "Send them to the cloud",
+                "text": "I connected the readings to AWS IoT and a dashboard, so conditions can be checked from anywhere."
+              }
+            ]
+          },
+          {
+            "id": "impact",
+            "label": "impact",
+            "headline": "Always on",
+            "stats": [
+              {
+                "n": "10 s",
+                "l": "between readings"
+              },
+              {
+                "n": "500+",
+                "l": "readings a day"
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }

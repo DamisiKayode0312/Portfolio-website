@@ -38,7 +38,7 @@
   function finish(H){main.innerHTML=H.join('');var t=document.getElementById('title');t.focus({preventScroll:true});pop();spy();}
 
   /* Story format: intro, a role/timeline/tools/team row, then a few numbered sections with a headline each.
-     Every statement in the data comes from her documents; sources are listed under each section. */
+     Every statement in the data comes from her documents (see PLACEHOLDERS.md); sources are not shown on the page. */
   function renderStory(x,next){
     var st=x.story,H=[];
     H.push('<div class="cs-head story-head">');
@@ -46,7 +46,7 @@
     if(st.intro)H.push('<p class="intro">'+esc(st.intro)+'</p>');
     if(st.meta)H.push('<dl class="facts">'+st.meta.map(function(m){return '<div><dt>'+esc(m[0])+'</dt><dd>'+esc(m[1])+'</dd></div>';}).join('')+'</dl>');
     H.push(linksHtml(x));
-    H.push('<figure class="hero">'+(x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" style="view-transition-name:hero-'+esc(x.slug)+'">':'')+'</figure>');
+    if(x.image)H.push('<figure class="hero"><img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" style="view-transition-name:hero-'+esc(x.slug)+'"></figure>');
     H.push('</div>');
     H.push('<div class="journal">');
     H.push('<aside class="index" aria-label="Sections"><p class="lbl">The story</p><ol>'+st.sections.map(function(s){return '<li><a href="#'+esc(s.id)+'">'+esc(s.label)+'</a></li>';}).join('')+'</ol></aside>');
@@ -54,12 +54,11 @@
     st.sections.forEach(function(s,n){
       H.push('<section class="entry story" id="'+esc(s.id)+'" data-pop><p class="no">'+('0'+(n+1)).slice(-2)+' — '+esc(s.label)+'</p><h2>'+esc(s.headline)+'</h2>');
       (s.paras||[]).forEach(function(t){H.push('<p class="para">'+esc(t)+'</p>');});
-      if(s.steps)H.push('<ol class="steps">'+s.steps.map(function(t,k){return '<li><p class="step-t"><span>'+('0'+(k+1)).slice(-2)+' ·</span> '+esc(t.title)+'</p><p>'+esc(t.text)+'</p></li>';}).join('')+'</ol>');
       if(s.stats)H.push('<ul class="stats">'+s.stats.map(function(t){return '<li><b>'+esc(t.n)+'</b><span>'+esc(t.l)+'</span></li>';}).join('')+'</ul>');
+      if(s.steps)H.push('<ol class="steps">'+s.steps.map(function(t,k){return '<li><p class="step-t"><span>'+('0'+(k+1)).slice(-2)+' ·</span> '+esc(t.title)+'</p><p>'+esc(t.text)+'</p></li>';}).join('')+'</ol>');
       (s.after||[]).forEach(function(t){H.push('<p class="para">'+esc(t)+'</p>');});
       H.push(figs(s.figures));
       if(s.note)H.push('<p class="note">'+esc(s.note)+'</p>');
-      if(s.sources)H.push('<p class="sources">Sources: '+esc(s.sources)+'</p>');
       H.push('</section>');});
     H.push('</div></div>');
     H.push(nextHtml(next));

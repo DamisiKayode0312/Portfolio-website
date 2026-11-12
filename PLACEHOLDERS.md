@@ -54,3 +54,6 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 ## Earlier concepts kept for reference (not linked from the new site)
 
 `entrance-v1.html` (first ticket), `museum.html` (scroll walk), `home.html` (station-line layout), `gallery.html` (walkable art hallway), `legacy/` (original portfolio).
+
+## Case-study write-ups (Nov 2026)
+Every case study now uses the `story` format in `data/exhibits.json` (Elaine Yu-style: intro, facts row, numbered sections with headlines), in first person. Sources are not shown on the page; the older `sections` data beside each story keeps the evidence level and source for every statement (PRD, milestone reports, résumé, case scan, reflection, creative brief). Still wanted: a short "what I'd do differently" from Victoria for each project, in her own words.
