@@ -24,7 +24,7 @@
   .card{display:grid;gap:8px;height:100%;padding:16px;border-radius:var(--r-img);background:var(--cream);box-shadow:0 0 0 1px var(--taupe);text-decoration:none;color:var(--ink)}
   .card img,.card .frame-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:8px;background:#fff}
   .card .frame-ph{border-radius:8px}
-  .card h2{font-size:22px;color:var(--burgundy-ink)}
+  .card h2{font-size:22px;font-weight:400;letter-spacing:-.01em;color:var(--burgundy-ink)}
   .card .cat{font:500 13px/1.4 var(--font-body);letter-spacing:.02em;color:var(--muted)}
   .card .go{color:var(--burgundy-ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
   .qv-foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
@@ -34,7 +34,7 @@
 <body>
 <main class="qv">
   <div class="qv-top"><a href="index.html#home">‹ Victoria’s Gallery</a><a href="index.html#contact">Contact</a></div>
-  <h1>All work</h1>
+  <h1 data-swash>All work</h1>
   <p class="intro">Every project on one page. Open any of them for the full case study, or take the <a href="index.html">museum tour</a>.</p>
   <ul class="grid" id="grid"><li>Loading…</li></ul>
   <div class="qv-foot" id="foot"></div>
@@ -50,5 +50,6 @@ fetch('data/site.json').then(function(r){return r.json();}).then(function(s){
   document.getElementById('foot').innerHTML=(s.resume&&s.resume.href?'<a class="btn btn-primary" href="'+s.resume.href+'" download>Download résumé</a>':'<span class="btn btn-primary" aria-disabled="true">Résumé coming soon</span>')+'<a class="btn btn-secondary" href="index.html#contact">Contact</a>';
 });
 </script>
+<script src="js/swash.js" defer></script>
 </body>
 </html>

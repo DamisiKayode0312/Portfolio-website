@@ -86,15 +86,15 @@
     <div class="ex-stage" id="ex-stage">
       <div class="ex-wall" id="ex-wall">
         <div class="ex-item ex-panel ex-intro">
-          <p class="label">Gallery I</p>
-          <h2 id="work-h" tabindex="-1">Product &amp; Technology</h2>
+          <p class="label sig">Gallery I</p>
+          <h2 id="work-h" tabindex="-1" data-swash>Product &amp; Technology</h2>
           <p>Things I have built and designed. Keep scrolling to walk along the wall; select a frame to read its story.</p>
           <a class="ex-link" href="work.html">View all projects</a>
         </div>
         <div class="ex-room ex-room--work" id="ex-projects"></div>
         <div class="ex-item ex-panel ex-end">
-          <p class="label">End of Gallery I</p>
-          <p class="ex-end-line">Thanks for walking through</p>
+          <p class="label sig">End of Gallery I</p>
+          <p class="ex-end-line" data-swash>Thanks for walking through</p>
           <a class="ex-link" href="work.html">View all projects</a>
           <a class="ex-link" href="#experience">Experience ↓</a>
         </div>
@@ -107,7 +107,7 @@
   <section id="experience" class="experience" data-tone="light" data-group="experience" aria-labelledby="exp-h">
     <div class="exp-in">
       <p class="label" data-pop>Experience</p>
-      <h2 id="exp-h" data-pop>Where I’ve worked</h2>
+      <h2 id="exp-h" data-pop data-swash>Where I’ve worked</h2>
       <ol class="exp-list" id="exp-list"></ol>
     </div>
   </section>
@@ -116,7 +116,7 @@
   <section id="about" class="about" data-tone="cream" data-group="about" aria-labelledby="about-h">
     <div class="about-grid">
       <div class="about-side">
-        <h2 id="about-h" data-pop>Artist. Engineer. Curious by nature.</h2>
+        <h2 id="about-h" data-pop data-swash>Artist. Engineer. Curious by nature.</h2>
         <div class="about-actions" data-pop>
           <a class="btn btn-primary" id="resume-about" href="#">Download résumé</a>
           <a class="btn btn-secondary" href="#contact">Say hello</a>
@@ -145,8 +145,8 @@
     <div class="salon-wall" id="salon">
       <div class="salon-col salon-col--1">
         <div class="title-card">
-          <p class="label">Gallery II</p>
-          <h2 id="play-h" tabindex="-1">The Playground</h2>
+          <p class="label sig">Gallery II</p>
+          <h2 id="play-h" tabindex="-1" data-swash>The Playground</h2>
           <p class="tc-hint">Select a piece to see it up close</p>
         </div>
       </div>
@@ -155,7 +155,7 @@
 
   <!-- 07 · Leave a doodle -->
   <section id="doodle" class="doodle" data-tone="cream" data-group="about" aria-labelledby="doodle-h">
-    <h2 id="doodle-h" data-pop>Leave a doodle</h2>
+    <h2 id="doodle-h" data-pop data-swash>Leave a doodle</h2>
     <p class="sub" data-pop>A space for visitors to create</p>
     <a class="skip-doodle" href="#contact">Skip the doodle</a>
     <div class="doodle-layout">
@@ -176,7 +176,7 @@
   <!-- 08 · Closing -->
   <section id="contact" class="closing" data-tone="cream" aria-labelledby="contact-h">
     <div class="heart-frame" data-pop aria-hidden="true"><span class="pframe pframe--landscape"><span class="pf-art"><svg viewBox="0 0 60 50"><path d="M30 44C12 32 6 24 6 16a11 11 0 0 1 24-4 11 11 0 0 1 24 4c0 8-6 16-24 28z"/></svg></span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" aria-hidden="true" draggable="false" loading="lazy" decoding="async"></span></div>
-    <h2 id="contact-h" data-pop>Let’s make something meaningful</h2>
+    <h2 id="contact-h" data-pop data-swash>Let’s make something meaningful</h2>
     <div class="contact-actions" data-pop id="contact-actions"></div>
   </section>
 </main>
@@ -206,6 +206,7 @@
   <symbol id="laurel" viewBox="0 0 40 90"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M30 86C14 70 10 46 18 6"/><path d="M22 70c-8 0-12-6-12-10 6 0 11 4 12 10zM20 56c-8-1-11-7-11-11 6 1 10 5 11 11zM19 42c-7-2-10-8-9-12 5 2 9 6 9 12zM19 28c-6-3-8-9-7-13 5 3 8 7 7 13zM24 66c6-4 11-3 13 0-5 3-9 3-13 0zM21 52c6-4 11-4 13-1-5 3-9 4-13 1zM20 38c6-4 10-4 12-1-5 3-8 3-12 1z"/></g></symbol>
 </svg>
 
+<script src="js/swash.js" defer></script>
 <script src="js/exhibition.js" defer></script>
 <script src="js/site.js" defer></script>
 </body>

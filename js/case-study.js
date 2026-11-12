@@ -36,14 +36,14 @@
   function nextHtml(next){return '<nav class="next" aria-label="Next exhibit">'+(next?
       '<a href="case-study.html?p='+encodeURIComponent(next.slug)+'"><span class="thumb"><span class="pframe pframe--landscape"><span class="pf-art">'+(next.image?'<img src="'+esc(next.image.src)+'" alt="">':'<span class="mini-ph">'+esc(next.title.charAt(0))+'</span>')+'</span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" aria-hidden="true" loading="lazy"></span></span><span class="nt"><span class="lbl">Next exhibit</span><b>'+esc(next.title)+'</b></span><span class="chev" aria-hidden="true">›</span></a>':
       '<a href="index.html#work"><span class="nt"><span class="lbl">End of the collection</span><b>Back to the gallery</b></span><span class="chev" aria-hidden="true">›</span></a>')+'</nav>';}
-  function finish(H){main.innerHTML=H.join('');var t=document.getElementById('title');t.focus({preventScroll:true});pop();spy();}
+  function finish(H){main.innerHTML=H.join('');var t=document.getElementById('title');if(window.swash)window.swash(t);t.focus({preventScroll:true});pop();spy();}
 
   /* Story format: intro, a role/timeline/tools/team row, then a few numbered sections with a headline each.
      Every statement in the data comes from her documents (see PLACEHOLDERS.md); sources are not shown on the page. */
   function renderStory(x,next){
     var st=x.story,H=[];
     H.push('<div class="cs-head story-head">');
-    H.push('<p class="cat">'+esc(x.category)+'</p><h1 id="title" tabindex="-1">'+esc(x.title)+'</h1>');
+    H.push('<p class="cat">'+esc(x.category)+'</p><h1 id="title" tabindex="-1" data-swash>'+esc(x.title)+'</h1>');
     if(st.intro)H.push('<p class="intro">'+esc(st.intro)+'</p>');
     if(st.meta)H.push('<dl class="facts">'+st.meta.map(function(m){return '<div><dt>'+esc(m[0])+'</dt><dd>'+esc(m[1])+'</dd></div>';}).join('')+'</dl>');
     H.push(linksHtml(x));
@@ -74,7 +74,7 @@
     document.getElementById('mini').innerHTML='Gallery · '+esc(x.title);
     var H=[];
     H.push('<div class="cs-head">');
-    H.push('<p class="cat">'+esc(x.category)+'</p><h1 id="title" tabindex="-1">'+esc(x.title)+'</h1>');
+    H.push('<p class="cat">'+esc(x.category)+'</p><h1 id="title" tabindex="-1" data-swash>'+esc(x.title)+'</h1>');
     H.push('<figure class="hero">'+(x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" style="view-transition-name:hero-'+esc(x.slug)+'">':'<div class="hero-ph placeholder">Placeholder · Project image (a photo, screen or sketch from Dami)</div>')+'</figure>');
     var S=x.summary||{};
     H.push('<div class="summary">'+[['idea','The idea'],['who','Who it helps'],['how','How it works']].map(function(k){var b=S[k[0]]||{};
@@ -99,7 +99,7 @@
       '<a href="case-study.html?p='+encodeURIComponent(next.slug)+'"><span class="thumb"><span class="pframe pframe--landscape"><span class="pf-art">'+(next.image?'<img src="'+esc(next.image.src)+'" alt="">':'<span class="mini-ph">'+esc(next.title.charAt(0))+'</span>')+'</span><img class="pf-frame" src="assets/frames/frame-landscape.webp" alt="" aria-hidden="true" loading="lazy"></span></span><span class="nt"><span class="lbl">Next exhibit</span><b>'+esc(next.title)+'</b></span><span class="chev" aria-hidden="true">›</span></a>':
       '<a href="index.html#work"><span class="nt"><span class="lbl">End of the collection</span><b>Back to the gallery</b></span><span class="chev" aria-hidden="true">›</span></a>')+'</nav>');
     main.innerHTML=H.join('');
-    var t=document.getElementById('title');t.focus({preventScroll:true});
+    var t=document.getElementById('title');if(window.swash)window.swash(t);t.focus({preventScroll:true});
     pop();spy();
   }
 
