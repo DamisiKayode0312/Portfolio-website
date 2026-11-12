@@ -139,7 +139,7 @@ section{position:relative}
 .ex-progress i{display:block;height:100%;width:100%;background:var(--gold-light);transform-origin:0 50%;transform:scaleX(0)}
 @media (min-width:900px){.exhibition{--gap:clamp(96px,10vw,180px);--h:calc(100svh - var(--nav-h) - 230px)}.ex-label{width:300px}}
 /* reduced motion, or no JS: the same exhibits as a calm vertical gallery, all lit */
-.exhibition.is-static{height:auto!important;overflow-x:clip}
+.exhibition.is-static{height:auto!important;overflow:clip}
 .exhibition.is-static .ex-stage{position:static;height:auto;overflow:visible;display:block;padding:56px 0 72px}
 .exhibition.is-static .ex-wall,.exhibition.is-static .ex-room,.exhibition.is-static .ex-art{flex-direction:column;height:auto;transform:none!important;gap:64px}
 .exhibition.is-static .ex-wall{padding:0 var(--gutter)!important}

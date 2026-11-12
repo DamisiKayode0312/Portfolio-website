@@ -1,0 +1,37 @@
+# Publishes Victoria's Gallery to GitHub Pages whenever main changes.
+# Only the live site goes up: the three pages, their CSS, JS, data and assets. Old concept pages, previews and docs stay out.
+name: Publish site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect the live site
+        run: |
+          mkdir -p _site/css _site/js
+          cp index.html work.html case-study.html _site/
+          cp css/tokens.css css/site.css css/soft.css css/case-study.css _site/css/
+          cp js/site.js js/exhibition.js js/swash.js js/case-study.js _site/js/
+          cp -r data assets _site/
+          rm -f _site/data/projects.json
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
