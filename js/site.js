@@ -61,15 +61,15 @@
     $('#tear').addEventListener('click',function(){enter(false);});
     $('#skip-ticket').addEventListener('click',function(e){e.preventDefault();enter(true);});
     stub.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();enter(false);}});
-    /* drag the stub down; threshold 70px or a quick flick */
-    var drag=null;
-    stub.addEventListener('pointerdown',function(e){if(torn||reduce)return;drag={x:e.clientX,y:e.clientY,t:performance.now(),lastY:e.clientY,lastT:performance.now(),v:0};stub.setPointerCapture(e.pointerId);stub.classList.add('drag');ticket.classList.remove('sway');});
-    stub.addEventListener('pointermove',function(e){if(!drag)return;var dy=Math.max(0,e.clientY-drag.y),dx=(e.clientX-drag.x)*.4,now=performance.now();
-      drag.v=(e.clientY-drag.lastY)/Math.max(1,now-drag.lastT);drag.lastY=e.clientY;drag.lastT=now;
-      ticket.classList.toggle('tearing',dy>8);
-      stub.style.transform='translate('+dx+'px,'+(dy*.7)+'px) rotate('+(dx/14+dy/40)+'deg)';});
-    function release(e,cancel){if(!drag)return;var dy=e.clientY-drag.y,v=drag.v;drag=null;stub.classList.remove('drag');
-      if(!cancel&&(dy>70||v>.6)){stub.style.transform='';enter(false);}
+    /* drag the stub away: to the right on wide screens, down on phones; tears past 70px or on a quick flick */
+    var drag=null,wide=matchMedia('(min-width:720px)');
+    stub.addEventListener('pointerdown',function(e){if(torn||reduce)return;drag={x:e.clientX,y:e.clientY,last:wide.matches?e.clientX:e.clientY,lastT:performance.now(),v:0};stub.setPointerCapture(e.pointerId);stub.classList.add('drag');ticket.classList.remove('sway');});
+    stub.addEventListener('pointermove',function(e){if(!drag)return;var w=wide.matches,main=w?e.clientX-drag.x:e.clientY-drag.y,cross=(w?e.clientY-drag.y:e.clientX-drag.x)*.4,d=Math.max(0,main),now=performance.now(),pos=w?e.clientX:e.clientY;
+      drag.v=(pos-drag.last)/Math.max(1,now-drag.lastT);drag.last=pos;drag.lastT=now;
+      ticket.classList.toggle('tearing',d>8);
+      stub.style.transform=w?'translate('+(d*.7)+'px,'+cross+'px) rotate('+(d/40+cross/14)+'deg)':'translate('+cross+'px,'+(d*.7)+'px) rotate('+(cross/14+d/40)+'deg)';});
+    function release(e,cancel){if(!drag)return;var d=wide.matches?e.clientX-drag.x:e.clientY-drag.y,v=drag.v;drag=null;stub.classList.remove('drag');
+      if(!cancel&&(d>70||v>.6)){stub.style.transform='';enter(false);}
       else{stub.style.transform='';ticket.classList.remove('tearing');if(!reduce)ticket.classList.add('sway');}}
     stub.addEventListener('pointerup',function(e){if(drag&&Math.abs(e.clientY-drag.y)<6&&Math.abs(e.clientX-drag.x)<6){drag=null;stub.classList.remove('drag');enter(false);return;}release(e,false);});
     stub.addEventListener('pointercancel',function(e){release(e,true);});

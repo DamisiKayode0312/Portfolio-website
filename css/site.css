@@ -63,43 +63,9 @@ p{margin:0}
 .entrance.leaving{opacity:0;transition-delay:.2s}
 .entrance-mark{width:40px;height:34px;color:var(--gold-bright)}
 .entrance-rule{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);margin-bottom:8px}
-.ticket-scene{perspective:900px;width:min(82vw,420px)}
-.ticket{transform-style:preserve-3d;transform:rotate(-3deg);transition:transform .6s var(--ease-out),opacity .45s ease;animation:drop .7s var(--ease-spring) both}
-@keyframes drop{from{opacity:0;transform:translateY(-40px) rotate(-3deg)}70%{transform:translateY(4px) rotate(-3deg)}to{opacity:1;transform:rotate(-3deg)}}
-.ticket.sway{animation:drop .7s var(--ease-spring) both,sway 6s ease-in-out .7s 2}
-@keyframes sway{0%,100%{transform:rotate(-3deg) rotateX(1.2deg) rotateY(-1.2deg)}50%{transform:rotate(-3deg) rotateX(-1.2deg) rotateY(1.2deg)}}
-.ticket-main,.stub{position:relative;background:linear-gradient(160deg,#F2EEE8,#E4DED6 55%,#D6CEC4);color:var(--burgundy-ink);
-  box-shadow:inset 0 0 0 6px #E9E4DD,inset 0 0 0 7px var(--gold),inset 0 0 0 10px #E9E4DD,inset 0 0 0 11px var(--gold)}
-.ticket-main{border-radius:10px 10px 0 0;padding:36px 44px 30px;text-align:center;filter:drop-shadow(0 18px 18px rgba(0,0,0,.35))}
-.ticket-main::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(60% 50% at var(--hx,30%) var(--hy,20%),rgba(255,255,255,.45),transparent 70%);mix-blend-mode:soft-light}
-.ticket-title{font:300 clamp(36px,10.5vw,50px)/1.05 var(--font-display);letter-spacing:-.045em;padding-top:.15em}
-.ticket-title .sw{font:400 1.5em/0 var(--font-script);letter-spacing:0;margin-right:.16em;position:relative;top:.06em}
-.ticket-title .sw-g{margin-right:.02em}
-.ticket-sub{font:300 clamp(17px,4.8vw,21px) var(--font-display);letter-spacing:-.02em;margin-top:10px;color:var(--brass)}
-.laurel{position:absolute;top:22px;width:22px;height:52px;color:var(--gold)}
-.laurel-l{left:16px}.laurel-r{right:16px;transform:scaleX(-1)}
-.perf{position:relative;height:0;z-index:2}
-.perf::before,.perf::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:var(--wall-deep)}
-.perf::before{left:-10px}.perf::after{right:-10px}
-.perf i{position:absolute;left:16px;right:16px;top:-1px;border-top:2px dotted var(--gold)}
-.stub{border-radius:0 0 10px 10px;padding:20px 24px;display:flex;align-items:center;justify-content:center;gap:14px;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;
-  transform-origin:50% 0;transition:transform .32s var(--ease-spring),opacity .45s ease,clip-path .2s;min-height:64px;filter:drop-shadow(0 12px 12px rgba(0,0,0,.3))}
-.stub .orn{width:6px;height:6px;color:var(--gold)}
-.admission{font:500 16px var(--font-body);letter-spacing:.04em}
-.stub.drag{transition:none;cursor:grabbing}
-/* jagged torn edges, shown while tearing */
-.tearing .ticket-main{clip-path:polygon(0 0,100% 0,100% 100%,96% calc(100% - 6px),92% 100%,88% calc(100% - 6px),84% 100%,80% calc(100% - 6px),76% 100%,72% calc(100% - 6px),68% 100%,64% calc(100% - 6px),60% 100%,56% calc(100% - 6px),52% 100%,48% calc(100% - 6px),44% 100%,40% calc(100% - 6px),36% 100%,32% calc(100% - 6px),28% 100%,24% calc(100% - 6px),20% 100%,16% calc(100% - 6px),12% 100%,8% calc(100% - 6px),4% 100%,0 calc(100% - 6px))}
-.tearing .stub{clip-path:polygon(0 6px,4% 0,8% 6px,12% 0,16% 6px,20% 0,24% 6px,28% 0,32% 6px,36% 0,40% 6px,44% 0,48% 6px,52% 0,56% 6px,60% 0,64% 6px,68% 0,72% 6px,76% 0,80% 6px,84% 0,88% 6px,92% 0,96% 6px,100% 0,100% 100%,0 100%)}
-.tearing .perf{opacity:0}
-.stub.gone{transform:translate(40px,260px) rotate(16deg)!important;opacity:0}
-.ticket.leave{transform:rotate(-3deg) rotateX(14deg) scale(.96) translateY(-24px)!important;opacity:0;animation:none}
 .tear-hint{font:400 15px var(--font-body);color:var(--champagne);margin-top:10px}
-.nudge{display:inline-block;animation:nudge 1.6s ease-in-out 3}
-@keyframes nudge{50%{transform:translateY(4px)}}
 .entrance .btn-primary{background:var(--parchment);color:var(--burgundy-ink);border-color:var(--parchment)}
 .skip-ticket{display:inline-flex;align-items:center;min-height:44px;color:var(--champagne);font-size:15px;text-underline-offset:3px}
-@media (min-width:1024px){.ticket-scene{width:420px}.ticket{transform:rotate(-2deg)}}
 
 /* ===== nav ===== */
 .nav{position:sticky;top:0;z-index:100;background:var(--cream);color:var(--burgundy-ink);border-bottom:1px solid var(--taupe);
@@ -508,3 +474,105 @@ section{position:relative}
 .experience .xp-mark{background:transparent;box-shadow:none;border-radius:0}
 /* the wand fills more of its frame: the film is mostly cream around a small wand */
 .pframe>.pf-art>.wall-film{object-fit:cover;object-position:center;transform:scale(1.4);transform-origin:52% 44%;background:#F9F5EE}
+
+/* ---------- the admission ticket: a cream ticket with a tear-off stub (stub on the right on wide screens, below on phones) ---------- */
+.ticket-scene{perspective:1100px;width:min(94vw,880px)}
+.ticket{--paper:#F7F2EA;--ink:#651E28;display:grid;grid-template-columns:minmax(0,1fr) 0 minmax(0,.46fr);transform-style:preserve-3d;transform:rotate(-1deg);
+  filter:drop-shadow(0 20px 22px rgba(0,0,0,.38));transition:transform .6s var(--ease-out),opacity .45s ease;animation:drop .7s var(--ease-spring) both;color:var(--ink)}
+@keyframes drop{from{opacity:0;transform:translateY(-40px) rotate(-1deg)}70%{transform:translateY(4px) rotate(-1deg)}to{opacity:1;transform:rotate(-1deg)}}
+.ticket.sway{animation:drop .7s var(--ease-spring) both,sway 6s ease-in-out .7s 2}
+@keyframes sway{0%,100%{transform:rotate(-1deg) rotateX(1deg) rotateY(-1deg)}50%{transform:rotate(-1deg) rotateX(-1deg) rotateY(1deg)}}
+.ticket-main,.stub{position:relative;background:var(--paper)}
+/* notches and scalloped edges are cut out with masks, so the damask shows through */
+.ticket-main{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:clamp(22px,3.4vw,34px) clamp(18px,3vw,40px) clamp(22px,3vw,30px) clamp(14px,2vw,22px);
+  -webkit-mask:radial-gradient(circle 26px at 100% 0,#0000 98%,#000),radial-gradient(circle 26px at 100% 100%,#0000 98%,#000);
+  -webkit-mask-composite:source-in;mask:radial-gradient(circle 26px at 100% 0,#0000 98%,#000),radial-gradient(circle 26px at 100% 100%,#0000 98%,#000);mask-composite:intersect}
+.ticket-main::after,.stub::after{content:"";position:absolute;top:0;bottom:0;width:8px;pointer-events:none;
+  background:radial-gradient(circle 6px at 0 50%,var(--wall-deep) 98%,#0000) 0 0/8px 20px repeat-y}
+.ticket-main::after{left:0}
+.stub::after{right:0;transform:scaleX(-1)}
+.t-side{margin:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:4px 10px 4px 0;border-right:1.5px solid var(--ink);
+  writing-mode:vertical-rl;transform:rotate(180deg);font:500 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#2A1418}
+.t-side span{white-space:nowrap}
+.t-body{display:grid;justify-items:center;text-align:center}
+.t-arc{width:min(100%,360px);height:auto;overflow:visible;margin-bottom:-6px}
+.t-arc text{font:500 15px var(--font-body);letter-spacing:.16em;text-transform:uppercase;fill:var(--ink)}
+.t-mark{width:clamp(38px,6vw,54px);height:auto;color:#2A1418;margin:2px 0 4px}
+.ticket .ticket-title{margin:0;font:400 clamp(40px,7vw,68px)/1.05 var(--font-script);letter-spacing:0;color:var(--ink);padding:0 .1em}
+.t-rule{display:block;width:min(60%,260px);height:1.5px;background:var(--ink);margin:2px 0 6px}
+.t-small{margin:0;font:500 12px var(--font-body);letter-spacing:.08em;color:#2A1418}
+.t-quote{margin:2px 0 clamp(10px,1.6vw,16px);font:400 clamp(20px,2.6vw,26px)/1.2 var(--font-script);color:var(--ink)}
+.t-rows{margin:0;width:100%;max-width:520px;display:grid;gap:8px;text-align:left}
+.t-row{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:12px;padding:0 0 8px 20px;position:relative;border-bottom:1.5px solid var(--ink)}
+.t-row::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
+.t-row--plain{border-bottom:0;padding-bottom:0}
+.t-row dt{font:500 clamp(12px,1.5vw,15px) var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#2A1418}
+.t-row dt::after{content:":"}
+.t-row dd{margin:0;text-align:right;font:500 clamp(12px,1.4vw,14px)/1.3 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#2A1418}
+.t-row--big dd{font:400 clamp(24px,3.6vw,36px)/1 var(--font-display);letter-spacing:-.02em;text-transform:none;color:var(--ink)}
+.t-row dd.t-script{font:400 clamp(22px,2.6vw,28px)/1 var(--font-script);letter-spacing:0;text-transform:none;color:var(--ink);text-align:left}
+/* perforation */
+.perf{position:relative;z-index:2;width:0;border-left:2px dashed rgba(101,30,40,.55);margin:22px 0}
+.perf i{display:none}
+/* stub */
+.stub{display:grid;align-content:center;justify-items:center;gap:clamp(8px,1.4vw,12px);padding:clamp(20px,3vw,30px) clamp(18px,2.6vw,30px);text-align:center;
+  cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transform-origin:0 50%;transition:transform .32s var(--ease-spring),opacity .45s ease,clip-path .2s;
+  -webkit-mask:radial-gradient(circle 26px at 0 0,#0000 98%,#000),radial-gradient(circle 26px at 0 100%,#0000 98%,#000);
+  -webkit-mask-composite:source-in;mask:radial-gradient(circle 26px at 0 0,#0000 98%,#000),radial-gradient(circle 26px at 0 100%,#0000 98%,#000);mask-composite:intersect}
+.s-times{margin:0;width:100%;display:grid}
+.s-times div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 2px}
+.s-times div:first-child{border-bottom:1.5px solid var(--ink)}
+.s-times dt{font:500 clamp(11px,1.3vw,13px) var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#2A1418}
+.s-times dd{margin:0;font:500 clamp(12px,1.4vw,15px) var(--font-body);color:#2A1418}
+.s-qr{position:relative;display:block;width:clamp(96px,13vw,132px);aspect-ratio:1;padding:10px;
+  background:linear-gradient(var(--ink),var(--ink)) 0 0/18px 2px,linear-gradient(var(--ink),var(--ink)) 0 0/2px 18px,linear-gradient(var(--ink),var(--ink)) 100% 0/18px 2px,linear-gradient(var(--ink),var(--ink)) 100% 0/2px 18px,
+    linear-gradient(var(--ink),var(--ink)) 0 100%/18px 2px,linear-gradient(var(--ink),var(--ink)) 0 100%/2px 18px,linear-gradient(var(--ink),var(--ink)) 100% 100%/18px 2px,linear-gradient(var(--ink),var(--ink)) 100% 100%/2px 18px;background-repeat:no-repeat}
+.s-qr img{display:block;width:100%;height:100%;pointer-events:none}
+.s-fine{margin:0;font:500 11px/1.5 var(--font-body);color:#2A1418}
+.s-script{margin:0;font:400 clamp(22px,2.6vw,28px)/1.1 var(--font-script);color:var(--ink)}
+.stub.drag{transition:none;cursor:grabbing}
+/* torn edges while tearing, and where the stub goes */
+.tearing .perf{opacity:0}
+.tearing .stub{clip-path:polygon(6px 0,100% 0,100% 100%,6px 100%,0 96%,6px 92%,0 88%,6px 84%,0 80%,6px 76%,0 72%,6px 68%,0 64%,6px 60%,0 56%,6px 52%,0 48%,6px 44%,0 40%,6px 36%,0 32%,6px 28%,0 24%,6px 20%,0 16%,6px 12%,0 8%,6px 4%)}
+.stub.gone{transform:translate(260px,30px) rotate(12deg)!important;opacity:0}
+.ticket.leave{transform:rotate(-1deg) rotateX(12deg) scale(.96) translateY(-24px)!important;opacity:0;animation:none}
+.nudge{display:inline-block;width:8px;height:8px;margin-left:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);animation:nudge-x 1.6s ease-in-out 3}
+@keyframes nudge-x{50%{translate:4px 0}}
+/* phones: the stub hangs below, torn downwards */
+@media (max-width:719px){
+  .ticket-scene{width:min(92vw,440px)}
+  .ticket{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 0 auto}
+  .ticket-main{padding:22px 18px 18px 12px;
+    -webkit-mask:radial-gradient(circle 20px at 0 100%,#0000 98%,#000),radial-gradient(circle 20px at 100% 100%,#0000 98%,#000);-webkit-mask-composite:source-in;
+    mask:radial-gradient(circle 20px at 0 100%,#0000 98%,#000),radial-gradient(circle 20px at 100% 100%,#0000 98%,#000);mask-composite:intersect}
+  .ticket-main::after{display:none}
+  .t-side{font-size:10px;padding-right:8px}
+  .t-arc text{font-size:17px}
+  .ticket .ticket-title{font-size:clamp(36px,11.5vw,50px)}
+  .t-row{gap:8px}
+  .perf{width:auto;height:0;border-left:0;border-top:2px dashed rgba(101,30,40,.55);margin:0 22px}
+  .stub{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"qr times" "qr fine" "script script";align-items:center;justify-items:start;text-align:left;gap:6px 16px;padding:20px 22px 18px;transform-origin:50% 0;
+    -webkit-mask:radial-gradient(circle 20px at 0 0,#0000 98%,#000),radial-gradient(circle 20px at 100% 0,#0000 98%,#000);-webkit-mask-composite:source-in;
+    mask:radial-gradient(circle 20px at 0 0,#0000 98%,#000),radial-gradient(circle 20px at 100% 0,#0000 98%,#000);mask-composite:intersect}
+  .stub::after{display:none}
+  .s-qr{grid-area:qr;width:92px}
+  .s-times{grid-area:times}
+  .s-fine{grid-area:fine}
+  .s-script{grid-area:script;justify-self:center}
+  .tearing .stub{clip-path:polygon(0 6px,4% 0,8% 6px,12% 0,16% 6px,20% 0,24% 6px,28% 0,32% 6px,36% 0,40% 6px,44% 0,48% 6px,52% 0,56% 6px,60% 0,64% 6px,68% 0,72% 6px,76% 0,80% 6px,84% 0,88% 6px,92% 0,96% 6px,100% 0,100% 100%,0 100%)}
+  .stub.gone{transform:translate(30px,260px) rotate(12deg)!important}
+  .nudge{transform:rotate(45deg);animation-name:nudge-y}
+}
+@keyframes nudge-y{50%{translate:0 4px}}
+@media (max-height:620px) and (max-width:719px){.t-arc,.t-mark{display:none}}
+/* phones: keep the whole ticket and its buttons on screen; scroll rather than crop if a screen is very short */
+.entrance{justify-content:safe center;overflow-y:auto}
+@media (max-width:719px){
+  .entrance{gap:10px;padding-top:calc(16px + env(safe-area-inset-top,0px))}
+  .entrance-mark,.entrance-rule{display:none}
+  .t-arc text{font-size:14px;letter-spacing:.14em}
+  .t-arc{width:min(100%,300px)}
+  .t-row--big dd{font-size:clamp(22px,7vw,30px)}
+  .tear-hint{margin-top:4px}
+}
+@media (max-width:719px) and (max-height:700px){.tear-hint{display:none}.ticket-main{padding-top:16px;padding-bottom:14px}.stub{padding-top:16px;padding-bottom:14px}}

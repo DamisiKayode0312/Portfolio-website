@@ -33,18 +33,34 @@
   <div class="ticket-scene" id="scene">
     <div class="ticket" id="ticket">
       <div class="ticket-main">
-        <svg class="laurel laurel-l" viewBox="0 0 40 90" aria-hidden="true"><use href="#laurel"/></svg>
-        <svg class="laurel laurel-r" viewBox="0 0 40 90" aria-hidden="true"><use href="#laurel"/></svg>
-        <p class="ticket-title"><span class="sr-only">Victoria’s Gallery</span><span aria-hidden="true"><span class="sw">V</span>ictoria’s <span class="sw sw-g">G</span>allery</span></p>
-        <p class="ticket-sub">An exhibition by Dami</p>
+        <p class="t-side" aria-hidden="true"><span>Admit one</span><span>Ticket Nº 1 · All ages</span></p>
+        <div class="t-body">
+          <svg class="t-arc" viewBox="0 0 360 74" aria-hidden="true"><path id="t-arc-path" d="M24 70 Q180 -6 336 70" fill="none"/><text><textPath href="#t-arc-path" startOffset="50%" text-anchor="middle">You’re invited to the opening</textPath></text></svg>
+          <svg class="t-mark" viewBox="0 0 48 40" aria-hidden="true"><use href="#museum"/></svg>
+          <p class="ticket-title">Victoria’s Gallery</p>
+          <i class="t-rule" aria-hidden="true"></i>
+          <p class="t-small">featuring</p>
+          <p class="t-quote">“…product, engineering and art”</p>
+          <dl class="t-rows">
+            <div class="t-row t-row--big"><dt>Curator</dt><dd>Victoria Kayode</dd></div>
+            <div class="t-row"><dt>Location</dt><dd>Atlanta, GA &amp; online</dd></div>
+            <div class="t-row t-row--plain"><dt>Dress code</dt><dd class="t-script">curious</dd></div>
+          </dl>
+        </div>
       </div>
       <div class="perf" aria-hidden="true"><i></i></div>
       <div class="stub" id="stub" role="button" tabindex="0" aria-label="Tear the ticket to enter the gallery">
-        <span class="orn" aria-hidden="true"></span><span class="admission">Admission</span><span class="orn" aria-hidden="true"></span>
+        <dl class="s-times" aria-hidden="true">
+          <div><dt>Doors open</dt><dd>Anytime</dd></div>
+          <div><dt>Gallery hours</dt><dd>24/7</dd></div>
+        </dl>
+        <span class="s-qr" aria-hidden="true"><img src="assets/qr-linkedin.svg" alt="" draggable="false"></span>
+        <p class="s-fine" aria-hidden="true">Scan to connect on LinkedIn.<br>Visits: unlimited. Impressions: lasting!</p>
+        <p class="s-script" aria-hidden="true">See you inside!</p>
       </div>
     </div>
   </div>
-  <p class="tear-hint" aria-hidden="true">Pull the stub to enter <span class="nudge">↓</span></p>
+  <p class="tear-hint" aria-hidden="true">Pull the stub to enter <span class="nudge"></span></p>
   <button class="btn btn-primary" id="tear" type="button">Tear to enter</button>
   <a class="skip-ticket" id="skip-ticket" href="#home">Skip the ticket</a>
 </div>
