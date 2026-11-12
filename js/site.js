@@ -23,8 +23,8 @@
     setTimeout(function(){$('#tear').focus({preventScroll:true});},reduce?0:700);
   }
   /* the hero wall scrolls continuously: the five frames are hung twice in one track that slides left forever.
-     The copy is hidden from screen readers and the keyboard. It pauses on hover, on keyboard focus, off screen,
-     and with the pause button; with reduced motion it stays a still, centred row. */
+     The copy is hidden from screen readers and the keyboard. It pauses on hover, on keyboard focus and off screen;
+     with reduced motion it stays a still, centred row. */
   var heroRow=$('.poster-row'),heroTrack=null;
   function setLoop(){if(!heroTrack)return;var w=heroTrack.firstElementChild.getBoundingClientRect().width;heroTrack.style.setProperty('--loop',Math.max(20,w/(innerWidth<700?32:48)).toFixed(1)+'s');}
   if(heroRow&&!reduce){
@@ -35,12 +35,6 @@
     $$('img',copy).forEach(function(im){im.removeAttribute('fetchpriority');});
     heroTrack=document.createElement('div');heroTrack.className='poster-track';heroTrack.appendChild(set);heroTrack.appendChild(copy);
     heroRow.appendChild(heroTrack);heroRow.classList.add('is-marquee');
-    var tog=document.createElement('button');tog.type='button';tog.className='wall-toggle';tog.setAttribute('aria-pressed','false');
-    var icon=function(paused){tog.setAttribute('aria-label',paused?'Play the moving frames':'Pause the moving frames');
-      tog.innerHTML=paused?'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z" fill="currentColor"/></svg>':'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';};
-    icon(false);
-    tog.addEventListener('click',function(){var p=heroRow.classList.toggle('is-paused');tog.setAttribute('aria-pressed',String(p));icon(p);});
-    var wallBox=document.createElement('div');wallBox.className='poster-wall';heroRow.parentNode.insertBefore(wallBox,heroRow);wallBox.appendChild(heroRow);wallBox.appendChild(tog);
     setLoop();addEventListener('resize',setLoop);
     $$('img',heroTrack).forEach(function(im){if(!im.complete)im.addEventListener('load',setLoop,{once:true});});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){heroRow.classList.toggle('is-offscreen',!es[0].isIntersecting);}).observe(heroRow);
