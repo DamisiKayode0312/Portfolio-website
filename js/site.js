@@ -124,12 +124,29 @@
     $('#lb-title').textContent=a.placeholder?'Artwork coming':'“'+a.title+'”';
     $('#lb-meta').innerHTML=[a.year,a.medium].filter(Boolean).map(esc).join('<br>');
     $('#lb-blurb').textContent=a.placeholder?'This frame is waiting for a piece from Dami: title, year, medium and a short note.':(a.story||'');}
-  function openLb(i,from){lbReturn=from;showLb(i);if(lb.showModal)lb.showModal();else lb.setAttribute('open','');$('#lb-close').focus();}
+  /* the painting comes off the wall: it grows out of its frame into the close-up, and goes back when closed */
+  var EASE='cubic-bezier(.2,.7,.2,1)',closing=false;
+  function pieceArt(i){var b=$('.salon-piece[data-i="'+i+'"]');return b&&b.querySelector('.pf-art');}
+  function flip(img,from,reverse,ms){var a=from.getBoundingClientRect(),c=img.getBoundingClientRect();if(!a.width||!c.width)return null;
+    var t='translate('+(a.left+a.width/2-(c.left+c.width/2)).toFixed(1)+'px,'+(a.top+a.height/2-(c.top+c.height/2)).toFixed(1)+'px) scale('+(a.width/c.width).toFixed(3)+')';
+    var k=[{transform:t,opacity:.6},{transform:'none',opacity:1}];return img.animate(reverse?k.reverse():k,{duration:ms,easing:EASE,fill:'both'});}
+  function openLb(i,from){lbReturn=from;showLb(i);if(lb.showModal)lb.showModal();else lb.setAttribute('open','');$('#lb-close').focus();
+    var img=$('#lb-art .lb-img'),src=pieceArt(i);if(reduce||!img||!src||!img.animate)return;
+    var go=function(){var an=flip(img,src,false,460);if(an)an.onfinish=function(){an.cancel();};
+      var cs=getComputedStyle(lb);lb.animate([{backgroundColor:'rgba(250,249,246,0)',boxShadow:'none'},{backgroundColor:cs.backgroundColor,boxShadow:cs.boxShadow}],{duration:380,easing:EASE});
+      [].forEach.call(lb.querySelectorAll('.lb-label,.lb-nav'),function(el){el.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:320,delay:180,easing:EASE,fill:'backwards'});});};
+    if(img.complete)go();else img.addEventListener('load',go,{once:true});}
+  function closeLb(){if(closing||!lb.open)return;var img=$('#lb-art .lb-img'),src=pieceArt(lbIndex),piece=$('.salon-piece[data-i="'+lbIndex+'"]');if(piece)lbReturn=piece;
+    if(reduce||!img||!src||!img.animate){lb.close();return;}
+    closing=true;var an=flip(img,src,true,300);lb.animate([{opacity:1},{opacity:0}],{duration:300,easing:'ease-in',fill:'forwards'});
+    var done=function(){closing=false;lb.close();lb.getAnimations().forEach(function(x){x.cancel();});if(an)an.cancel();};
+    if(an)an.onfinish=done;else done();}
+  lb.addEventListener('cancel',function(e){e.preventDefault();closeLb();});
   $('#lb-prev').addEventListener('click',function(){showLb(lbIndex-1);});
   $('#lb-next').addEventListener('click',function(){showLb(lbIndex+1);});
-  $('#lb-close').addEventListener('click',function(){lb.close();});
+  $('#lb-close').addEventListener('click',closeLb);
   lb.addEventListener('close',function(){if(lbReturn)lbReturn.focus({preventScroll:true});});
-  lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
   lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')showLb(lbIndex-1);if(e.key==='ArrowRight')showLb(lbIndex+1);});
   var sx=null;lb.addEventListener('pointerdown',function(e){sx=e.clientX;});lb.addEventListener('pointerup',function(e){if(sx===null)return;var d=e.clientX-sx;sx=null;if(Math.abs(d)>50)showLb(lbIndex+(d<0?1:-1));});
   var bar=$('#ex-bar');

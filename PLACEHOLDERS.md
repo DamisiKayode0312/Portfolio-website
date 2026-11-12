@@ -57,3 +57,9 @@ Everything below renders on the site as a visible placeholder (dashed, hatched b
 
 ## Case-study write-ups (Nov 2026)
 Every case study now uses the `story` format in `data/exhibits.json` (Elaine Yu-style: intro, facts row, numbered sections with headlines), in first person. Sources are not shown on the page; the older `sections` data beside each story keeps the evidence level and source for every statement (PRD, milestone reports, résumé, case scan, reflection, creative brief). Still wanted: a short "what I'd do differently" from Victoria for each project, in her own words.
+
+## From the LOCIT poster (Nov 2026)
+- Used: hardware photo (GPS, USB, processor, power), GPS test route, findings (open sky vs tree cover, ~2 h battery), parts total ~$285.
+- To confirm: the poster spells LOCIT as "Location Integrated Technology", the résumé as "Location Integrated Tracker" (the site uses the résumé).
+- Not used: teammates' names (AZAD: four engineers), the Raspberry Pi camera photo.
+- Weather Station enclosure render: assumed to be the CPE 4040 weather station enclosure; confirm.

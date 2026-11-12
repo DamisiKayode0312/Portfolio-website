@@ -369,3 +369,13 @@ section{position:relative}
 .lb-label p{margin:0}
 .lb-label .wl-story:empty{display:none}
 .lb-label .wl-story{margin-top:var(--s2);line-height:1.5}
+
+/* picture lights: hovering or focusing a painting lights the wall above it (pointer devices) */
+.salon-piece{position:relative;isolation:isolate}
+.salon-piece::before{content:"";position:absolute;z-index:-1;left:-30%;right:-30%;top:-34%;height:110%;pointer-events:none;
+  background:radial-gradient(ellipse 50% 50% at 50% 42%,rgba(255,226,176,.32),rgba(255,226,176,.12) 45%,rgba(255,226,176,0) 70%);opacity:0;transition:opacity .4s var(--ease-out)}
+.salon-piece .pframe{transition:filter .4s var(--ease-out)}
+@media (hover:hover){.salon-piece:hover::before{opacity:1}.salon-piece:hover .pframe{filter:brightness(1.06)}}
+.salon-piece:focus-visible::before{opacity:1}
+@media (prefers-reduced-motion:reduce){.salon-piece::before,.salon-piece .pframe{transition:none}}
+.title-card h2:focus{outline:none}

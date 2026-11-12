@@ -8,8 +8,8 @@
       "featured": true,
       "teaser": "A smart location-tracking necklace with a companion app for live location and safety alerts.",
       "image": {
-        "src": "assets/projects/locit/companion-app-screens.jpg",
-        "alt": "Three phone screens from the LOCIT companion app: a teal sign-in screen, a campus map with a location pin, and a geofence screen with an out-of-bounds warning."
+        "src": "assets/projects/locit/app-screens-hd.webp",
+        "alt": "LOCIT companion app on two phones: the teal sign-in screen and a campus map with a location pin."
       },
       "summary": {
         "idea": {
@@ -297,7 +297,8 @@
             "headline": "Everything had to fit in a pendant",
             "paras": [
               "The first 3D-printed enclosure was too bulky to wear as a necklace. I designed the enclosure in Fusion 360, and we kept shrinking and reprinting it until the GPS module, microcontroller and battery fit.",
-              "We also had to cut scope. UV sensors came out because the parts took too long to arrive, Bluetooth came in, and the requirements were revised to match what we could actually build."
+              "We also had to cut scope. UV sensors came out because the parts took too long to arrive, Bluetooth came in, and the requirements were revised to match what we could actually build.",
+              "The full parts list for the prototype came to about $285."
             ],
             "figures": [
               {
@@ -342,9 +343,9 @@
                 "caption": "App design screens: sign in, geofencing, settings."
               },
               {
-                "src": "assets/projects/locit/hardware-diagram.webp",
-                "alt": "Hardware block diagram: temperature, UV and vibration sensors, gyroscope and GPS tracker feed a PCB board, along with LEDs and buttons, a camera, a solar panel and battery, microSD storage and a Bluetooth transceiver; the board drives a display.",
-                "caption": "Planned hardware architecture from the PRD. UV sensors were later dropped.",
+                "src": "assets/projects/locit/gps-components.webp",
+                "alt": "Prototype hardware laid out on a wooden table: a GPS module with antenna, a USB board, a processor board and a small lithium battery, each labelled.",
+                "caption": "Prototype hardware: GPS, USB, processor and power",
                 "small": true
               }
             ],
@@ -375,7 +376,18 @@
             "paras": [
               "I tested GPS tracking and geofencing alerts across more than 20 scenarios, then demoed the system to non-technical audiences."
             ],
-            "note": "These figures come from our own capstone testing, not from use in the field."
+            "note": "These figures come from our own capstone testing, not from use in the field.",
+            "after": [
+              "Field testing also showed the limits. GPS was precise in open areas but drifted on roads with heavy tree cover, and the battery lasted about 2 hours on a full charge, far short of the 24-hour target."
+            ],
+            "figures": [
+              {
+                "src": "assets/projects/locit/gps-test-route.webp",
+                "alt": "Map with a red GPS track running along roads from north of a lake down toward Marietta.",
+                "caption": "A GPS track recorded during field testing",
+                "small": true
+              }
+            ]
           },
           {
             "id": "next",
@@ -577,7 +589,10 @@
       "category": "Embedded Systems · IoT · Data Engineering",
       "featured": false,
       "teaser": "A Raspberry Pi that reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
-      "image": null,
+      "image": {
+        "src": "assets/projects/weather-station/temperature-chart.webp",
+        "alt": "Line chart titled CPE4040 Weather Station showing temperature readings between about 72 and 77 degrees from 12:30 to 13:20 on 21 February 2024."
+      },
       "summary": {
         "idea": {
           "text": "A Raspberry Pi weather station for continuous environmental monitoring.",
@@ -651,11 +666,19 @@
           "needs": "Next steps."
         }
       },
-      "frame": "portrait",
+      "frame": "landscape",
       "small": true,
       "story": {
         "intro": "A Raspberry Pi weather station I built to monitor conditions remotely. It reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
         "meta": [
+          [
+            "Course",
+            "CPE 4040"
+          ],
+          [
+            "Timeline",
+            "Spring 2024"
+          ],
           [
             "Tools",
             "Python, Raspberry Pi, AWS IoT"
@@ -678,6 +701,19 @@
               {
                 "title": "Send them to the cloud",
                 "text": "I connected the readings to AWS IoT and a dashboard, so conditions can be checked from anywhere."
+              }
+            ],
+            "figures": [
+              {
+                "src": "assets/projects/weather-station/enclosure.webp",
+                "alt": "3D model of a small rectangular enclosure with a sliding lid and a raised block with a round opening for a sensor.",
+                "caption": "Enclosure modeled in Fusion 360",
+                "small": true
+              },
+              {
+                "src": "assets/projects/weather-station/dashboard.webp",
+                "alt": "Two live charts from the CPE4040 Weather Station dashboard: temperature on the left and humidity on the right, recorded on 21 February 2024.",
+                "caption": "Live readings on the dashboard: temperature and humidity"
               }
             ]
           },
