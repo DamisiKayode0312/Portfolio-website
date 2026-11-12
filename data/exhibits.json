@@ -537,22 +537,22 @@
           {
             "id": "principle",
             "label": "key decision",
-            "headline": "Every claim has to trace back to you",
+            "headline": "It can only use what you give it",
             "paras": [
-              "The rule I built everything around: anything Fairy Job Mother says about your background has to point to something you actually wrote. If you trained two new associates and made a closing checklist, it can help you say that more clearly. It can’t add a 30% productivity gain you never mentioned."
+              "The one rule I wouldn’t bend: everything Fairy Job Mother says about you has to come from something you actually shared. If you trained two new coworkers and made a closing checklist, it can help you say that better. It won’t turn it into “increased productivity by 30%” when you never said that."
             ],
             "steps": [
               {
-                "title": "“Not evidenced”, never “you can’t”",
-                "text": "When a job asks for something your experience doesn’t show, it says “Not evidenced in the text.” Missing evidence isn’t missing ability."
+                "title": "Gaps aren’t failures",
+                "text": "If a job asks for something your experience doesn’t show, it tells you it isn’t in what you shared, not that you can’t do it."
               },
               {
-                "title": "One project, not a course list",
-                "text": "It picks one important gap and turns it into a small project you can start, with a clear deliverable."
+                "title": "One project, not a reading list",
+                "text": "Instead of a long list of courses, it picks the gap that matters most and gives you one small project you can actually start."
               },
               {
-                "title": "A sample for recruiters",
-                "text": "Reviewers can walk through a fictional example without sharing anything personal, and it still works if the AI is switched off."
+                "title": "A demo anyone can try",
+                "text": "Recruiters can click through a made-up example without sharing anything personal, and it still works if the AI is turned off."
               }
             ]
           },
@@ -561,7 +561,8 @@
             "label": "scope",
             "headline": "What I left out on purpose",
             "paras": [
-              "No job boards, auto-apply, accounts, payments or résumé uploads in the first release. Pasting text is less convenient than uploading a file, but there’s no parsing or storage to build or protect. A feature stays out unless it improves the core path from your experience to a next step."
+              "I kept the first version small on purpose: no job boards, no auto-apply, no accounts, no payments. Every idea had to answer one question: does it make it easier to get from your experience to a clear next step? If not, it waited.",
+              "Résumé uploads were one of the things that waited. People started by pasting their experience in, and once the basics worked, I added uploads so you can bring your résumé as it is."
             ]
           },
           {
@@ -579,7 +580,7 @@
               },
               {
                 "title": "Live AI features",
-                "text": "I built and deployed AI features that compare a user’s experience with a job description, then suggest tailored resume changes, skill-gap guidance and portfolio projects that would demonstrate the right skills."
+                "text": "I built and deployed AI features that compare a user’s experience with a job description, then suggest tailored resume changes, skill-gap guidance and portfolio projects that would demonstrate the right skills. You can paste your experience or upload your résumé."
               },
               {
                 "title": "Test, then refine",
@@ -615,7 +616,7 @@
             "label": "what’s next",
             "headline": "Still being written",
             "paras": [
-              "Next, I want to widen testing beyond the first group of users. Only then will I add things like résumé file uploads, saved plans and more career directions, and each one has to earn its place by making the path from your experience to a next step clearer."
+              "Next, I want to test with more people. After that, maybe saved plans and more career directions, but only if they make the path from your experience to a next step clearer."
             ]
           }
         ]
