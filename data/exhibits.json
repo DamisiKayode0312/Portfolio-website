@@ -874,7 +874,11 @@
       "kind": "experience",
       "company": "Handshake AI",
       "role": "AI Evaluation & Technical Research Analyst",
-      "dates": "Nov 2025 – present · Remote"
+      "dates": "Nov 2025 – present · Remote",
+      "logo": {
+        "src": "assets/logos/handshake-lg.webp",
+        "alt": "Handshake AI logo"
+      }
     },
     {
       "slug": "news-corp",
@@ -1069,7 +1073,11 @@
       "kind": "experience",
       "company": "News Corp",
       "role": "AI Product Manager Intern",
-      "dates": "Aug – Oct 2025 · Remote"
+      "dates": "Aug – Oct 2025 · Remote",
+      "logo": {
+        "src": "assets/logos/newscorp-lg.webp",
+        "alt": "News Corp logo"
+      }
     }
   ]
 }

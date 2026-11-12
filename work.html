@@ -25,6 +25,8 @@
   .card{display:grid;gap:8px;height:100%;padding:16px;border-radius:var(--r-img);background:#FFFDFA;box-shadow:var(--soft-lift);text-decoration:none;color:var(--ink)}
   .card img,.card .frame-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:8px;background:#fff}
   .card .frame-ph{border-radius:8px}
+  .card .logo-ph{display:grid;place-items:center;aspect-ratio:16/10;border-radius:8px;background:#F4EFE8}
+  .card .logo-ph img{width:auto;height:auto;max-width:56%;max-height:42%;aspect-ratio:auto;object-fit:contain;background:none;border-radius:0}
   .card h2{font-size:22px;font-weight:400;letter-spacing:-.01em;color:var(--burgundy-ink)}
   .card .cat{font:400 13px/1.4 var(--font-body);letter-spacing:.02em;color:var(--muted)}
   .card .go{color:var(--burgundy-ink);font-weight:500;text-decoration:underline;text-underline-offset:3px}
@@ -44,7 +46,7 @@
 fetch('data/exhibits.json').then(function(r){return r.json();}).then(function(d){
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   document.getElementById('grid').innerHTML=d.exhibits.map(function(x){
-    return '<li><a class="card" href="case-study.html?p='+encodeURIComponent(x.slug)+'">'+(x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" loading="lazy">':'<div class="frame-ph">Placeholder · Project image needed</div>')+
+    return '<li><a class="card" href="case-study.html?p='+encodeURIComponent(x.slug)+'">'+(x.image?'<img src="'+esc(x.image.src)+'" alt="'+esc(x.image.alt)+'" loading="lazy">':x.logo?'<div class="logo-ph"><img src="'+esc(x.logo.src)+'" alt="'+esc(x.logo.alt)+'" loading="lazy"></div>':'<div class="frame-ph">Placeholder · Project image needed</div>')+
       '<span class="cat">'+esc(x.category)+'</span><h2>'+esc(x.title)+'</h2><p>'+esc(x.teaser)+'</p><span class="go">Read the case study</span></a></li>';}).join('');
 });
 fetch('data/site.json').then(function(r){return r.json();}).then(function(s){
