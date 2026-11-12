@@ -40,7 +40,7 @@
     var S=x.summary||{};
     H.push('<div class="summary">'+[['idea','The idea'],['who','Who it helps'],['how','How it works']].map(function(k){var b=S[k[0]]||{};
       return '<div class="sblock" data-pop><h2>'+k[1]+'</h2>'+(b.text?'<p>'+esc(b.text)+'</p><p class="meta">'+chip(b.ev,b.src)+'</p>':ph(b.needs||'Awaiting material'))+'</div>';}).join('')+'</div>');
-    if(x.links&&x.links.length)H.push('<p class="links">'+x.links.map(function(l){return '<a class="btn btn-secondary" href="'+esc(l.href)+'" rel="noopener">'+esc(l.label)+' <span aria-hidden="true">↗</span></a>';}).join('')+'</p>');
+    if(x.links&&x.links.length)H.push('<p class="links">'+x.links.map(function(l){return '<a class="btn btn-secondary" href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(l.label)+' <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>';}).join('')+'</p>');
     H.push('</div>');
 
     H.push('<div class="journal">');
