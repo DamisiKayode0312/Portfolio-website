@@ -91,3 +91,5 @@ body{background:var(--parchment)}
 /* a role without a picture hangs its company logo in the next-exhibit frame */
 .mini-logo{display:grid;place-items:center;height:100%;background:#F4EFE8}
 .pframe>.pf-art>.mini-logo>img{width:auto;height:auto;max-width:62%;max-height:56%;object-fit:contain}
+.mini-logo.is-fill{display:block}
+.pframe>.pf-art>.mini-logo.is-fill>img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover}

@@ -922,8 +922,9 @@
       "role": "AI Evaluation & Technical Research Analyst",
       "dates": "Nov 2025 – present · Remote",
       "logo": {
-        "src": "assets/logos/handshake-lg.webp",
-        "alt": "Handshake AI logo"
+        "src": "assets/logos/handshake-banner.webp",
+        "alt": "Handshake logo",
+        "fill": true
       }
     },
     {
