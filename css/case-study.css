@@ -88,3 +88,6 @@ body{background:var(--parchment)}
 .stats span{font-size:14px;line-height:1.4;color:var(--muted)}
 .note{max-width:65ch;font-size:15px;color:var(--muted);margin:0 0 12px}
 .sources{font-size:12.5px;line-height:1.5;color:var(--muted);margin:10px 0 0;max-width:65ch}
+/* a role without a picture hangs its company logo in the next-exhibit frame */
+.mini-logo{display:grid;place-items:center;height:100%;background:#F4EFE8}
+.pframe>.pf-art>.mini-logo>img{width:auto;height:auto;max-width:62%;max-height:56%;object-fit:contain}
