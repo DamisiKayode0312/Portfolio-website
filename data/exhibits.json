@@ -636,8 +636,8 @@
       "featured": false,
       "teaser": "A Raspberry Pi that reads temperature, humidity and pressure every 10 seconds and sends them to AWS IoT and a dashboard.",
       "image": {
-        "src": "assets/projects/weather-station/temperature-chart.webp",
-        "alt": "Line chart titled CPE4040 Weather Station showing temperature readings between about 72 and 77 degrees from 12:30 to 13:20 on 21 February 2024."
+        "src": "assets/projects/weather-station/temperature-dashboard.webp",
+        "alt": "Weather station dashboard: a line chart of temperature from 12:30 to 13:25 on February 21, 2024, holding near 72 to 73 degrees before climbing to a latest reading of 77. Data from ThingSpeak."
       },
       "summary": {
         "idea": {
@@ -1112,8 +1112,7 @@
                 "title": "Short-form video",
                 "text": "Quick, swipeable stories for the way people read on their phones."
               }
-            ],
-            "note": "These were recommendations with projected benefits, not shipped features."
+            ]
           }
         ]
       },
